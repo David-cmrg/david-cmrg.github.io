@@ -1,0 +1,611 @@
+
+
+/* Default Light Mode */
+:root {
+    --text-color: black;
+    --special-characters: black;
+    --element-hover-color: #ece7e7;
+    --element-color: white;
+    --body-color: #f5f1f1;
+    --border-color: #000000;
+    --white-color: white;
+    --button-hover-color: rgb(192, 192, 192);
+    --highlighter: rgb(192, 192, 192);
+    --error-background-color: #800517;
+}
+
+.comment { color: #6a9955 !important; }
+.keyword { color: #569cd6 !important; }
+.class-name { color: #d7ba7d !important; }
+.method { color: #dcdcaa !important; }
+.type { color: #4ec9b0 !important; }
+.string { color: #ce9178 !important; }
+code { text-align: left; align-items: start;} /* Ändert nichts -_- */
+.verifiziert { color: #4ec9b0 !important; }
+.nicht-verifiziert { color: #d7ba7d !important;}
+.fehler {color: var(--error-background-color) !important;}
+
+/* Dark Mode */
+.dark-mode {
+    --text-color: white;
+    --special-characters: black;
+    --element-hover-color: rgb(87, 82, 82);
+    --element-color: #343434;
+    --body-color: #212122;
+    --border-color: #000000;
+    --white-color: white;
+    --button-hover-color: rgb(97, 95, 95);
+    --highlighter: rgb(97, 95, 95);
+    --error-background-color: #800517;
+}
+
+
+
+/* Generelle styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    scroll-behavior: smooth !important;
+    color: var(--text-color) !important;
+    transition: all 0.3s;
+}
+
+body {
+    background-color: var(--body-color);
+    height: 100% !important;
+    display: flex;
+}
+
+/* Navigationsleiste */
+nav {
+    width: 250px;
+    height: 100vh;
+    background-color: var(--element-color);
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-radius: 0 15px 15px 0;
+    z-index: 100;
+}
+nav h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+nav ul li {
+    margin-bottom: 20px;
+    margin-left: 35px;
+    text-align: start !important;
+}
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+
+  /* Hamburger Menü */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    margin-bottom: 105px;
+}
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        transform: translateX(-100%);
+    }
+    nav.active {
+        transform: translateX(0);
+    }
+    .hamburger {
+        display: flex;
+    }
+    main{
+        margin-left: 0px !important;
+        padding: 10px 25px !important;
+        width: 100% !important;
+    }
+
+    /* Button-Styling */
+    #toggle-history {
+        position: fixed;  /* Fixiert den Button auf dem Bildschirm */
+        top: 6px;        /* Abstand vom oberen Rand */
+        right: 6px;      /* Abstand vom rechten Rand */
+        padding: 15px;
+        font-size: 13px;
+        cursor: pointer;
+        color: var(--text-color);
+        border: none;
+        border-radius: 10px;
+        transition: 0.3s;
+        z-index: 1000;    /* Stellt sicher, dass er über anderen Elementen bleibt */
+        background-color: var(--body-color);
+    }
+
+}
+  
+
+
+
+  /* Main */
+  main {
+    margin-left: 210px;
+    padding: 30px 45px 30px 75px;
+    width: 100%;
+  }
+  .titleMain{
+    text-align: center;
+    font-family: "Montserrat", serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+  } 
+  
+
+/* CODE SNIPPET | CODE CONTAINER THAT HOLDS THE CODE */
+.code-container {
+    background-color: var(--element-color) !important;
+    border-radius: 8px;
+    border: 1px solid var(--border-color) !important;
+    overflow-x: auto;
+    position: relative;
+    margin: 0px 0px 35px 0px;
+}
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--element-color);
+    padding: 8px 12px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 1px solid var(--element-color) !important;
+    width: 100% !important;
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+.button {
+    background-color: var(--body-color);
+    border: none;
+    color: var(--text-color);
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.button:hover {
+    background-color: var(--button-hover-color);
+    color: white;
+}
+
+#titlePage{
+    text-align: center;
+    margin: 1vh 0vh 5vh 0vh;
+}
+.Aufgabenstellung{
+    margin: 20px 0px 20px 30px;
+    text-align: left;
+}
+#Lösungsprozess{
+    margin: 50px 0px 20px 0px;
+}
+.SchritteListe{
+    padding: 5px 0px 5px 45px;
+}
+.Schritte{
+    margin: 35px 0px 15px 0px;
+}
+
+#Kurse{
+    margin: 50px 0px 20px 0px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+}
+#Kurse div{
+    padding: 35px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--element-color);
+}
+#Kurse div:hover{
+    background-color: var(--button-hover-color);
+}
+#Einfuehrung{
+    margin: 10px 15px 45px 25px;
+}
+#AufgabenMain{
+    margin: 10px 15px 35px 25px;
+}
+#AufgabenLinks li{
+    margin-bottom: 7px;
+    font-size: large;
+}
+.TastenKombination{
+    background-color: var(--highlighter);
+    color: var(--text-color);
+    margin: 3px;
+    padding: 0vh 0.7vh;
+}
+
+#Fragen{
+    margin: 0px 10px 0px 10px;
+}
+
+#Fragen li{
+    margin: 40px 0px 5px 0px !important;
+}
+#Fragen div{
+    display: flex !important;
+}
+
+
+.antwort {
+    filter: blur(5px);
+    cursor: pointer;
+    display: inline-block;
+}
+.antwort.anzeigen {
+    filter: blur(0);
+}
+
+
+.container {
+        position: relative;
+        display: inline-block;
+        width:100% !important;
+        text-align: left !important;
+    }
+
+    .blurDivCLASS {
+        filter: blur(5px); /* Der Blur-Effekt */
+        display: flex;
+        width:100% !important;
+    }
+
+    .blurDivCLASS.anzeigen {
+        filter: blur(0); /* Blur entfernen */
+    }
+
+    /* Button in der Mitte */
+    .show-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        background-color: #000;
+        color: white !important;
+        border-radius: 5px;
+        z-index: 10; /* Button bleibt oben */
+    }
+
+.unterliste{
+    margin: 0px 0px 0px 20px;
+}
+
+#nav-title-verifystatus{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+}
+#nav-title-verifystatus i{
+    text-align: center;
+    margin: 3.1vh 0vh 0vh 5vh;
+}
+
+
+
+
+/*  LIGHT DARK MODE BUTTON */
+
+/* From Uiverse.io by satyamchaudharydev */ 
+/* The switch - the box around the slider */
+.switch {
+    display: block;
+    --width-of-switch: 3.5em;
+    --height-of-switch: 2em;
+    /* size of sliding icon -- sun and moon */
+    --size-of-icon: 1.4em;
+    /* it is like a inline-padding of switch */
+    --slider-offset: 0.3em;
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+    
+    position: absolute;
+    bottom: 20px;  /* Distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FDFD96; /* Gelb Gold: #FDFD96; Light Blue: #96fdf4; Even lighter blue: #c8f5e7 */
+    border-radius: 30px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon,1.4em);
+    width: var(--size-of-icon,1.4em);
+    border-radius: 20px;
+    left: var(--slider-offset,0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #0b2a4e;
+  }
+  
+  input:checked + .slider:before {
+    left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+    background: #0b2a4e;
+    /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+  }
+
+
+
+
+
+
+/* General styles */
+.aufgaben-section {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap when there's not enough space */
+    justify-content: center; /* Center content horizontally */
+    gap: 20px; /* Space between articles */
+    padding: 20px;
+}
+
+/* Individual articles */
+.aufgaben-section a{
+    background: var(--element-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1 1 300px; /* Flex-grow: 1, Flex-shrink: 1, Minimum width: 300px */
+    max-width: 400px; /* Ensures articles don't get too wide */
+}
+.aufgaben-section a:hover{
+    background: var(--element-hover-color);
+    transition: all 0.4s;
+}
+
+.aufgaben-section a i{
+    margin-bottom: 3vh;
+}
+/* Responsive behavior */
+@media (max-width: 600px) {
+    .aufgaben-section {
+        flex-direction: column; /* Stack articles vertically on small screens */
+        align-items: center;
+    }
+    .aufgaben-section a {
+        width: 100%; /* Take full width on small screens */
+        max-width: none; /* Remove max width limit */
+        min-height: 5vh;
+        max-height: 12vh;
+    }
+
+    .aufgaben-section article {
+        width: 90%; /* Take most of the screen width */
+        max-width: none; /* Remove max width limit */
+    }
+}
+
+
+
+.error-bg {
+    background-color: var(--error-background-color) !important;
+    filter: brightness(65%) grayscale(40%);
+
+    i, h4{
+        color: var(--white-color) !important;
+    }
+}
+
+
+
+
+
+/* Button-Styling */
+#toggle-history {
+    position: fixed;  /* Fixiert den Button auf dem Bildschirm */
+    top: 13px;        /* Abstand vom oberen Rand */
+    right: 13px;      /* Abstand vom rechten Rand */
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--text-color);
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    z-index: 1000;    /* Stellt sicher, dass er über anderen Elementen bleibt */
+    background-color: var(--body-color);
+}
+
+#toggle-history:hover {
+    background-color: var(--element-color);
+}
+
+
+/* Das modale Fenster */
+#history-modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#history-modal.hidden {
+    display: none !important;
+}
+
+
+/* Der weiße Kasten in der Mitte */
+#history-content {
+    background: var(--element-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    width: 300px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+/* Schließen-Button */
+#close-history {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Liste der letzten Themen */
+#recent-topics {
+    list-style: none;
+    padding: 0;
+    text-align: start;
+    padding: 0px 0px 0px 10px;
+    transition: all 0.3s !important;
+}
+
+#recent-topics li {
+    margin: 10px 0;
+    transition: all 0.3s !important;
+}
+
+#recent-topics a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s !important;
+}
+
+#recent-topics a:hover {
+    text-decoration: underline;
+    transition: all 0.3s ease !important;
+}
+#history-content h3 {
+    margin-bottom: 3vh;
+}
+
+
+
+/* General styles */
+.vorherige-naechste {
+    display: flex; 
+    flex-wrap: wrap; /* Allows items to wrap when there's not enough space */
+    justify-content: center; /* Center content horizontally */
+    gap: 70%; /* Space between articles */
+    padding: 20px;
+    margin: 5vh 0vh 3vh 0vh;
+}
+
+/* Individual articles */
+.vorherige-naechste a{
+    background: var(--element-color);
+    padding: 15px 0px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
+    flex: 1 1 30px; /* Flex-grow: 1, Flex-shrink: 1, Minimum width: 30px */
+    max-width: 250px; /* Ensures articles don't get too wide */
+}
+
+.vorherige-naechste a:hover{
+    background: var(--button-hover-color);
+}
+
+
+#Datentypen {
+    width: 75%;
+    margin: 45px auto;
+    border-collapse: collapse;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 65px;
+}
+
+#Datentypen th {
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 1px solid var(--text-color);
+    border-left: 1px solid var(--text-color); 
+    text-align: center;
+}
+
+#Datentypen th:first-child {
+    border-left: none; 
+}
+
+#Datentypen tbody tr td {
+    padding: 10px 0px 10px 40px;
+    text-align: left; 
+    border-left: 1px solid var(--text-color); 
+}
+
+#Datentypen tbody tr td:first-child {
+    border-left: none; 
+}
+
+#Datentypen tbody tr:hover:not(:first-child) {
+    background-color: var(--element-color) !important;
+}
