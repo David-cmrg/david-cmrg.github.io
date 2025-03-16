@@ -94,7 +94,7 @@ code { text-align: left; align-items: start;} /* Ändert nichts -_- */
         transform: translateX(0);
     }
     .hamburger {
-        display: flex;
+        display: flex !important;
     }
     main{
         margin-left: 0px !important;
