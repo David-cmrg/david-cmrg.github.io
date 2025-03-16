@@ -1,5 +1,3 @@
-
-
 /* Default Light Mode */
 :root {
     --text-color: black;
@@ -11,7 +9,7 @@
     --white-color: white;
     --button-hover-color: rgb(192, 192, 192);
     --highlighter: rgb(192, 192, 192);
-    --error-background-color: #800517;
+    --error-background-color: #ad1c32; /* Error Background old: #800517  */
 }
 
 .comment { color: #6a9955 !important; }
@@ -39,6 +37,113 @@ code { text-align: left; align-items: start;} /* Ändert nichts -_- */
     --error-background-color: #800517;
 }
 
+@media (min-width: 1000px) {
+    /* Icon styling */
+    .html-icon, .java-icon, .scratch-icon {
+        font-size: 13em !important;
+    }
+}
+
+/* Responsive behavior */
+@media (max-width: 1000px) {
+    #Kurse{
+        margin: 23vh 0vh 2vh 0vh !important;
+        display: flex;
+        flex-direction: column !important;
+        width: 100%;
+        margin: 0 auto;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: flex-start;
+        align-items: stretch;
+        align-content: center;
+        gap: 9em;
+
+        a{
+            margin: 0 auto;
+            width: 100%;
+        }
+    }
+    .html-icon, .java-icon, .scratch-icon {
+        font-size: 8em !important;
+    }
+
+    .icon-desc-text {
+        display: block;
+        text-decoration: none !important;
+        margin-top: 7vh !important;
+        font-size: 1.5em;
+        opacity: 0;
+        transition: opacity 0.3s, transform 0.3s;
+        transform: translateY(5px);
+    }
+    .hvr-float-shadow:hover .icon-desc-text {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    code{
+        font-size: small;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        transform: translateX(-100%);
+    }
+    nav.active {
+        transform: translateX(0);
+    }
+    .hamburger {
+        display: flex;
+    }
+    main{
+        margin-left: 0px !important;
+        padding: 10px 25px !important;
+        width: 100% !important;
+    }
+
+    /* Button-Styling */
+    #toggle-history {
+        position: fixed;  /* Fixiert den Button auf dem Bildschirm */
+        top: 6px;        /* Abstand vom oberen Rand */
+        right: 6px;      /* Abstand vom rechten Rand */
+        padding: 15px;
+        font-size: 13px;
+        cursor: pointer;
+        color: var(--text-color);
+        border: none;
+        border-radius: 10px;
+        transition: 0.3s;
+        z-index: 1000;    /* Stellt sicher, dass er über anderen Elementen bleibt */
+        background-color: var(--body-color);
+    }
+
+}
+/* Responsive behavior */
+@media (max-width: 600px) {
+    .aufgaben-section {
+        flex-direction: column; /* Stack articles vertically on small screens */
+        align-items: center;
+    }
+    .aufgaben-section a {
+        width: 100%; /* Take full width on small screens */
+        max-width: none; /* Remove max width limit */
+        min-height: 5vh;
+        max-height: 12vh;
+    }
+
+    .aufgaben-section article {
+        width: 90%; /* Take most of the screen width */
+        max-width: none; /* Remove max width limit */
+    }
+}
+
+
+
+
+
+
+
 
 
 /* Generelle styles */
@@ -49,7 +154,7 @@ code { text-align: left; align-items: start;} /* Ändert nichts -_- */
     font-family: "Montserrat", serif;
     font-optical-sizing: auto;
     font-style: normal;
-    scroll-behavior: smooth !important;
+    scroll-behavior: smooth;
     color: var(--text-color) !important;
     transition: all 0.3s;
 }
@@ -110,43 +215,6 @@ nav ul li a {
     margin: 5px;
 }
 
-@media (max-width: 768px) {
-    nav {
-        transform: translateX(-100%);
-    }
-    nav.active {
-        transform: translateX(0);
-    }
-    .hamburger {
-        display: flex;
-    }
-    main{
-        margin-left: 0px !important;
-        padding: 10px 25px !important;
-        width: 100% !important;
-    }
-
-    /* Button-Styling */
-    #toggle-history {
-        position: fixed;  /* Fixiert den Button auf dem Bildschirm */
-        top: 6px;        /* Abstand vom oberen Rand */
-        right: 6px;      /* Abstand vom rechten Rand */
-        padding: 15px;
-        font-size: 13px;
-        cursor: pointer;
-        color: var(--text-color);
-        border: none;
-        border-radius: 10px;
-        transition: 0.3s;
-        z-index: 1000;    /* Stellt sicher, dass er über anderen Elementen bleibt */
-        background-color: var(--body-color);
-    }
-
-}
-  
-
-
-
   /* Main */
   main {
     margin-left: 210px;
@@ -178,7 +246,7 @@ nav ul li a {
     padding: 8px 12px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    border-bottom: 1px solid var(--element-color) !important;
+    border-bottom: 1px solid var(--border-color) !important;
     width: 100% !important;
 }
 .buttons {
@@ -216,27 +284,10 @@ nav ul li a {
     margin: 35px 0px 15px 0px;
 }
 
-#Kurse{
-    margin: 50px 0px 20px 0px;
-    padding-top: 50px;
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-    margin: 0 auto;
-}
-#Kurse div{
-    padding: 35px;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    background-color: var(--element-color);
-}
-#Kurse div:hover{
-    background-color: var(--button-hover-color);
-}
 #Einfuehrung{
     margin: 10px 15px 45px 25px;
 }
-#AufgabenMain{
+.AufgabenMain{
     margin: 10px 15px 35px 25px;
 }
 #AufgabenLinks li{
@@ -419,26 +470,6 @@ nav ul li a {
 .aufgaben-section a i{
     margin-bottom: 3vh;
 }
-/* Responsive behavior */
-@media (max-width: 600px) {
-    .aufgaben-section {
-        flex-direction: column; /* Stack articles vertically on small screens */
-        align-items: center;
-    }
-    .aufgaben-section a {
-        width: 100%; /* Take full width on small screens */
-        max-width: none; /* Remove max width limit */
-        min-height: 5vh;
-        max-height: 12vh;
-    }
-
-    .aufgaben-section article {
-        width: 90%; /* Take most of the screen width */
-        max-width: none; /* Remove max width limit */
-    }
-}
-
-
 
 .error-bg {
     background-color: var(--error-background-color) !important;
@@ -608,4 +639,70 @@ nav ul li a {
 
 #Datentypen tbody tr:hover:not(:first-child) {
     background-color: var(--element-color) !important;
+}
+
+
+
+
+
+/* Float Shadow */
+.hvr-float-shadow {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(207, 61, 61, 0);
+    transition: transform 0.3s;
+}
+
+.hvr-float-shadow:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%); /* Quality of Life update possible - Add distinguishability between light and dark mode*/
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.hvr-float-shadow:hover {
+    transform: translateY(-10px);
+}
+
+.hvr-float-shadow:hover:before {
+    opacity: 1;
+    transform: translateY(5px);
+}
+
+
+.hvr-float-shadow:hover .icon-desc-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+#Kurse {
+    margin: 23vh 0vh 2vh 0vh !important;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;  /* Centers and spaces elements */
+    align-items: center;  /* Centers items vertically */
+    flex-wrap: nowrap;  /* Prevents wrapping */
+}
+
+.icon-desc-text {
+    display: block;
+    text-decoration: none !important;
+    margin-top: 7vh !important;
+    font-size: 1.5em;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateY(5px);
 }
