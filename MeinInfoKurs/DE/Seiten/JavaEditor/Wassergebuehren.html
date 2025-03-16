@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../../style.css">
     <script src="../../script.js"></script>
     <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231"
      crossorigin="anonymous"></script>
     <title>MeinInfoKurs | Wassergebühren.java</title>
@@ -23,7 +26,6 @@
         <h2 class="titleMain" style="margin:2.3vh 0vh 15vh 0vh;">MeinInfoKurs</h2>
         <ul>
             <li><i class="fa-solid fa-house"></i>  <a href="../../index.html">Startseite</a></li>
-            <!-- <li><i class="fa-brands fa-html5 fa-xl"></i>  <a href="../HTML/html.html">HTML</a></li> -->
             <li><i class="fa-brands fa-java fa-xl"></i>  <a href="../JavaEditor/Java.html">Java</a></li>
             <li><i class="fa-solid fa-bug fa-lg"></i>  <a href="fehlersuche.html">Fehler Suche</a></li>
             <li><i class="fa-solid fa-book"></i>  <a href="docs.html">Dokumentation</a></li>
@@ -53,11 +55,133 @@
                 <ul id="recent-topics"></ul>
             </div>
         </div>
+        
+        <p>
+            Die Aufgabe der heutigen Stunde ist <strong>der automatisierte Wassergebührenbescheid!</strong> Dazu schauen wir uns mal die Aufgabe genauer an und versuchen durch 
+            intelligentes Lösen ein vollfunktionsfähiges Programm zu erstellen. <br/>
+            Die Aufgabenstellung lautet:
+        </p>
+        <p class="Aufgabenstellung">
+            Die Firma Aquatech beliefert die Bürger aus Java mit Wasser. Die Eingaben für den Wassergebührenbescheid sollen zukünftig über ein Konsolenprogramm eingelesen werden. 
+            Danach erfolgt die automatisch generierte Ausgabe des Gebührenbescheids. Analysiere dazu den gegebenen Gebührenbescheid. <br/><br/>
+
+            Eingabe:     Welche Daten musst du eingeben? <br/>
+            Verarbeitung: Wie und in welcher Reihenfolge werden die Gebühren berechnet. <br/>
+            Ausgabe:     Welche Daten musst du ausgeben?
+        </p>
+        <table id="Datentypen">
+			<tbody><tr>
+                <th>Zählerstand Alt</th>
+                <th>Zählerstand Neu</th>
+                <th>Wasserverbrauch pro m&sup3;</th>
+                <th>Monatlicher Grundpreis</th>
+                <th>Preis pro m&sup3;</th>
+                <th>Nettobetrag (&euro;)</th>
+                <th>ust. 7%</th>
+                <th>Bruttobetrag (&euro;)</th>
+            </tr>
+            <tr>
+                <td>744</td>
+                <td>868</td>
+                <td>124</td>
+                <td>6,90</td>
+                <td>1,68</td>
+                <td>208,32<br/><br/>82,80</td>
+                <td>14,58<br/><br/>5,80</td>
+                <td>222,90<br/><br/>88,60</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>124</td>
+                <td></td>
+                <td></td>
+                <td><strong>291,12</strong></td>
+                <td><strong>20,38</strong></td>
+                <td><strong>311,50</strong></td>
+            </tr>
+		</tbody></table>
+        <h2 id="Lösungsprozess">Lösungsprozess der Aufgabe:</h2>
+        <div class="code-container">
+            <div class="toolbar">
+                <span><i class="fa-solid fa-code"></i>  Java</span>
+                <div class="buttons">
+                    <button class="button" onclick="copyCode()">Kopieren</button>
+                    <button class="button" onclick="downloadCode()">Herunterladen</button>
+                </div>
+            </div>
+            <div class="container">
+            <button class="show-button" onclick="revealContent()">Code Anzeigen</button>
+            <pre class="blurDivCLASS" id="blurDivID">
+                <code id="codeBlock">
+                    <span class="comment">/**
+                    *
+                    * Programm zur Berechnung der Wassergebühren.
+                    *
+                    * @version 1.0 vom 16.03.2025
+                    * @MeinInfoKurs.github.io
+                    */</span>
+
+                    <span class="keyword">public class</span> <span class="class-name">Wassergebuehren</span> {
+
+                        <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+                            <span class="type">int</span> zaehlerAlt, zaehlerNeu, wasserverbrauch;
+                            <span class="type">double</span> grundpreis, preisProM3, ust = 0.07;
+                            <span class="type">double</span> nettoVerbrauch, nettoGesamt, mehrwertsteuer, bruttoGesamt;
+
+                            zaehlerAlt = InOut.readInt(<span class="string">"Alter Zählerstand: "</span>);
+                            zaehlerNeu = InOut.readInt(<span class="string">"Neuer Zählerstand: "</span>);
+                            grundpreis = InOut.readDouble(<span class="string">"Monatlicher Grundpreis (€): "</span>);
+                            preisProM3 = InOut.readDouble(<span class="string">"Preis pro Kubikmeter (€): "</span>);
+
+                            wasserverbrauch = zaehlerNeu - zaehlerAlt;
+                            nettoVerbrauch = wasserverbrauch * preisProM3;
+                            nettoGesamt = nettoVerbrauch + grundpreis;
+                            mehrwertsteuer = nettoGesamt * ust;
+                            bruttoGesamt = nettoGesamt + mehrwertsteuer;
+
+                            System.out.println(<span class="string">"Ihr Wasserverbrauch: "</span> + wasserverbrauch + <span class="string">" m³"</span>);
+                            System.out.println(<span class="string">"Nettobetrag: "</span> + InOut.format2(nettoGesamt) + <span class="string">" €"</span>);
+                            System.out.println(<span class="string">"Mehrwertsteuer: "</span> + InOut.format2(mehrwertsteuer) + <span class="string">" €"</span>);
+                            System.out.println(<span class="string">"Bruttobetrag: "</span> + InOut.format2(bruttoGesamt) + <span class="string">" €"</span>);
+                        }
+                    }
+                </code></pre>
+            </div>
+        </div>
 
         <p>
-            Bitte warten Sie auf erstellung der Seite. (Zuletzt aktualisiert: 08.03.2025)
+            Die folgenden Schritte sind für die Lösung notwendig:  
+            <ol class="SchritteListe">
+                <li>Eingabe des alten und neuen Zählerstands</li>
+                <li>Eingabe des Grundpreises und des Preises pro Kubikmeter</li>
+                <br/>
+                <li>Berechnung des Wasserverbrauchs</li>
+                <li>Berechnung der Nettokosten</li>
+                <li>Berechnung der Mehrwertsteuer (7%)</li>
+                <br/>
+                <li>Berechnung der Bruttokosten</li>
+                <li>Ausgabe der Werte</li>
+            </ol>
         </p>
-
+        <h3 class="Schritte">Berechnungen von gesuchten Werten</h3>
+        <p>
+            Der Wasserverbrauch wird berechnet, indem der alte Zählerstand vom neuen Zählerstand subtrahiert wird.<br/>
+            Die Kosten für das verbrauchte Wasser werden berechnet, indem der Wasserverbrauch mit dem Preis pro Kubikmeter multipliziert wird.<br/>
+            Die Gesamtkosten ohne Steuern setzen sich aus den Kosten für den Verbrauch und dem monatlichen Grundpreis zusammen.<br/>
+            Die Mehrwertsteuer wird berechnet, indem die Gesamtkosten ohne Steuern mit dem Mehrwertsteuersatz multipliziert werden.<br/>
+            Die Gesamtkosten inklusive Steuern ergeben sich aus den Nettokosten plus der berechneten Mehrwertsteuer.<br/>
+            Alle Rechnungen sehen im Programm dann folgendermaßen aus:<br/>
+        </p><br/>
+        <div class="code-container">
+            <pre><code> 
+                wasserverbrauch = zaehlerNeu - zaehlerAlt;
+                nettoVerbrauch = wasserverbrauch * preisProM3;
+                nettoGesamt = nettoVerbrauch + grundpreis;
+                mehrwertsteuer = nettoGesamt * ust;
+                bruttoGesamt = nettoGesamt + mehrwertsteuer;
+            </code></pre>
+        </div>
 
         <section class="vorherige-naechste">
             <a href="Variablenraetsel.html" class="error-bg">
@@ -71,6 +195,7 @@
                 </article>
             </a>
         </section>
+
 
     </main>
     <script>
@@ -89,7 +214,7 @@
             const blob = new Blob([cleanCode(code)], { type: 'text/plain' });
             const a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
-            a.download = 'Wassergebuehren.java';
+            a.download = 'Bahnreise.java';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
