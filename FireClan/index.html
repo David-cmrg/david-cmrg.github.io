@@ -1,1 +1,716 @@
+<!DOCTYPE html>
+<html lang="de">
+      <head>
+    		<meta charset="UTF-8">
+    		<meta name="description" content="Fire Clan: Das Clash of Clans Erfolgsmodell! Tritt heute bei und finde Freude an einem gut organisiertem Umfeld :)">
+    		<meta name="author" content="David Gomez Camargo">
+    		<meta property="og:title" content="Fire Clan | Clash of Clans">
+    		<meta property="og:description" content="Fire Clan: Das Clash of Clans Erfolgsmodell! Tritt heute bei und finde Freude an einem gut organisiertem Umfeld :)">
+    		<meta property="og:image" content="https://api-assets.clashofclans.com/badges/512/L_dwz4AeQfIz9ci7SqsqXEDJv6uOqvV2puRFf0j0M5U.png">
+    		<meta property="og:url" content="https://deine-webseite.de">
+          <title>Fire Clan | Clash of Clans</title>
+          <link rel="icon" href="https://primary.jwwb.nl/public/m/m/a/temp-sgjkafyqhgddbbjryktc/fireclan-standard.png">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://kit.fontawesome.com/a587449559.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css">
 
+
+          <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@media screen and (max-width: 1050px) {
+    
+    #hide1{
+        text-align: center; 
+        align-items: center;
+        color: gold; 
+        background-color: #212121; 
+        border-radius: 10px; 
+        width: 65% !important; 
+        height: 35% !important;
+        margin: 0 auto; 
+        margin-top: 1svh !important;
+    }
+    #hide1-2{
+        text-align: center;
+        align-items: center;
+        color: gold; 
+        font-size: 90% !important;
+        background-color: #212121; 
+        border-radius: 10px; 
+        width: 65% !important;
+        height: 35% !important; 
+        margin: 0 auto; 
+        margin: 50% 0% !important;
+        transition: font-size 1s ease-in-out;
+    }
+    #hide1-2:hover{
+        font-size: 120% !important;
+        transition: font-size 1s ease-in-out;
+    }
+
+    header {
+        margin: 10px;
+        background-color: #212121;
+        padding-top: 4px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border: 5px solid #212121;
+        border-radius: 20px;
+        width: 92%;
+        height: 6rem;
+        position: fixed;
+        top: 0;
+        z-index: 501;
+    }
+
+    .logo{
+	    width: 5rem;
+	    height: 5rem;
+        opacity: 1;
+        transition: all 0.6s ease;
+    }
+
+    li {
+        font-size: 25px;
+        transition: opacity 0.3s ease;
+    }
+
+    .list-item {
+        color: #fff;
+        padding: .9rem;
+        position: relative;
+    }
+
+
+
+    #partition{
+        height: 100%;
+        width: 2px;
+        align-content: center;
+        margin-left: 20px;
+    }
+    #partition hr {
+        border: none; /* Entfernt die Standard-Rahmenlinie */
+        border-top: 80px solid white; /* Farbe und Dicke des Trennstrichs */
+        margin: 0px 0; /* Abstand oberhalb und unterhalb des Trennstrichs */
+    }
+
+
+        
+    #discord{
+        color: #7289da;
+        padding-top: 4px;
+        padding-left: 0px;
+        margin-bottom: 15px;
+        transition: all 0.4s ease-in-out;   
+        }
+    #discord:hover{
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        color: white;
+        background: #4158ac;
+        transition: all 0.4s ease;
+    }
+
+
+    #navbar {
+        display: flex; 
+        align-items: center;
+        justify-content: space-between;
+        transition: all 0.3s ease-in-out;
+        z-index: 500;
+    }
+    
+    .list {
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+    }
+    
+    .logo:hover {
+        opacity: 0.5;
+        cursor: pointer;
+    }
+    
+    li:hover {
+        opacity: 0.7;
+        cursor: pointer;
+    }
+    
+    .list-item::after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        border-radius: 5px;
+        transform: scaleX(0);
+        transition: all 0.6s ease;
+    }
+
+    .list-item:hover::after {
+        transform: scaleX(1);
+    }
+   
+    
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        background: #101010; /* #121212; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    body::-webkit-scrollbar { /* Macht die Scroll-leiste nicht sichtbar */
+        width: 0;
+        background: transparent;
+      }
+    
+     a, i {
+        color: white;
+        font-weight: 500;
+        text-decoration: none;
+    } 
+    
+    #home{
+        width: 100%;
+        height: 100%;
+    }
+
+    
+    .titles{
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-family: Courier;
+        font-size: 50px;
+    }
+    
+    
+    #footer{
+        background-color: rgb(0, 0, 0);
+        color: white;
+        padding: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 15px;
+        width: 100%;
+        display: flex;
+        position: relative;
+        }
+    
+    #socials{
+        float: left;
+        font-size: 25px;
+    }
+    
+    .app-info{
+        width: 100%;
+        height: 90%;
+        margin-left: 35px;
+        text-decoration: none !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .info-item {
+        color: #fff;
+        position: relative;
+        font-size: 18px;
+        font-family: America, sans-serif;
+        padding-bottom: 13px;
+        transition: all 1s;
+    }
+    .info-item:hover {
+        color: #fff;
+        position: relative;
+        font-size: 20px;
+        color: ghostwhite;
+        padding-bottom: 13px;
+        transition: all 1s;
+    }
+    
+    
+
+    #clan {
+        margin: 9svh 0svh 0svh 0svh !important;
+        display: flex;
+        flex-direction: column; /* Change this from row to column */
+        align-items: center;
+    }
+    
+    #clan img {
+        height: 45svh;
+        width: 100%;
+        order: 1;
+        margin: 2svh 0 0 0;
+        margin-left: 0 !important;
+    }
+    
+    #clan .info {
+        order: 2;
+        margin: 0svh 15svh;
+        background-color: #232323;
+        color: white;
+        border-radius: 25px;
+        font-family: America, sans-serif;
+        text-align: left;
+        margin: 0 auto;
+        width: 88%;
+    }
+    
+
+    .info p:first-child{
+        margin: 4svh 0svh 1svh 0svh;
+        font-size: 3svh;
+        text-align: center;
+    }
+
+    .info p{
+        font-size: 2.8svh;
+        margin: 0svh 4svh;
+        text-align: left;
+    }
+
+    #whyFireClan {
+        margin: 9svh 0svh 8svh 0svh !important;
+        display: flex;
+        flex-direction: column; /* Change this from row to column */
+        align-items: center;
+        margin: 0 auto;
+    }
+    
+    #whyFireClan img {
+        height: 45svh;
+        width: 45svh;
+        order: 1;
+        margin: 2svh 0svh 0svh 0svh !important;
+    }
+    
+    #whyFireClan .moreInfo {
+        order: 2;
+        margin: 0svh 15svh;
+        background-color: #232323;
+        color: white;
+        border-radius: 25px;
+        font-family: America, sans-serif;
+        text-align: left;
+        margin: 0 auto;
+        width: 88%;
+    }  
+    
+
+    .moreInfo p:first-child{
+        margin: 4svh 0svh 1svh 0svh;
+        font-size: 3svh;
+        text-align: center;
+    }
+
+    .moreInfo p{
+        font-size: 2.2svh;
+        margin: 0svh 4svh;
+        text-align: left;
+    }
+
+    #clashNow:hover{
+        width: 110%;
+        height: 110%;
+    }
+
+    #CoC-Small{
+        height: 4svh;
+        width: 4svh;
+    }
+}
+
+
+    #hide1{
+        text-align: center; 
+        color:gold; 
+        font-size: 20px; 
+        background-color: #212121; 
+        border-radius: 10px; 
+        width:35%; 
+        height: 22%; 
+        margin: 0 auto; 
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+    #hide1-2{
+        text-align: center; 
+        color:gold; 
+        font-size: 20px; 
+        background-color: #212121; 
+        border-radius: 10px; 
+        width:35%; 
+        height: 22%; 
+        margin: 0 auto; 
+        padding-top: 1%;
+        padding-bottom: 1%;
+        transition: font-size 1s ease-in-out;
+    }
+    #hide1-2:hover{
+        font-size: 22px;
+        transition: font-size 1s ease-in-out;
+    }
+
+
+    header {
+        margin: 10px;
+        background-color: #212121;
+        padding-top: 4px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border: 5px solid #212121;
+        border-radius: 20px;
+        width: 92%;
+        height: 6rem;
+        position: fixed;
+        top: 0;
+        z-index: 501;
+    }
+
+    .logo{
+	    width: 5rem;
+	    height: 5rem;
+        opacity: 1;
+        transition: all 0.6s ease;
+    }
+
+    li {
+        font-size: 25px;
+        transition: opacity 0.3s ease;
+    }
+
+    .list-item {
+        color: #fff;
+        padding: .9rem;
+        position: relative;
+    }
+
+
+
+    #partition{
+        height: 100%;
+        width: 2px;
+        align-content: center;
+        margin-left: 20px;
+    }
+    #partition hr {
+        border: none; /* Entfernt die Standard-Rahmenlinie */
+        border-top: 80px solid white; /* Farbe und Dicke des Trennstrichs */
+        margin: 0px 0; /* Abstand oberhalb und unterhalb des Trennstrichs */
+    }
+
+
+        
+    #discord{
+        color: #7289da;
+        padding-top: 4px;
+        padding-left: 0px;
+        margin-bottom: 15px;
+        transition: all 0.4s ease-in-out;   
+        }
+    #discord:hover{
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        color: white;
+        background: #4158ac;
+        transition: all 0.4s ease;
+    }
+
+
+    #navbar {
+        display: flex; 
+        align-items: center;
+        justify-content: space-between;
+        transition: all 0.3s ease-in-out;
+        z-index: 500;
+    }
+    
+    .list {
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+    }
+    
+    .logo:hover {
+        opacity: 0.5;
+        cursor: pointer;
+    }
+    
+    li:hover {
+        opacity: 0.7;
+        cursor: pointer;
+    }
+    
+    .list-item::after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        border-radius: 5px;
+        transform: scaleX(0);
+        transition: all 0.6s ease;
+    }
+
+    .list-item:hover::after {
+        transform: scaleX(1);
+    }
+   
+    
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        background: #101010; /* #121212; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    body::-webkit-scrollbar { /* Macht die Scroll-leiste nicht sichtbar */
+        width: 0;
+        background: transparent;
+      }
+    
+     a, i {
+        color: white;
+        font-weight: 500;
+        text-decoration: none;
+    } 
+    
+    #home{
+        width: 100%;
+        height: 100%;
+    }
+
+    
+    .titles{
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-family: Courier;
+        font-size: 50px;
+    }
+    
+    
+    #footer{
+        background-color: rgb(0, 0, 0);
+        color: white;
+        padding: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 15px;
+        width: 100%;
+        display: flex;
+        position: relative;
+        }
+    
+    #socials{
+        float: left;
+        font-size: 25px;
+    }
+    
+    .app-info{
+        width: 100%;
+        height: 90%;
+        margin-left: 35px;
+        text-decoration: none !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .info-item {
+        color: #fff;
+        position: relative;
+        font-size: 120% !important;
+        font-family: America, sans-serif;
+        padding-bottom: 13px;
+        transition: all 1s;
+    }
+    
+    
+
+#clan{
+    margin: 20svh 0svh 8svh 0svh;
+    display: flex;
+}
+
+#clan img{
+    height: 45svh;
+    width: 45svh;
+    margin-left: 10svh;
+    float: left;
+}
+
+#clan .info{
+    float: right;
+    margin: 0svh 10svh;
+    background-color: #232323;
+    color: white;
+    border-radius: 25px;
+    font-family: America, sans-serif;
+    text-align: left;
+}
+
+.info p:first-child{
+    margin: 4svh 0svh 1svh 0svh;
+    font-size: 3svh;
+    text-align: center;
+}
+
+.info p{
+    font-size: 2.8svh;
+    margin: 0svh 4svh;
+    text-align: left;
+}
+
+#whyFireClan{
+    margin: 20svh 0svh 8svh 0svh;
+    display: flex;
+}
+
+#whyFireClan img{
+    height: 45svh;
+    width: 45svh;
+    margin-right: 10svh;
+    float: right;
+}
+
+#whyFireClan .moreInfo{
+    float: left;
+    margin: 0svh 10svh;
+    background-color: #232323;
+    color: white;
+    border-radius: 25px;
+    font-family: America, sans-serif;
+    text-align: center;
+}
+
+.moreInfo p:first-child{
+    margin: 4svh 0svh 1svh 0svh;
+    font-size: 3svh;
+    text-align: center;
+}
+
+.moreInfo p{
+    font-size: 2.2svh;
+    margin: 0svh 4svh;
+    text-align: left;
+}
+
+#clashNow:hover{
+    width: 110%;
+    height: 110%;
+}
+
+#CoC-Small{
+    height: 4svh;
+    width: 4svh;
+}
+
+            </style>   
+            <script>
+                document.addEventListener('contextmenu', function(event) {
+                event.preventDefault();
+                });
+            </script>  
+        </head>
+
+
+      <body>
+        <header>
+             <div id="navbar">
+                <a href="https://discord.gg/rttZqusQmR" target="_blank" class="hide-icons"><img src="https://primary.jwwb.nl/public/m/m/a/temp-sgjkafyqhgddbbjryktc/fireclan-standard.png" class="logo" alt="Fire Clan Logo"></a>
+                 <ul class="list">
+                     <li class="list-item"><a href="#home"> Home</a></li>
+                     <li class="list-item"><a href="#support"> Support </a></li>
+                    <li class="list-item"><a href="https://discord.gg/rttZqusQmR">Discord</a></li>
+                 </ul>
+            </div>
+        </header>
+        <main id="home">
+            <div id="clan">
+                <img src="https://api-assets.clashofclans.com/badges/512/L_dwz4AeQfIz9ci7SqsqXEDJv6uOqvV2puRFf0j0M5U.png" alt="Fire Clan Logo">
+                <div class="info">
+                    <p style="text-decoration: underline;">Der Fire Clan</p>
+                    <p> <br/>
+                        Suchst du einen aktiven, starken und hilfsbereiten Clan? Dann bist du bei uns genau richtig! <br/>
+                        Der Fire Clan steht für Teamgeist, Erfolg und Spaß am Spiel. Egal, ob du ein erfahrener Krieger oder ein motivierter Neuling bist – bei uns findest du deinen Platz!
+                        Bei uns erwarten dich regelmäßige Clan-Kriege, eine aktive Community, großzügige Truppenspenden und die Chance, in der Clan-Kriegs-Liga dein Können unter Beweis zu stellen. Außerdem holen wir in besonderen Clan-Ereignissen immer alle Belohnungen ab – Teamwork zahlt sich aus! <br/>
+                        Wenn du aktiv bist und Lust auf ein starkes Team hast, dann trete jetzt bei! 💪🔥 <br/>
+                    </p>
+        
+                </div>
+            </div>
+            <div id="whyFireClan">
+                <div class="moreInfo">
+                    <p style="text-decoration: underline;">Deine Vorteile bei uns! 🔥</p>
+                    <p > <br/>
+                        Wir bieten dir alles, was du für dein maximales Spielerlebnis brauchst: <br/><br/>
+
+                        ⚔️ Clan-Kriege & Clan-Kriegs-Liga <br/>
+                        Wir kämpfen regelmäßig in Clan-Kriegen und geben jedem die Chance, sich zu beweisen. In der Clan-Kriegs-Liga treten wir gemeinsam gegen andere Clans an und steigen mit vereinten Kräften auf! <br/><br/>
+
+                        🎁 Maximale Belohnungen in Clan-Ereignissen <br/>
+                        Bei besonderen Clan-Events wie Clan-Spielen holen wir immer alle Belohnungen – so profitierst du von maximalen Ressourcen und magischen Gegenständen. <br/><br/>
+
+                        🤝 Starke Community & Aktive Spenden <br/>
+                        Du brauchst Verstärkung für deine Angriffe oder deine Verteidigung? Kein Problem! Bei uns gibt es schnelle und großzügige Spenden – wir unterstützen uns gegenseitig, damit jeder stärker wird. <br/><br/>
+
+                        🏆 Aufstiegsmöglichkeiten & Strukturierter Zweitclan <br/>
+                        Wir haben nicht nur unseren Hauptclan, sondern auch einen Zweitclan, der neuen oder weniger erfahrenen Spielern eine Plattform bietet, um sich zu entwickeln. Wer sich beweist, kann problemlos in den Hauptclan aufsteigen! <br/><br/><br/>
+                    </p>
+                </div>
+                <img style="margin-top: 4%;" src="https://primary.jwwb.nl/public/m/m/a/temp-sgjkafyqhgddbbjryktc/barbarian-king-high.png" alt="Barbarian King">
+            </div>
+            <div class="media">
+                <p>Text</p>
+            </div><br/>
+    
+            <p style="color: #212121; pointer-events: none;"><br/></p> <!-- Das löschen dieser "unwichtigen Linie" wird dazu führen, dass die Webseite sich nicht so verhält wie sie sollte!  -->
+            <h1 class="titles" id="hide2">Lass uns Clashen!</h1>
+            <div style="height: 20svh;">
+                <p id="hide1"><a href="https://discord.gg/rttZqusQmR" target="_blank" class="hide" id="hide1-2"> Tritt jetzt bei! </a></p>
+            </div>
+        
+    
+            <br/><br/><br/><br/>
+            
+
+
+            <div id="footer">
+                <div id="socials">
+                    <a href="https://discord.gg/rttZqusQmR" target="_blank" class="hide-icons"><i class="fa-brands fa-discord" id="discord"></i></a>
+                    <br/>
+                    <a href="https://link.clashofclans.com/de?action=OpenClanProfile&tag=2Q0QJLJ8L" target="_blank" class="hide-icons"><img id="CoC-Small" src="https://primary.jwwb.nl/public/m/m/a/temp-sgjkafyqhgddbbjryktc/coc-high.png"></a>
+                    <br/>
+                </div>
+                <div id="partition"><hr></div>
+                <div id="support">
+                    <div class="app-info">
+                        <p class="info-item"><a href="#home">Deine Fire Clan Familie</a></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+     </body>
+     </html>
