@@ -1,0 +1,33 @@
+JSG: true
+FontName: Segoe UI
+FontSize: 12
+FontColor: -16777208
+- Kind: Algorithm
+  SwitchWithCaseLine: false
+  RectPos|0 0 350 302 100 150
+  Algorithmus  main(args)|0 0 350 27 5 2
+    Eingabe: Alter|0 27 350 52 5 29
+    if: 
+      Alter > 135|0 52 350 152 187 52
+      then list head|0 77 251 152 5 79
+      while: 
+        wiederhole solange Alter > 135|0 77 251 152 5 79
+        while head|22 102 251 152 27 104
+        Ausgabe: "Invalides Alter!"|22 102 251 127 27 104
+        Eingabe: Alter|22 127 251 152 27 129
+    else:
+      else list head|251 77 350 152 256 79
+      |251 77 350 152 256 79
+    Eingabe: Monate|0 152 350 177 5 154
+    if: 
+      Monate > 11|0 177 350 277 196 177
+      then list head|0 202 275 277 5 204
+      while: 
+        wiederhole solange Monate > 11|0 202 275 277 5 204
+        while head|22 227 275 277 27 229
+        Ausgabe: "Invalide Monat Anzahl!!"|22 227 275 252 27 229
+        Eingabe: Monate|22 252 275 277 27 254
+    else:
+      else list head|275 202 350 277 280 204
+      |275 202 350 277 280 204
+    Eingabe: Gewicht|0 277 350 302 5 279
