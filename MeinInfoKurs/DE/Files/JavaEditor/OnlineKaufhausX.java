@@ -6,7 +6,7 @@
 * @MeinInfoKurs.github.io
 */
 
-public class OnlineKaufhaus {
+public class OnlineKaufhausX {
   
   public static void main(String[] args) {
 
