@@ -5,7 +5,7 @@
 * @version 1.0 vom 20.03.2025
 * @MeinInfoKurs.github.io
 */
-public class Schuelersprecher {
+public class SchuelersprecherX {
   
   public static void main(String[] args) {
     String Kandidat1="", Kandidat2="", Kandidat3="";
@@ -19,4 +19,4 @@ public class Schuelersprecher {
     System.out.println(Kandidat1 "+" Kandidat2 "+" Kandidat3);
   } // end of main
   
-} // end of class Schuelersprecher 
+} // end of class SchuelersprecherX 
