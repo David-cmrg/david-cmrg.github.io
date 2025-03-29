@@ -1,0 +1,83 @@
+*{
+    font-family: "Montserrat", serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+
+}
+
+body{
+    background-color: var(--body-color);
+}
+
+:root {
+    --text-color: white;
+    --special-characters: black;
+    --element-hover-color: rgb(87, 82, 82);
+    --element-color: #343434;
+    --body-color: #212122;
+    --border-color: #000000;
+    --white-color: white;
+    --button-hover-color: rgb(97, 95, 95);
+    --highlighter: rgb(97, 95, 95);
+    --error-background-color: #800517;
+}
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--element-color) !important;
+    width: fit-content;
+    border-radius: 100px;
+    padding: 0.25rem 0.5rem;
+    margin: auto;
+
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0rem 0rem !important;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0.2rem;
+    border-radius: 50%;
+    width: 3rem; 
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li.active { 
+    background-color: rgb(175, 1, 1);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li i {
+    color: #848081;
+}
+
+
+nav ul li.active i {
+    color: white;
+}
+
+
+
+.intro{
+    width: 100%;
+}
+.intro p:first-child{font-size: 2.5rem; text-align: center; margin:0}
+.intro p:last-child{font-size: 1.3rem; text-align: center; margin:0}
