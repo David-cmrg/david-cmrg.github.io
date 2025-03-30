@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Creation Process | V1.3</title>
+        <title>Portfolio | David Gomez C.</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/a587449559.js" crossorigin="anonymous"></script>
-        <link href="style.css" rel="stylesheet" type="text/css">
+        
+        <link href="../style.css" rel="stylesheet" type="text/css">
+        <script src="../script.js"></script>
+        
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css">
       
@@ -14,36 +17,32 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231"
-        crossorigin="anonymous"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script>
 
-        <!-- Credits to Lively Wallpapers -->
-        <link rel="stylesheet" href="CanvasBackground/CSS/normalize.min.css">
-        <link rel="stylesheet" href="CanvasBackground/CSS/style.css">      
-
-
-        <script>
-            window.addEventListener("scroll", function () {
-                let scrollPos = window.scrollY;
-                let maxScroll = window.innerHeight * 0.6;
-            
-                let opacity = 1 - (scrollPos / maxScroll);
-            
-                // Prevent opacity from going below 0 or above 1
-                opacity = Math.max(0, Math.min(1, opacity));
-            
-                document.querySelector("#startscreen-dynamic").style.opacity = opacity;
-                document.querySelector("#canvas-webgl").style.opacity = opacity;
-            });                           
-        </script>
+        <link rel="stylesheet" href="../CanvasBackground/CSS/normalize.min.css">
+        <link rel="stylesheet" href="../CanvasBackground/CSS/style.css">      
     </head>
+    <div class="language-selector">
+        <div class="dropdown" tabindex="0" style="z-index: 100;">
+            <button class="dropbtn"><i class="fa-solid fa-globe fa-lg"></i></button>
+            <div class="dropdown-content">
+                <a href="#">EN English</a>
+                <a href="../ES">ES Español</a>
+                <a href="../DE">DE Deutsch</a>
+            </div>
+        </div>
+    </div>
 
-    
+
     <body>
         <header>
             <nav>
                 <ul>
-                    <li class="list-item active"><a href="#"><i class="fa-solid fa-house fa-lg"></i></a></li>
+                    <li class="list-item active" id="homeNav">
+                        <a href="javascript:void(0);" onclick="scrollToTop()">
+                            <i class="fa-solid fa-house fa-lg"></i>
+                        </a>
+                    </li>
                     <li class="list-item"><a href="#AboutMe"><i class="fa-solid fa-user fa-lg"></i></a></li>
                     <li class="list-item"><a href="#MyProjects"><i class="fa-solid fa-code fa-lg"></i></a></li>
                     <li class="list-item"><a href="#Contact"><i class="fa-solid fa-envelope fa-lg"></i></a></li>
@@ -52,7 +51,7 @@
         </header>  
         <main>
             <div id="startscreen-dynamic">
-                <canvas class="p-canvas-webgl" id="canvas-webgl"></canvas> 
+                <canvas class="p-canvas-webgl" id="canvas-webgl"></canvas>
                 <div class="intro">
                     <p id="im-david">I'm David.</p>
                     <p>Web and Software Developer</p>
@@ -60,6 +59,7 @@
                         With a passion for coding.
                     </p> 
                 </div>
+                <p id="#" style="color: var(--body-color)">.</p>
             </div>
             
             <p id="AboutMe" style="color: var(--body-color)">.</p>
@@ -72,17 +72,17 @@
                 </article>
 
                 <p id="MyProjects" style="color: var(--body-color)">.</p>
-                <div style="margin-top: 6rem;">
+                <div style="margin-top: 8rem;">
                     <p>What I Do</p><hr/>
                 </div>
                 <article>
                     <p>I'm a passionate Web Developer with a strong interest in technology and programming. Currently, I'm working on various web development projects, including creating and maintaining personal websites. My skill set includes HTML, CSS, and JavaScript, which I utilize to build responsive and user-friendly web interfaces. I'm continually expanding my knowledge and exploring new technologies to enhance my development capabilities.</p>
                 </article>
                 <p id="Contact" style="color: var(--body-color)">.</p>
-                <div style="margin-top: 6rem;">
+                <div style="margin-top: 8rem;">
                     <p>Contact Me</p><hr/>
                 </div>
-                <article style="width: fit-content; margin-top: 2rem">
+                <article style="width: fit-content; margin-top: 4rem; margin-bottom: 3rem">
                     <p>My Email - david.cmrg@proton.me</p>
                 </article>
                 <div class="Icons">
@@ -104,7 +104,7 @@
                             </button>
                         </div>
                         <div class="child child-3">
-                            <button class="button btn-3"  onclick="window.open('https://github.com/David-cmrg', '_blank')">
+                            <button class="button btn-3" onclick="window.open('https://github.com/David-cmrg', '_blank')">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     height="1em"
@@ -134,12 +134,10 @@
                     </div>
                 </div>
             </div>
-            <div style="margin: 10rem 0rem"></div>
+            <div style="margin: 12rem 0rem"></div>
         </main>
-
-        <!-- Credits to Lively Wallpapers -->
-        <script src="CanvasBackground/JS/three.min.js"></script>
-        <script src="CanvasBackground/JS/jquery.min.js"></script>
-        <script src="CanvasBackground/JS/script.js"></script>
+        <script src="../CanvasBackground/JS/three.min.js"></script>
+        <script src="../CanvasBackground/JS/jquery.min.js"></script>
+        <script src="../CanvasBackground/JS/script.js"></script>
     </body>
 </html>
