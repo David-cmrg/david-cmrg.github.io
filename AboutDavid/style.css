@@ -4,6 +4,16 @@
     }
 }
 
+@media (max-height: 500px) { 
+   #startscreen-dynamic div{
+    position: absolute;
+    top: 50% !important;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    border-radius: 10px;
+}
+}
+
 
 *{
     font-family: "Montserrat", serif;
