@@ -10,6 +10,10 @@
     --button-hover-color: rgb(192, 192, 192);
     --highlighter: rgb(192, 192, 192);
     --error-background-color: #ad1c32; /* Error Background old: #800517  */
+
+    --verifiziert: #4ec9b0;
+    --nicht-verifiziert: #d7ba7d;
+    --fehler: #ad1c32;
 }
 
 .comment { color: #6a9955 !important; }
@@ -35,6 +39,10 @@ code { text-align: left; align-items: start;} /* Ändert nichts -_- */
     --button-hover-color: rgb(97, 95, 95);
     --highlighter: rgb(97, 95, 95);
     --error-background-color: #800517;
+
+    --verifiziert: #4ec9b0;
+    --nicht-verifiziert: #d7ba7d;
+    --fehler: #800517;
 }
 
 @media (min-width: 1000px) {
@@ -98,16 +106,17 @@ code { text-align: left; align-items: start;} /* Ändert nichts -_- */
     }
     main{
         margin-left: 0px !important;
-        padding: 10px 25px !important;
+        padding: 15px 25px !important;
         width: 100% !important;
+        
     }
 
     /* Button-Styling */
     #toggle-history {
         visibility: hidden;
-        /* position: fixed;  /* Fixiert den Button auf dem Bildschirm * /
+        /* position: fixed;  /* Fixiert den Button auf dem Bildschirm */
         top: 6px;        /* Abstand vom oberen Rand * /
-        right: 6px;      /* Abstand vom rechten Rand * /
+        right: 6px;      /* Abstand vom rechten Rand */
         padding: 15px;
         font-size: 13px;
         cursor: pointer;
@@ -115,27 +124,27 @@ code { text-align: left; align-items: start;} /* Ändert nichts -_- */
         border: none;
         border-radius: 10px;
         transition: 0.3s;
-        z-index: 1000;    /* Stellt sicher, dass er über anderen Elementen bleibt * /
-        background-color: var(--body-color); */
+        z-index: 1000;    /* Stellt sicher, dass er über anderen Elementen bleibt */
+        background-color: var(--body-color);
     }
 
 }
 /* Responsive behavior */
 @media (max-width: 600px) {
     .aufgaben-section {
-        flex-direction: column; /* Stack articles vertically on small screens */
+        flex-direction: column; 
         align-items: center;
     }
     .aufgaben-section a {
-        width: 100%; /* Take full width on small screens */
-        max-width: none; /* Remove max width limit */
+        width: 100%; 
+        max-width: none; 
         min-height: 5vh;
         max-height: 12vh;
     }
 
     .aufgaben-section article {
-        width: 90%; /* Take most of the screen width */
-        max-width: none; /* Remove max width limit */
+        width: 90%; 
+        max-width: none; 
     }
 }
 
@@ -165,6 +174,27 @@ body {
     height: 100% !important;
     display: flex;
 }
+
+/* Regelt die Überschriftsgröße für kleinere Geräte */
+h1{font-size: normal;}
+@media (min-width: 1000px) {h1{font-size:xx-large;}}
+@media (max-width: 1000px) {h1{font-size:larger !important;} #ChatSVG svg{height:30px !important;width:30px !important;}}
+@media (max-width: 300px) {h1{font-size:medium !important;}}
+
+@media (max-width: 500px) {
+    #ChatSVG svg{
+        height:20px !important; 
+        width:20px !important;
+    }
+    .hamburger{
+        width: 100% !important;
+        padding-right: 100%;
+    }
+    #nav-title-verifystatus{
+        margin-top: 8vh;
+    }
+}
+
 
 /* Navigationsleiste */
 nav {
@@ -220,7 +250,7 @@ nav ul li a {
   main {
     margin-left: 210px;
     padding: 30px 45px 30px 75px;
-    width: 100%;
+    width: 100% !important;
   }
   .titleMain{
     text-align: center;
@@ -447,9 +477,9 @@ nav ul li a {
 /* General styles */
 .aufgaben-section {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap when there's not enough space */
-    justify-content: center; /* Center content horizontally */
-    gap: 20px; /* Space between articles */
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
     padding: 20px;
 }
 
@@ -460,8 +490,8 @@ nav ul li a {
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    flex: 1 1 300px; /* Flex-grow: 1, Flex-shrink: 1, Minimum width: 300px */
-    max-width: 400px; /* Ensures articles don't get too wide */
+    flex: 1 1 300px; 
+    max-width: 400px; 
 }
 .aufgaben-section a:hover{
     background: var(--element-hover-color);
@@ -487,9 +517,9 @@ nav ul li a {
 
 /* Button-Styling */
 #toggle-history {
-    position: fixed;  /* Fixiert den Button auf dem Bildschirm */
-    top: 13px;        /* Abstand vom oberen Rand */
-    right: 13px;      /* Abstand vom rechten Rand */
+    position: fixed;  
+    top: 13px;       
+    right: 13px;      
     padding: 15px;
     font-size: 16px;
     cursor: pointer;
@@ -497,7 +527,7 @@ nav ul li a {
     border: none;
     border-radius: 10px;
     transition: 0.3s;
-    z-index: 1000;    /* Stellt sicher, dass er über anderen Elementen bleibt */
+    z-index: 1000;   
     background-color: var(--body-color);
 }
 
@@ -579,9 +609,9 @@ nav ul li a {
 /* General styles */
 .vorherige-naechste {
     display: flex; 
-    flex-wrap: wrap; /* Allows items to wrap when there's not enough space */
-    justify-content: center; /* Center content horizontally */
-    gap: 70%; /* Space between articles */
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 70%; 
     padding: 20px;
     margin: 5vh 0vh 3vh 0vh;
 }
@@ -594,8 +624,8 @@ nav ul li a {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     text-decoration: none;
-    flex: 1 1 30px; /* Flex-grow: 1, Flex-shrink: 1, Minimum width: 30px */
-    max-width: 250px; /* Ensures articles don't get too wide */
+    flex: 1 1 30px; 
+    max-width: 250px; 
 }
 
 .vorherige-naechste a:hover{
@@ -693,9 +723,9 @@ nav ul li a {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-around;  /* Centers and spaces elements */
-    align-items: center;  /* Centers items vertically */
-    flex-wrap: nowrap;  /* Prevents wrapping */
+    justify-content: space-around;
+    align-items: center;  
+    flex-wrap: nowrap;  
 }
 
 .icon-desc-text {
@@ -707,3 +737,14 @@ nav ul li a {
     transition: opacity 0.3s, transform 0.3s;
     transform: translateY(5px);
 }
+
+
+footer {
+    flex: none;
+    position: absolute !important;
+    width: 100% !important; 
+    text-align: center !important; 
+    padding: 0vh 0vh 2vh 0vh;
+    align-self:last baseline !important;
+}
+footer p:first-child{margin-top: 5vh;} /* Bringt nichts */
