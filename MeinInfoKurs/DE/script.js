@@ -136,6 +136,66 @@ document.addEventListener("keydown", function (event) {
 });
 
 
+// Support Icon Viewage
+const chatContainer = document.getElementById('chat-container');
+
+function toggleChat() {
+  chatContainer.classList.toggle('active');
+}
+
+async function handleUserInput(event) {
+  if (event.key === 'Enter') {
+    const inputField = document.getElementById('user-input');
+    const message = inputField.value.trim();
+    if (!message) return;
+    
+    displayMessage(message, 'user');
+    inputField.value = '';
+    
+    try {
+      const res = await fetch('https://david-cmrg-github-io.onrender.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message })
+      });
+      const data = await res.json();
+      displayMessage(data.reply || "Keine Antwort erhalten.", 'bot');
+    } catch (error) {
+      console.error('Fehler:', error);
+      displayMessage("Serverfehler. Bitte versuch's später nochmal.", 'bot');
+    }
+  }
+}
+
+function displayMessage(message, sender) {
+  const chatBox = document.getElementById('chat-box');
+  const messageWrapper = document.createElement('div');
+  messageWrapper.classList.add('message');
+  
+  const bubble = document.createElement('div');
+  bubble.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+  bubble.textContent = message;
+  
+  const icon = document.createElement('div');
+  icon.className = 'profile-icon';
+  icon.textContent = sender === 'user' ? '🧑' : '🤖';
+  
+  if (sender === 'bot') {
+    messageWrapper.appendChild(icon);
+    messageWrapper.appendChild(bubble);
+  } else {
+    messageWrapper.appendChild(bubble);
+    messageWrapper.appendChild(icon);
+  }
+  
+  chatBox.appendChild(messageWrapper);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  displayMessage('Hallo! Ich bin dein digitaler Assistent. Wie kann ich dir helfen?', 'bot');
+});
+
 
 
 
