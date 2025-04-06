@@ -1,16 +1,17 @@
 {
-  "name": "meininfokurs",
+  "name": "david-cmrg.github.io",
   "version": "1.0.0",
-  "description": "Chatbot application for MeinInfoKurs",
-  "main": "index.js",
+  "description": "My project deployed on Render",
+  "main": "MeinInfoKurs/DE/index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node MeinInfoKurs/DE/index.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "openai": "^3.0.0",
-    "dotenv": "^10.0.0",
-    "nodemon": "^2.0.7"
-  }
+    "openai": "^4.29.2"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "author": "David-cmrg",
+  "license": "ISC"
 }
