@@ -136,64 +136,106 @@ document.addEventListener("keydown", function (event) {
 });
 
 
+
+
 // Support Icon Viewage
-const chatContainer = document.getElementById('chat-container');
+// State management
+const chatState = {
+  isOpen: false,
+  messages: [],
+};
 
-function toggleChat() {
-  chatContainer.classList.toggle('active');
-}
+// DOM elements
+const elements = {
+  container: document.getElementById('chat-container'),
+  chatBox: document.getElementById('chat-box'),
+  input: document.getElementById('user-input'),
+};
 
-async function handleUserInput(event) {
-  if (event.key === 'Enter') {
-    const inputField = document.getElementById('user-input');
-    const message = inputField.value.trim();
-    if (!message) return;
-    
-    displayMessage(message, 'user');
-    inputField.value = '';
-    
-    try {
-      const res = await fetch('https://david-cmrg-github-io.onrender.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message })
-      });
-      const data = await res.json();
-      displayMessage(data.reply || "Keine Antwort erhalten.", 'bot');
-    } catch (error) {
-      console.error('Fehler:', error);
-      displayMessage("Serverfehler. Bitte versuch's später nochmal.", 'bot');
-    }
-  }
-}
+// Debounce utility
+const debounce = (func, delay) => {
+  let timeoutId;
+  return (...args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func(...args), delay);
+  };
+};
 
-function displayMessage(message, sender) {
-  const chatBox = document.getElementById('chat-box');
-  const messageWrapper = document.createElement('div');
-  messageWrapper.classList.add('message');
-  
+// Toggle chat visibility
+const toggleChat = () => {
+  chatState.isOpen = !chatState.isOpen;
+  elements.container.classList.toggle('active', chatState.isOpen);
+};
+
+// Render message
+const renderMessage = ({ text, sender }) => {
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('message');
+
   const bubble = document.createElement('div');
   bubble.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
-  bubble.textContent = message;
-  
+  bubble.textContent = text;
+
   const icon = document.createElement('div');
   icon.className = 'profile-icon';
   icon.textContent = sender === 'user' ? '🧑' : '🤖';
-  
-  if (sender === 'bot') {
-    messageWrapper.appendChild(icon);
-    messageWrapper.appendChild(bubble);
-  } else {
-    messageWrapper.appendChild(bubble);
-    messageWrapper.appendChild(icon);
-  }
-  
-  chatBox.appendChild(messageWrapper);
-  chatBox.scrollTop = chatBox.scrollHeight;
-}
 
-window.addEventListener('DOMContentLoaded', () => {
-  displayMessage('Hallo! Ich bin dein digitaler Assistent. Wie kann ich dir helfen?', 'bot');
+  wrapper.append(...(sender === 'bot' ? [icon, bubble] : [bubble, icon]));
+  elements.chatBox.appendChild(wrapper);
+  elements.chatBox.scrollTop = elements.chatBox.scrollHeight;
+};
+
+// Handle incoming message
+const handleMessage = async (text) => {
+  if (!text.trim()) return;
+
+  // User message
+  const userMsg = { text, sender: 'user' };
+  chatState.messages.push(userMsg);
+  renderMessage(userMsg);
+  elements.input.value = '';
+
+  try {
+    const response = await fetch('https://david-cmrg-github-io.onrender.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text }),
+    });
+    const { reply = 'Keine Antwort erhalten.' } = await response.json();
+    const botMsg = { text: reply, sender: 'bot' };
+    chatState.messages.push(botMsg);
+    renderMessage(botMsg);
+  } catch (error) {
+    console.error('Chat Error:', error);
+    const errorMsg = { text: 'Serverfehler. Bitte später versuchen.', sender: 'bot' };
+    chatState.messages.push(errorMsg);
+    renderMessage(errorMsg);
+  }
+};
+
+// Debounced input handler
+const debouncedInput = debounce(handleMessage, 300);
+
+// Event delegation
+document.addEventListener('click', (e) => {
+  if (e.target.matches('[data-action="toggle"]')) toggleChat();
+});
+
+elements.input.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') debouncedInput(e.target.value);
+});
+
+// Custom event for message rendering
+document.addEventListener('newMessage', ({ detail }) => renderMessage(detail));
+
+// Initial message
+document.addEventListener('DOMContentLoaded', () => {
+  const welcomeMsg = {
+    text: 'Hallo! Ich bin dein digitaler Assistent. Wie kann ich dir helfen?',
+    sender: 'bot',
+  };
+  chatState.messages.push(welcomeMsg);
+  document.dispatchEvent(new CustomEvent('newMessage', { detail: welcomeMsg }));
 });
 
 
