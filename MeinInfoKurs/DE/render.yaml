@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: openai-chatbot
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: OPENAI_API_KEY
+        fromDatabase: OPENAI_API_KEY
+    github:
+      repo: "David-cmrg/david-cmrg.github.io"
+      branch: "main"
+      path: "MeinInfoKurs/DE"
