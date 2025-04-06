@@ -240,10 +240,12 @@
         <button class="chat-toggle-btn" onclick="toggleChat()">💬</button>
 
         <!-- Chat Container -->
-        <div id="chat-container">
-            <div id="chat-box"></div>
-            <div id="input-area">
-                <input type="text" id="user-input" placeholder="Schreibe eine Nachricht..." onkeypress="handleUserInput(event)" autocomplete="off">
+        <button id="chat-button" onclick="toggleChat()">Chat</button>
+        <div id="chat-popup">
+            <div id="chatbox"></div>
+            <div id="chat-input">
+                <input id="message-input" type="text" placeholder="Ask me..." autocomplete="off">
+                <button onclick="sendMessage()">Send</button>
             </div>
         </div>
     </main>
