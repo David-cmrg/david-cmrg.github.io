@@ -4,11 +4,11 @@ services:
     env: node
     plan: free
     buildCommand: npm install
-    startCommand: node DE/index.js  # Correct path to index.js inside DE directory
+    startCommand: node DE/index.js
     envVars:
       - key: OPENAI_API_KEY
         fromDatabase: OPENAI_API_KEY
     github:
       repo: "David-cmrg/david-cmrg.github.io"
       branch: "main"
-      path: "MeinInfoKurs/DE"
+      path: "MeinInfoKurs/DE" 
