@@ -1,19 +1,18 @@
-const fetch = require('node-fetch'); // Add this dependency in package.json
-
-// Simple Express server to handle chatbot requests
 const express = require('express');
+const fetch = require('node-fetch');
 const app = express();
+
 app.use(express.json());
 
-const HF_API_TOKEN = process.env.HF_API_TOKEN; // Set this in Render
+const HF_API_TOKEN = process.env.HF_API_TOKEN;
 const HF_API_URL = 'https://api-inference.huggingface.co/models/facebook/blenderbot-400M-distill';
 
-app.get('/', (req, res) => {
-  res.send('Chatbot backend is running!');
-});
+app.get('/', (req, res) => res.send('Chatbot backend is running!'));
 
 app.post('/chat', async (req, res) => {
   const userMessage = req.body.message || 'Hello!';
+  const pageContext = req.body.context || '';
+  const inputText = pageContext ? `${pageContext}\n\nUser: ${userMessage}` : userMessage;
 
   try {
     const response = await fetch(HF_API_URL, {
@@ -22,20 +21,14 @@ app.post('/chat', async (req, res) => {
         'Authorization': `Bearer ${HF_API_TOKEN}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ inputs: userMessage }),
+      body: JSON.stringify({ inputs: inputText }),
     });
-
     const data = await response.json();
-    const botReply = data.generated_text || 'Sorry, I didn’t understand that.';
-    res.json({ reply: botReply });
+    res.json({ reply: data.generated_text || 'Sorry, I didn’t understand.' });
   } catch (error) {
-    console.error('Error with Hugging Face API:', error.message);
     res.status(500).json({ reply: 'Something went wrong!' });
   }
 });
 
-// Listen on Render’s required port
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
