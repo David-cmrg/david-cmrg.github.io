@@ -1,14 +1,16 @@
 {
-  "name": "openai-chatbot",
+  "name": "meininfokurs",
   "version": "1.0.0",
-  "description": "A chatbot powered by OpenAI",
+  "description": "Chatbot application for MeinInfoKurs",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "openai": "^3.0.0",
     "dotenv": "^10.0.0",
-    "openai": "^3.0.0"
+    "nodemon": "^2.0.7"
   }
 }
