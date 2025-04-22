@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeinInfoKurs V2 | Python</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a587449559.js" crossorigin="anonymous"></script>
+        
+    <link href="../../style.css" rel="stylesheet" type="text/css">
+    <script src="../../script.js"></script>
+        
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css">
+      
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="../../index.html"><i class="fa-solid fa-home fa-lg"></i></a></li>
+            <li><a href="../Scratch/Scratch.html"><i class="fa-solid fa-cube fa-lg"></i></a></li>
+            <li><a href="../Java/Java.html"><i class="fa-brands fa-java fa-xl"></i></a></li>
+            <li><a href="../HTML/html.html"><i class="fa-brands fa-html5 fa-xl"></i></a></li>
+        </ul>
+    </nav>
+
+      <div id="welcome">
+        <h1>Python in der<br/> Goon Akademie</h1>
+        <p>Bitte warten Sie auf erstellung der Aufgabenbereiche. (Zuletzt aktualisiert: 23.04.2025) </p>
+        <p>Python unterstützung ist noch nicht in Planung. ETA: 2026.</p>
+    </div>
+
+        <!-- Das modale Fenster -->
+        <div id="history-modal">
+            <div id="history-content">
+                <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                <h3>ZULETZT ANGESEHEN</h3>
+                <ul id="recent-topics"></ul>
+            </div>
+        </div>
+</body>
+<script>
+        // Three.js Szene
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x1a1a2e);
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, 0, 10);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Modelle
+        const models = [];
+
+
+        // Orbitalbewegung
+        function animateModels() {
+            models.forEach((model, i) => {
+                if (model && model !== selectedModel) {
+                    const time = Date.now() * 0.001;
+                    model.position.x = modelPositions[i].x + Math.sin(time + i) * 0.5;
+                    model.position.y = modelPositions[i].y + Math.cos(time + i) * 0.5;
+                    model.rotation.y += 0.01;
+                }
+            });
+        }
+
+        // Funktionen zur Anzeige von Abschnitten
+        function showWelcome() {
+            const isMobile = window.innerWidth <= 768;
+            gsap.to('#welcome', { opacity: 1, duration: 0.5, display: 'block' });
+            gsap.to('#model-title', { opacity: 0, duration: 0.5, display: 'none' });
+            gsap.to('#model-description', { opacity: 0, duration: 0.5, display: 'none' });
+            gsap.to('#back-to-welcome', { opacity: 0, duration: 0.5, display: 'none' });
+            gsap.to('#content', { opacity: 0, duration: 0.5, display: 'none' });
+            modelPositions = getModelPositions();
+            models.forEach((model, i) => {
+                if (model) {
+                    model.visible = true;
+                    gsap.to(model.position, {
+                        x: modelPositions[i].x,
+                        y: modelPositions[i].y,
+                        z: modelPositions[i].z,
+                        duration: 1
+                    });
+                    gsap.to(model.scale, {
+                        x: modelScales[i][0],
+                        y: modelScales[i][1],
+                        z: modelScales[i][2],
+                        duration: 1
+                    });
+                    gsap.to(model.rotation, {
+                        y: frontFacingRotations[i],
+                        duration: 1
+                    });
+                }
+            });
+            selectedModel = null;
+            gsap.to(camera.position, { 
+                x: 0, 
+                y: 0, 
+                z: isMobile ? 15 : 10, 
+                duration: 1 
+            });
+        }
+
+        function selectModel(index) {
+            const isMobile = window.innerWidth <= 768;
+            const scaleFactor = isMobile ? 0.4 : 0.5;
+            selectedModel = models[index];
+            models.forEach((model, i) => {
+                if (model) model.visible = (i === index);
+            });
+
+            // Zentriere das Modell und reduziere Skalierung
+            gsap.to(selectedModel.position, {
+                x: 0,
+                y: 0,
+                z: 0,
+                duration: 1
+            });
+            gsap.to(selectedModel.scale, {
+                x: modelScales[index][0] * scaleFactor,
+                y: modelScales[index][1] * scaleFactor,
+                z: modelScales[index][2] * scaleFactor,
+                duration: 1
+            });
+            gsap.to(selectedModel.rotation, {
+                y: frontFacingRotations[index],
+                duration: 1
+            });
+
+            // Passe Kamera an
+            gsap.to(camera.position, {
+                x: 0,
+                y: 0,
+                z: isMobile ? 8 : 5,
+                duration: 1
+            });
+        }
+
+        // Animationsschleife
+        function animate() {
+            requestAnimationFrame(animate);
+            animateModels();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Fenstergröße anpassen
+        window.addEventListener('resize', () => {
+            const isMobile = window.innerWidth <= 768;
+            camera.fov = isMobile ? 90 : 75;
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            modelPositions = getModelPositions();
+            if (!selectedModel) {
+                models.forEach((model, i) => {
+                    if (model) {
+                        model.position.set(modelPositions[i].x, modelPositions[i].y, modelPositions[i].z);
+                    }
+                });
+                camera.position.z = isMobile ? 15 : 10;
+            } else {
+                camera.position.z = isMobile ? 8 : 5;
+            }
+        });
+    </script>
+</html>
