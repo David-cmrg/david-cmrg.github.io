@@ -173,6 +173,9 @@ body {
     color: white;
     font-family: 'Montserrat', sans-serif;
 }
+main{
+    padding: 10vh 6vh;
+}
 
 canvas {
     position: fixed;
