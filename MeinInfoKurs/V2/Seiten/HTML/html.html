@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../script.js"></script>
+    <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+    <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
+    
+    <title>MeinInfoKurs | Web Development</title>
+</head>
+<body>
+    <!-- Navigationsleiste Smartphones -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!-- Navigationsleiste Monitore -->
+    <nav id="sidebar">
+        <h2 class="titleMain" style="margin:2.3vh 0vh 15vh 0vh;">MeinInfoKurs</h2>
+        <ul>
+            <li><i class="fa-solid fa-house"></i>  <a href="../../index.html">Startseite</a></li>
+            <li><i class="fa-brands fa-html5 fa-xl"></i>  <a href="#">HTML</a></li>
+            <!-- <li><i class="fa-solid fa-bug fa-lg"></i>  <a href="fehlersuche.html">Fehler Suche</a></li>
+            <li><i class="fa-solid fa-book"></i>  <a href="docs.html">Dokumentation</a></li> -->
+            <li><i class="fa-solid fa-school"></i>  <a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
+            <li><i class="fa-solid fa-circle-info fa-lg"></i>  <a href="../support.html">Support</a></li>
+        </ul>
+        <!-- From Uiverse.io by satyamchaudharydev --> 
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <h1 id="titlePage">Die Welt des Web-Developments</h1>
+        <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
+
+        <!-- Das modale Fenster -->
+        <div id="history-modal">
+            <div id="history-content">
+                <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                <h3>ZULETZT ANGESEHEN</h3>
+                <ul id="recent-topics"></ul>
+            </div>
+        </div>
+        
+        <h2>Einführung</h2>
+        <p id="Einfuehrung">
+            <strong>Willkommen in der Welt des Web Developments!</strong><br/>
+            Bereite dich vor auf eine spannende Reise voller Herausforderungen und Entdeckungen, an deren Ende eine wertvolle Belohnung auf dich wartet: die Fähigkeit, atemberaubende Websites und 
+            leistungsstarke Webanwendungen zu erstellen! Nein, es geht nicht um eine Expedition ins Unbekannte – sondern um das Erlernen der Kunst des Web Developments.
+            Vielleicht hast du dir schon einmal vorgestellt, deine eigene Website zu bauen oder ein beeindruckendes Online-Projekt zu realisieren. Nun, diese Reise wird dich genau dorthin führen! Und 
+            keine Sorge – ich bin dein Reisebegleiter, während du die Grundbausteine des modernen Internets kennenlernst.
+            Doch bevor wir loslegen, lohnt sich ein Blick zurück: Die Geschichte des Web Developments begann in den frühen 90ern, als Sir Tim Berners-Lee das World Wide Web erfand. Anfangs bestand das 
+            Web nur aus einfachen HTML-Dokumenten, aber mit der Zeit entwickelten sich Technologien wie CSS für das Design, JavaScript für interaktive Elemente und leistungsstarke Backend-Sprachen wie 
+            PHP, Python und Node.js.
+            Heute gibt es unzählige Frameworks und Tools, die die Arbeit erleichtern – von React und Vue für moderne Benutzeroberflächen bis hin zu Django und Express für performante Backends. Das Web 
+            ist allgegenwärtig, und mit den richtigen Fähigkeiten kannst du es mitgestalten!
+            Nun, genug der Theorie – lass uns die ersten Schritte in die faszinierende Welt des Web Developments wagen.<br/>
+            <strong>Viel Spaß beim Lernen und eine erfolgreiche Reise ins Web Development! 🚀</strong>
+        </p>
+        <h2>Hyper Text Markup Language (HTML)</h2>
+        <div class="AufgabenMain">
+            <section class="aufgaben-section">
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-shapes fa-xl"></i>
+                        <h4>Grundgerüst</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-arrow-up-right-from-square fa-xl"></i>
+                        <h4>Hyperlinks</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-image fa-xl"></i>
+                        <h4>Bilder</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-heading fa-xl"></i>
+                        <h4>Titel Attribut</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-quote-left fa-xl"></i>
+                        <h4>Zitate</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-message fa-xl"></i>
+                        <h4>Kommentare</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-list fa-xl"></i>
+                        <h4>Listen</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-table fa-xl"></i>
+                        <h4>Tabellen</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-location-dot fa-xl"></i>
+                        <h4>Ordnerstruktur und Navigation</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-link fa-xl"></i>
+                        <h4>Verlinkungen</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-box fa-xl"></i>
+                        <h4>Das Boxmodell</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                        <h4>Der web Inspektor</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-address-card fa-xl"></i>
+                        <h4>Die Visitenkarte</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-newspaper fa-xl"></i>
+                        <h4>Die Nachrichtenseite</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-location-arrow fa-xl"></i>
+                        <h4>Navigationsleisten</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-bars fa-xl"></i>
+                        <h4>Dropdown Menüs</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-pencil fa-xl"></i>
+                        <h4>Klausur Übungen</h4>
+                    </article>
+                </a>
+            </section>
+        </div>
+        <h2>Cascading Style Sheets (CSS)</h2>
+        <div class="AufgabenMain"> 
+            <section class="aufgaben-section">
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-pen-ruler fa-xl"></i>
+                        <h4>HTML mit CSS Stylen</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-network-wired fa-xl"></i>
+                        <h4>Elemente</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-sliders fa-xl"></i>
+                        <h4>Klassen</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-id-badge fa-xl"></i>
+                        <h4>IDs</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-font fa-xl"></i>
+                        <h4>Schriftarten</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-arrow-pointer fa-xl"></i>
+                        <h4>Selektoren</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-people-carry-box fa-xl"></i>
+                        <h4>Blockelement Baumeister</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-arrows-to-dot fa-xl"></i>
+                        <h4>Zentrierung</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-fan fa-xl"></i>
+                        <h4>Floating</h4>
+                    </article>
+                </a>
+                <a href="#" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-laptop-code fa-xl"></i>
+                        <h4>Pseudoklassen</h4>
+                    </article>
+                </a>
+            </section>
+        </div>   
+    </main>
+</body>
+</html>
