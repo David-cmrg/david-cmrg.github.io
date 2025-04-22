@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../../DE/style.css">
+    <script src="../../../DE/script.js"></script>
+    <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	    
+    <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
+    <!-- GOOGLE ADS --> <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+    
+    <title>MeinInfoKurs | Java Dokumentation</title>
+</head>
+<body>
+    <!-- Navigationsleiste Smartphones -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!-- Navigationsleiste Monitore -->
+    <nav id="sidebar">
+        <h2 class="titleMain" style="margin:2.3vh 0vh 15vh 0vh;">MeinInfoKurs</h2>
+        <ul>
+            <li><i class="fa-solid fa-house"></i>  <a href="../../index.html">Startseite</a></li>
+            <li><i class="fa-brands fa-java fa-xl"></i>  <a href="Java.html">Java</a></li>
+            <li><i class="fa-solid fa-bug fa-lg"></i>  <a href="fehlersuche.html">Fehler Suche</a></li>
+            <li><i class="fa-solid fa-book"></i>  <a href="#">Dokumentation</a></li>
+            <li><i class="fa-solid fa-school"></i>  <a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
+            <li><i class="fa-solid fa-circle-info fa-lg"></i>  <a href="../support.html">Support</a></li>
+        </ul>
+        <!-- From Uiverse.io by satyamchaudharydev --> 
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <h1 id="titlePage">Java Editor – Die Dokumentation für Anfänger </h1>
+        <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
+
+        <!-- Das modale Fenster -->
+        <div id="history-modal">
+            <div id="history-content">
+                <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                <h3>ZULETZT ANGESEHEN</h3>
+                <ul id="recent-topics"></ul>
+            </div>
+        </div>
+
+        
+        <h2>Einführung</h2>
+        <p id="Einfuehrung">
+            Das hier ist die Java Dokumentation Seite. Wenn du dir zu etwas unsicher bist und nochmal wissen möchtest, wie etwas funktioniert, 
+            was etwas ist oder wann man es verwendet, kannst du es hier nachlesen.
+            Ich gebe dir eine kurze Beschreibung und Erklärung wie und wann du was verwenden kannst.
+        </p>
+        <h2 class="Schritte">Datentypen</h2>
+        <p>
+            In Java gibt es verschiedene Datentypen die alle unterschiedliche Funktionen abdecken. In der folgenden Tabelle findest du einen die jeweiligen Datentypen und deren Funktionen.    
+        </p>
+        <table id="Datentypen">
+			<tbody><tr>
+                <th>Datentyp</th>
+                <th>Beschreibung</th>
+                <th>Beispiel</th>
+            </tr>
+            <tr>
+                <td><span class="type">int</span></td>
+                <td>Ganze Zahlen (positive und negative Zahlen)</td>
+                <td><span class="type">int</span> zahl = 42;</td>
+            </tr>
+            <tr>
+                <td><span class="type">double</span></td> 
+                <td>Positive und negative Zahlen mit Nachkommastellen</td>
+                <td><span class="type">double</span> pi = 3.1415;</td>
+            </tr>
+            <tr>
+                <td><span class="type">char</span></td>
+                <td>Einzelne Zeichen</td>
+                <td><span class="type">char</span> buchstabe = 'A';</td>
+            </tr>
+            <tr>
+                <td><span class="type">boolean</span></td>
+                <td>Wahrheitswerte (true oder false)</td>
+                <td><span class="type">boolean</span> istJavaSchwer = false;</td>
+            </tr>
+            <tr>
+                <td><span class="type">String</span></td>
+                <td>Zeichenketten (Texte)</td>
+                <td><span class="type">String</span> name = <span class="string">"David"</span>;</td>
+            </tr>
+		</tbody></table>
+
+
+        <h2 class="Schritte">Ein- und Ausgaben</h2>
+        <p>
+            Um eine Nutzereingabe bei Programmausführung zu ermöglichen, müssen wir das <span class="TastenKombination">"InOut.readInt"</span> oder ähnliche Methode verwenden.  
+            Das <span class="TastenKombination">"InOut.read"</span> ist dabei der Stamm. Nach dem <span class="TastenKombination">"read"</span> hängen wir dann den Datentypen an, für welchen wir einen Wert brauchen. Ein beispiel sieht so aus: 
+        </p><br/>
+
+            <div class="code-container" style="margin-bottom: 10px !important;">
+                <pre><code> 
+                    <span class="type">int</span> meinInteger; 
+                    <span class="type">double</span> meinDouble; 
+
+                    meinInteger = InOut.readInt(<span class="string">"Was für einen Int willst du eingeben?"</span>) 
+                    meinDouble = InOut.readDouble(<span class="string">"Was für einen Double willst du eingeben?"</span>) 
+                </code></pre>
+            </div>
+
+            <div style="margin: 45px 10px 0px 30px;">
+                <h3>1. Einfache Eingabe</h3>
+                <p>
+                    In folgendem Beispiel ist eine Nutzereingabe zu erkennen, welche die eingegebene Zahl (<span class="type">int</span>) in der Variable "zahl" speichert 
+                </p>
+                <div class="code-container" style="width: 90% !important; margin-top: 10px;">
+                    <pre><code>
+                        <span class="type">int</span> zahl = InOut.readInt(<span class="string">"Gib eine Zahl ein: "</span>);
+                    </code></pre>
+                </div>
+            </div>
+            <div style="margin: 0px 10px 0px 30px;">
+                <h3 id="nutzereingabe">2. Einfache Ausgabe</h3>
+                <p>
+                    Um einen Text an die Konsole ausgeben zu können, verwenden wir den <span class="TastenKombination">System.out.print("Text")</span>
+                </p>
+                <div class="code-container" style="width: 90% !important; margin-top: 10px; margin-bottom: 5px;">
+                    <pre><code>
+                        System.out.print(<span class="string">"Dieser Text erscheint auf der Konsole!"</span>);
+                    </code></pre>
+                </div>
+                <p>
+                    Alternativ können wir auch <span class="TastenKombination">System.out.println("Text");</span>  verwenden.  
+                    Dies sorgt dann aber dafür, dass der Text getrennt in einer neuen Zeile ausgegeben wird. 
+                    Ohne das <span class="TastenKombination">ln</span>, wird der Inhalt in der selben Zeile ausgegeben wie die vorherige und darauffolgende Ausgabe.
+                </p>
+                <div style="margin: 40px 10px 0px 30px;">
+                    <h3>Ausgabe von Variablen</h3>
+                    <p>
+                        Wollen wir eine Variable ausgeben anstelle von nur Text, so müssen wir den Name der Variable, die wir ausgeben wollen in die Klammer schreiben:
+                    </p>
+                    <div class="code-container" style="width: 90% !important; margin-top: 10px; margin-bottom: 35px;">
+                        <pre><code>
+                            <span class="type">int</span> meineVariable = 42; 
+                            System.out.print(<span class="type">meineVariable</span>); <span class="comment">// Die Zahl "42" wird auf der Konsole ausgegeben</span>
+                        </code></pre>
+                    </div>
+                    <p>
+                        Wenn wir nun aber einen Text und eine Variable zusammen ausgeben wollen, müssen wir ein wenig mehr in die Klammer schreiben.
+                        Das aneinanderreihen bei der Ausgabe von einem Text und einer Variable nennt man <span class="TastenKombination">Konkatenation.</span>
+                        Dies kann wie folgt aussehen:
+                    </p>
+                    <div class="code-container" style="width: 90% !important; margin-top: 10px; margin-bottom: 5px;">
+                        <pre><code>
+                            <span class="type">int</span> meineVariable = 42; 
+                            System.out.print(<span class="string">"Die Zahl beträgt "</span> + <span class="type">meineVariable</span>); <span class="comment">// Nun wird "Die Zahl beträgt 42" auf der Konsole ausgegeben.</span>
+                        </code></pre>
+                    </div>
+                </div><br/>
+            </div><br/>
+
+
+        <h2 class="Schritte">Bedingungen und Schleifen</h2>
+        <p>
+            In einem Java Code werden sehr oft sehr viele verschiedene Bedinungen überprüft, Schleifen ausgeführt und Rechnungen werden Berechnet. Diese 3 Schritte sind ein sehr wichtiger Teil 
+            in einem Programm. Sie helfen uns das Programm dynamischer zu machen. Jede Schleife wird für unterschiedliche Zwecke verwendet und hat verschiedene Vorteile.
+            Doch von der Grundstruktur sind sie ähnlich aufgebaut. Zuerst haben wir den Namen der Schleife, zum Beispiel <span class="TastenKombination">if</span>, dannach folgt eine Bedingung welche
+            die Schleife bei ausführung überprüft. Falls die Bedingung wahr oder nicht wahr ist, je nachdem welches unser Ziel ist, wird der Inhalt der Schleife ausgeführt. Entspricht die Bedingung nicht
+            der die in der <span class="TastenKombination">IF Bedingung</span> gegeben ist, wird der Code in der Schleife (meistens) übersprungen.
+        </p>
+    </main>
+    <script>
+        function revealAnswer(event) {
+            event.target.classList.add('anzeigen');
+        }
+    </script>
+</body>
+</html>

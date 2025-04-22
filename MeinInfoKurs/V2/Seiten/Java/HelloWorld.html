@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../../DE/style.css">
+    <script src="../../../DE/script.js"></script>
+    <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+    <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
+    <!-- GOOGLE ADS --> <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+    
+    <title>MeinInfoKurs | HelloWorld.java</title>
+</head>
+<body>
+    <!-- Navigationsleiste Smartphones -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!-- Navigationsleiste Monitore -->
+    <nav id="sidebar">
+        <h2 class="titleMain" style="margin:2.3vh 0vh 15vh 0vh;">MeinInfoKurs</h2>
+        <ul>
+            <li><i class="fa-solid fa-house"></i>  <a href="../../index.html">Startseite</a></li>
+            <li><i class="fa-brands fa-java fa-xl"></i>  <a href="../Java/Java.html">Java</a></li>
+            <li><i class="fa-solid fa-bug fa-lg"></i>  <a href="fehlersuche.html">Fehler Suche</a></li>
+            <li><i class="fa-solid fa-book"></i>  <a href="docs.html">Dokumentation</a></li>
+            <li><i class="fa-solid fa-school"></i>  <a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
+            <li><i class="fa-solid fa-circle-info fa-lg"></i>  <a href="../support.html">Support</a></li>
+        </ul>
+        <!-- From Uiverse.io by satyamchaudharydev --> 
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <div id="nav-title-verifystatus">
+            <h1 id="titlePage">Hello World</h1>
+            <i class="fa-solid fa-square-check fa-xl verifiziert" title="Code fehlerfrei." id="code-status-display"></i>
+        </div>
+        <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
+
+        <!-- Das modale Fenster -->
+        <div id="history-modal">
+            <div id="history-content">
+                <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                <h3>ZULETZT ANGESEHEN</h3>
+                <ul id="recent-topics"></ul>
+            </div>
+        </div>  
+        
+        <p>
+            Die Aufgabe der heutigen Stunde ist <strong>Hello World!</strong> Hello World ist ein standart Programm, welches man in jeder Programmiersprache als erstes schreibt. Man versucht zu verstehen wie Sachen in dieser Sprache funktionieren. Bist du also bei dieser Aufgabe, stehst du am Anfang eines langen Weges mit Java.<br/>
+            Naja, reden wir nicht so viel und schauen uns lieber die Aufgabe an. Die Aufgabenstellung lautet:
+        </p>
+        <p class="Aufgabenstellung">
+            Schreibe die folgende Zeile in den Haupt-Abschnitt. 
+            System.out.println("Hello World"); 
+        </p>
+        <h2 id="Lösungsprozess">Lösungsprozess der Aufgabe:</h2>
+        <div class="code-container">
+            <div class="toolbar">
+                <span><i class="fa-solid fa-code"></i>  Java</span>
+                <div class="buttons">
+                    <button class="button" onclick="copyCode()">Kopieren</button>
+                    <button class="button" onclick="downloadCode()">Herunterladen</button>
+                </div>
+            </div>
+            <div class="container">
+            <button class="show-button" onclick="revealContent()">Code Anzeigen</button>
+            <pre class="blurDivCLASS" id="blurDivID">
+                <code id="codeBlock">
+                    <span class="comment">/**
+                    *
+                    * Das fertige Java Programm "HelloWorld.java"
+                    *
+                    * @version 1.0 vom 25.02.2024
+                    * @MeinInfoKurs.github.io
+                    */</span>
+
+            <span class="keyword">public class</span> <span class="class-name">HelloWorld</span> {
+
+                <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+                    System.out.println(<span class="string">"Hello World"</span>);
+                }
+            }
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <p>
+            In der Aufgabenstellung wird gefordert, dass wir folgende Funktionen in unseren Code implementieren: <br/><br/>
+            
+            <ol class="SchritteListe">
+                <li>Ausgabe des Textes "Hello World"</li>
+            </ol>
+        </p>
+        <h3 class="Schritte">Konsolenausgabe</h3>
+        <p>
+            In dieser Aufgabe ist nur die Ausgabe eines <a href="https://www.w3schools.com/java/java_strings.asp" target="_blank">"Strings"</a> (String = Text) erforderlich. Dies ist sehr einfach!
+            Wenn du auf deiner Tastatur die Tastenkombination <span class="TastenKombination">STRG + U</span> drückst, dann wird ein <span class="TastenKombination">System.out.println()</span>
+            automatisch erzeugt. Wenn du in die Klammern nun <span class="TastenKombination">"Hello World"</span> schreibst, wird dieser String (String = Text) in der Konsole ausgegeben. 
+            Vergiss aber nicht, nach der letzten Klammer ein Semikolon (<span class="TastenKombination"> ; </span>) zu schreiben! Falls du dies vergisst, kann es dafür sorgen, dass das Programm nicht richtig funktioniert.
+        </p><br/>
+        <div class="code-container">
+            <pre><code>
+                System.out.println(<span class="string">"Hello World"</span>);
+            </code></pre>
+        </div>
+
+        
+        <section class="vorherige-naechste">
+            <a href="#" style="visibility: hidden;">
+                <article>
+                    <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
+                </article>
+            </a>
+            <a href="MeinNameIst.html">
+                <article>
+                    <h4>Nächste Aufgabe  <i class="fa-regular fa-circle-right fa-xl"></i></h4>
+                </article>
+            </a>
+        </section>
+    </main>
+    <script>
+        function cleanCode(text) {
+            return text.replace(/\u00A0/g, ' ').trim();
+        }
+
+        function copyCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            navigator.clipboard.writeText(cleanCode(code));
+            alert('Code copied to clipboard!');
+        }
+        
+        function downloadCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            const blob = new Blob([cleanCode(code)], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'HelloWorld.java';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>

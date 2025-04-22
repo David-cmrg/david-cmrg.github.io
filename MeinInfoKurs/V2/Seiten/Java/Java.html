@@ -3,166 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MeinInfoKurs | Java</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/a587449559.js" crossorigin="anonymous"></script>
-        
-    <link href="../../style.css" rel="stylesheet" type="text/css">
-    <script src="../../script.js"></script>
-        
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css">
-      
+    <link rel="stylesheet" href="../../../DE/style.css">
+    <script src="../../../DE/script.js"></script>
+    <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script>
-
+        
+    <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
+    <!-- GOOGLE ADS --> <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+    
+    <title>MeinInfoKurs | Java</title>
 </head>
 <body>
-    <nav>
+    <!-- Navigationsleiste Smartphones -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!-- Navigationsleiste Monitore -->
+    <nav id="sidebar">
+        <h2 class="titleMain" style="margin:2.3vh 0vh 15vh 0vh;">MeinInfoKurs</h2>
         <ul>
-            <li><a href="../../index.html"><i class="fa-solid fa-home fa-lg"></i></a></li>
-            <li><a href="../Scratch/Scratch.html"><i class="fa-solid fa-cube fa-lg"></i></a></li>
-            <li class="active"><a href="#"><i class="fa-brands fa-java fa-xl"></i></a></li>
-            <li><a href="../HTML/html.html"><i class="fa-brands fa-html5 fa-xl"></i></a></li>
+            <li><i class="fa-solid fa-house"></i>  <a href="../../index.html">Startseite</a></li>
+            <li><i class="fa-brands fa-java fa-xl"></i>  <a href="#">Java</a></li>
+            <li><i class="fa-solid fa-bug fa-lg"></i>  <a href="fehlersuche.html">Fehler Suche</a></li>
+            <li><i class="fa-solid fa-book"></i>  <a href="docs.html">Dokumentation</a></li>
+            <li><i class="fa-solid fa-school"></i>  <a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
+            <li><i class="fa-solid fa-circle-info fa-lg"></i>  <a href="../support.html">Support</a></li>
         </ul>
+        <!-- From Uiverse.io by satyamchaudharydev --> 
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
     </nav>
+
+    <!-- Main Content Area -->
     <main>
-        <h1>Java Aufgaben</h1>
-        <ul>
-            <li>
-                <h3>Hello World</h3>
-                <p>Erstelle ein einfaches Programm, das „Hello World“ auf der Konsole ausgibt.</p>
-                <a href="HelloWorld.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Mein Name ist..</h3>
-                <p>Erstelle ein Programm, das den Namen des Benutzers eingibt und ausgibt.</p>
-                <a href="MeinNameIst.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Die Wahl des Bürgermeisters</h3>
-                <p>Simuliere eine Bürgermeisterwahl mit Stimmenzählung für Kandidaten.</p>
-                <a href="DieWahlDesBürgermeisters.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Bewährungsfragen zur Wahlausgabe</h3>
-                <p>Erweitere die Wahl mit Bedingungen für Wahlausgaben (z. B. Stichwahl).</p>
-                <a href="BewährungsfragenZurWahlausgabe.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Die Schulsprecherwahl</h3>
-                <p>Simuliere eine Schulsprecherwahl mit Stimmenzählung und Ergebnisausgabe.</p>
-                <a href="DieSchulsprecherwahl.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Immobilienpreiskalkulator</h3>
-                <p>Berechne Immobilienpreise basierend auf Größe, Lage und Zustand.</p>
-                <a href="Immobilienpreiskalkulator.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Das Variablenrätsel</h3>
-                <p>Löse ein Rätsel durch Manipulation von Variablen und Bedingungen.</p>
-                <a href="DasVariablenrätsel.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Wassergebührenbescheid</h3>
-                <p>Berechne Wassergebühren basierend auf Verbrauch und Tarifen.</p>
-                <a href="Wassergebührenbescheid.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Fibonacci Zahlen und Quotienten</h3>
-                <p>Generiere Fibonacci-Zahlen und berechne ihre Quotienten.</p>
-                <a href="FibonacciZahlenUndQuotienten.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Die Marklerfirma</h3>
-                <p>Erstelle ein Programm zur Verwaltung von Maklerprovisionen.</p>
-                <a href="DieMarklerfirma.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Das Online Kaufhaus</h3>
-                <p>Simuliere einen Online-Shop mit Warenkorb und Preisrechnung.</p>
-                <a href="DasOnlineKaufhaus.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Der Parkscheinautomat</h3>
-                <p>Erstelle ein Programm für einen Parkscheinautomaten mit Eingabe von Parkdauer und Preisrechnung.</p>
-                <a href="DerParkscheinautomat.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Body-Mass-Index</h3>
-                <p>Berechne den BMI basierend auf Gewicht und Größe.</p>
-                <a href="BodyMassIndex.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Die Bahnreise</h3>
-                <p>Entwickle einen Preisrechner für Gruppenreisen mit der Bahn, inklusive 70% Rabatt für 6+ Personen.</p>
-                <a href="DieBahnreise.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Notenprogramm</h3>
-                <p>Erstelle ein Programm zur Berechnung von Schulnoten basierend auf Punkten.</p>
-                <a href="Notenprogramm.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Club der Millionäre</h3>
-                <p>Simuliere eine Mitgliederverwaltung für einen exklusiven Club.</p>
-                <a href="ClubDerMillionäre.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Das Ratespiel</h3>
-                <p>Implementiere ein Zahlenspiel, bei dem der Benutzer eine Zahl erraten muss.</p>
-                <a href="DasRatespiel.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Stift und Papier</h3>
-                <p>Erstelle ein Programm, das Eingaben wie auf Papier verarbeitet.</p>
-                <a href="StiftUndPapier.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Code lücken</h3>
-                <p>Fülle Lücken in einem bestehenden Java-Programm.</p>
-                <a href="CodeLücken.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Der Fahrscheinautomat</h3>
-                <p>Simuliere einen Fahrscheinautomaten mit Ticketpreisen und Zonen.</p>
-                <a href="DerFahrscheinautomat.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>Simulation der Population</h3>
-                <p>Simuliere das Wachstum einer Population unter bestimmten Bedingungen.</p>
-                <a href="SimulationDerPopulation.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>GUI - SMSRechner</h3>
-                <p>Erstelle eine GUI-Anwendung zur Berechnung von SMS-Kosten.</p>
-                <a href="GUISMSRechner.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>GUI - BMIRechner</h3>
-                <p>Entwickle eine GUI-Anwendung zur Berechnung des BMI.</p>
-                <a href="GUIBMIRechner.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>GUI - Taschenrechner</h3>
-                <p>Implementiere einen einfachen Taschenrechner mit GUI.</p>
-                <a href="GUITaschenrechner.html">Zur Aufgabe</a>
-            </li>
-            <li>
-                <h3>GUI - Parkscheinautomat</h3>
-                <p>Erstelle eine GUI-Version eines Parkscheinautomaten.</p>
-                <a href="GUIParkscheinautomat.html">Zur Aufgabe</a>
-            </li>
-        </ul>
+        <h1 id="titlePage">Die Welt in Java</h1>
+        <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
+
+        <!-- Das modale Fenster -->
+        <div id="history-modal">
+            <div id="history-content">
+                <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                <h3>ZULETZT ANGESEHEN</h3>
+                <ul id="recent-topics"></ul>
+            </div>
+        </div>
+        
+        <h2>Einführung</h2>
+        <p id="Einfuehrung">
+            <strong>Herzlich Willkommen</strong>, <br/>
+            zur Reise durch Java. Bereite dich vor auf eine abenteuerliche Reise voller Tücken und Gefahren, am deren Ende eine himmlische Belohnung wartet:  
+            Du beherrschst die Grundlagen in Java, damit du auch alleine in dieser rauen Umgebung zurechtkommst. 
+            Nein, es handelt sich nicht um eine Reise zu einer Insel, sondern um das Erlernen einer Programmiersprache Namens Java. Mag sein, dass das Bild der Insel Java etwas irreführend war, aber wenn Du schon mal hier bist:  
+            Sehe es als eine mentale Lernreise an und ich bin ihr Reisebegleiter, anschließend kannst Du deine eigenen Reisen in die Welt von Java planen und unternehmen, vorausgesetzt Du bewunderst auf unserer Reise nicht nur die Landschaft. Du wolltest bestimmt schon immer eine Work und Travel Reise machen.  
+            Bevor die Reisevorbereitungen getroffen werden, sollest Du etwas über die Geschichte von Java erfahren, wie diese wundervolle Welt entstanden ist. 
+            Der gute alte James Gosling hat vor langer Zeit in einer Firma Namens Sun (Sonne) eine Programmiersprache entwickelt, die viele gute Eigenschaften von anderen Programmiersprachen übernahm (C, C# und Delphi) und schlechte wegließ. 
+            Dies hatte zum Ziel eine plattformunabhängige Programmiersprache zu schaffen, die auf allen Geräten laufen kann. Bei den Zielgeräten handelte es sich damals um verschiedene Computer oder TV-SETTOP-Boxen, die programmiert werden konnten. Das Internet war zu derzeit noch nicht breit zugänglich und kein großes Thema. 
+            Die Sprache war leicht zu erlernen und gut durchdacht. James taufte seine Sprache Oak (Eiche). Die Namenswahl Oak von James kam nicht gut an. Die Sprache führte lange Zeit ein armseliges Dasein im Schatten seiner großen Brüder und Schwestern. 
+            Dies änderte sich in den 90er Jahren. Das Internet wurde auch für die Bürger erschwinglich. Fast jeder benutzte den Browser Netscape dafür. 
+            In den 90er Jahren gab es nicht nur Popstars in der Musikbranche (Jackson, Tupac, Kravitz, Cobain, …). Sondern es entwickelte sich auch ein neuer Stern am Programmierhimmel. 
+            Oak war relativ leicht zu erlernen und erfüllte alle Voraussetzungen für eine plattformunabhängige Verteilung über das Internet. Für einen Erfolg brauchte Oak allerdings einen guten einprägsamen Namen. 1992 wurde Oak in Java (umgangssprachlich Kaffee) umbenannt.  
+            1994 war der erste Prototyp fertig und 1995 erblickte die Java-Technologie von Sun mithilfe der Firma Netscape das Licht der Welt. 
+            Wie ein Popstar war Java in aller Munde und fand schnell Verbreitung. Viele Fans und Groupies (Programmierer) sorgten dafür, dass Java innerhalb kurzer Zeit auf der ganzen Welt bekannt war. Java hatte schnell eine große Fangemeinschaft. 
+            Der Siegeszug von Java war durch die neue Philosophie nicht verwunderlich. Einen Code für alle Computersysteme zu schreiben ersparte viel Zeit. Java-Applets (kleine Java Programme mit einem grafischen Benutzerinterface) können auf allen Betriebssystemen laufen. Es muss nur noch ein Code geschrieben werden, anstatt viele  Programm-Versionen für unterschiedliche Systeme zu programmieren. 
+            Dies führte dazu, dass Microsoft anfing in das Internet zu investieren, um dem Wachsen möglicher Konkurrenten entgegenzuwirken. Der Erfolg der lange Zeit kostenfreien Java-Technologie konnte nicht mehr aufgehalten werden. Netscape erging es nicht so gut, aber das ist eine andere Geschichte.  
+            Mit der Zeit entwickelte sich Java zu einer der meist verbeitesten Programmiersprachen. Seit langer Zeit ist Java entweder auf Platz 1 oder 2 der Programmiersprachen des TIOB Index.  Das Internet der Dinge ist für diese Programmiersprache wie geschaffen. Heutzutage ist Java auf Milliarden von Geräten installiert. 
+            Im Jahr 2010 hat Oracle die Firma Sun aufgekauft und versprochen die Software in Richtung einer freien und quelloffenen Software weiterzuentwickeln. 
+            Vor wenigen Jahren hat Oracle die kostenlose Nutzung der neusten Weiterentwicklung von Java für die kommerzielle Nutzung, aber auch für Bildungseinrichtungen, eingeschränkt. Privatpersonen können zur eigenen Verwendung die neusten Versionen weiterhin installieren. Schließlich soll es auch Nachwuchsprogrammierer geben. 
+            Eine kostenlose Variante von Java ist für alle zugänglich, allerdings sind darin nicht die neusten Features der kostenpflichtigen Variante enthalten. Für Beginner ist die kostenfreie Variante der bessere Weg. Die Neurungen werden erst mit fortgeschrittenen Programmier-Skills interessant. 
+            Nachdem Du jetzt etwas über die Geschichte und Kultur von Java erfahren hast, wenden wir uns der Möglichkeit zu die wundervolle Welt von Java zu betreten. <br/>
+            <strong>Viel Spaß beim Lernen und dir eine erfolgreiche Reise in Java!</strong>
+        </p>
+        <h2>Aufgaben aus der Welt des Java Editors</h2>
+        <div class="AufgabenMain">
+            <section class="aufgaben-section">
+                <a href="HelloWorld.html">
+                    <article>
+                        <i class="fa-solid fa-earth-europe fa-xl"></i>
+                        <h4>Hello World</h4>
+                    </article>
+                </a>
+                <a href="MeinNameIst.html">
+                    <article>
+                        <i class="fa-solid fa-address-card fa-xl"></i>
+                        <h4>Mein Name ist..</h4>
+                    </article>
+                </a>
+                <a href="DieWahlDesBurgermeisters.html">
+                    <article>
+                        <i class="fa-solid fa-check-to-slot fa-xl"></i>
+                        <h4>Die Wahl des Bürgermeisters</h4>
+                    </article>
+                </a>
+                <a href="bewaehrungsfragen.html">
+                    <article>
+                        <i class="fa-solid fa-clipboard-question fa-xl"></i>
+                        <h4>Bewährungsfragen zur Wahlausgabe</h4>
+                    </article>
+                </a>
+                <a href="SchulsprecherWahl.html">
+                    <article>
+                        <i class="fa-solid fa-chalkboard-user fa-xl"></i>
+                        <h4>Die Schulsprecherwahl</h4>
+                    </article>
+                </a>
+                <a href="Immobilienpreis.html">
+                    <article>
+                        <i class="fa-solid fa-hand-holding-dollar fa-xl"></i>
+                        <h4>Immobilienpreiskalkulator</h4>
+                    </article>
+                </a>
+                <a href="Variablenraetsel.html" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-not-equal fa-xl"></i>
+                        <h4>Das Variablenrätsel</h4>
+                    </article>
+                </a>
+                <a href="Wassergebuehren.html">
+                    <article>
+                        <i class="fa-solid fa-hand-holding-droplet fa-xl"></i>
+                        <h4>Wassergebührenbescheid</h4>
+                    </article>
+                </a>
+                <a href="FibonacciZahlen.html" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-square-root-variable fa-xl"></i>
+                        <h4>Fibonacci Zahlen und Quotienten</h4>
+                    </article>
+                </a>
+                <a href="Marklerfirma.html" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-building fa-xl"></i>
+                        <h4>Die Marklerfirma</h4>
+                    </article>
+                </a>
+                <a href="OnlineKaufhaus.html" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-store fa-xl"></i>
+                        <h4>Das Online Kaufhaus</h4>
+                    </article>
+                </a>
+                <a href="ParkscheinAutomat.html">
+                    <article>
+                        <i class="fa-solid fa-square-parking fa-xl"></i>
+                        <h4>Der Parkscheinautomat</h4>
+                    </article>
+                </a>
+                <a href="BodyMassIndex.html">
+                    <article>
+                        <i class="fa-solid fa-person fa-xl"></i>
+                        <h4>Body-Mass-Index</h4>
+                    </article>
+                </a>
+                <a href="Bahnreise.html">
+                    <article>
+                        <i class="fa-solid fa-train-tram fa-xl"></i>
+                        <h4>Die Bahnreise</h4>
+                    </article>
+                </a>
+                <a href="NotenProgramm.html" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-user-graduate fa-xl"></i>
+                        <h4>Notenprogramm</h4>
+                    </article>
+                </a>
+                <a href="Millionaere.html">
+                    <article>
+                        <i class="fa-solid fa-sack-dollar fa-xl"></i>
+                        <h4>Club der Millionäre</h4>
+                    </article>
+                </a>
+                <a href="Ratespiel.html" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-dice fa-xl"></i>
+                        <h4>Das Ratespiel</h4>
+                    </article>
+                </a>
+                <a href="StiftUndPapier.html" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-file-pen fa-xl"></i>
+                        <h4>Stift und Papier</h4>
+                    </article>
+                </a>
+                <a href="CodeLuecken.html" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-bug fa-xl"></i>
+                        <h4>Code lücken</h4>
+                    </article>
+                </a>
+                <a href="Fahrscheinautomat.html" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-car-side fa-xl"></i>
+                        <h4>Der Fahrscheinautomat</h4>
+                    </article>
+                </a>
+                <a href="SimulationPopulation.html" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-fish-fins fa-xl"></i>
+                        <h4>Simulation der Population</h4>
+                    </article>
+                </a>
+                <a href="GUI-SMSRechner.html" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-message fa-xl"></i>
+                        <h4>GUI - SMSRechner</h4>
+                    </article>
+                </a>
+                <a href="GUI-BMIRechner.html" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-person-circle-exclamation fa-xl"></i> 
+                        <h4>GUI - BMIRechner</h4>
+                    </article>
+                </a>
+                <a href="GUI-Taschenrechner.html" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-calculator fa-xl"></i>
+                        <h4>GUI - Taschenrechner</h4>
+                    </article>
+                </a>
+                <a href="GUI-Parkscheinautomat.html" class="error-bg">
+                    <article>
+                        <i class="fa-solid fa-square-parking fa-xl"></i>
+                        <h4>GUI - Parkscheinautomat</h4>
+                    </article>
+                </a>
+            </section>
+        </div>
     </main>
 </body>
 </html>
+
+
+<!-- Random icon:  <i class="fa-regular fa-window-restore"></i>  -->
