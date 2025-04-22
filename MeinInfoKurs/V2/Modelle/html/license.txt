@@ -1,0 +1,11 @@
+Model Information:
+* title:	html5 logo
+* source:	https://sketchfab.com/3d-models/html5-logo-479bbf9062de4b3196f08e52d1c12821
+* author:	edgargarciaa (https://sketchfab.com/edgargarciaa)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "html5 logo" (https://sketchfab.com/3d-models/html5-logo-479bbf9062de4b3196f08e52d1c12821) by edgargarciaa (https://sketchfab.com/edgargarciaa) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Scratch Cat
+* source:	https://sketchfab.com/3d-models/scratch-cat-9b6cb8f674b44aa7ac6f5f6a58d647bf
+* author:	fupi (https://sketchfab.com/fupi)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Scratch Cat" (https://sketchfab.com/3d-models/scratch-cat-9b6cb8f674b44aa7ac6f5f6a58d647bf) by fupi (https://sketchfab.com/fupi) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
