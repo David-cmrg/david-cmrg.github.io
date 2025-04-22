@@ -15,6 +15,75 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
     
     <title>MeinInfoKurs | Startseite</title>
+
+    <!-- Popup-specific styles -->
+    <style>
+        /* Popup overlay */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Popup content */
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: 'Montserrat', sans-serif; /* Match your website's font */
+        }
+
+        .popup-content h2 {
+            margin-top: 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .popup-content p {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        /* Buttons */
+        .popup-content button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-v1 {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-v2 {
+            background: #2196F3;
+            color: white;
+        }
+
+        .btn-v1:hover {
+            background: #45a049;
+        }
+
+        .btn-v2:hover {
+            background: #df8875;
+            transition: all 0.5s ease;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigationsleiste Smartphones -->
@@ -48,7 +117,7 @@
         <!-- Das modale Fenster -->
         <div id="history-modal">
             <div id="history-content">
-                <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                <span id="close-history">×</span> <!-- Schließen-Button -->
                 <h3>ZULETZT ANGESEHEN</h3>
                 <ul id="recent-topics"></ul>
             </div>
@@ -83,5 +152,33 @@
             </div>
         </div>
     </main>
+
+    <!-- Popup structure -->
+    <div class="popup-overlay" id="versionPopup">
+        <div class="popup-content">
+            <h1 style="color:red;">ACHTUNG!</h1>
+            <p>Du surfst gerade auf meiner stabilen Webseite. Möchtest du auf der stabilen V1-Version bleiben oder die neue, noch nicht vollständig stabile V2-Version ausprobieren?</p>
+            <button class="btn-v1" onclick="selectVersion('v1')">Auf V1 bleiben</button>
+            <button class="btn-v2" onclick="selectVersion('v2')">Zu V2 wechseln</button>
+        </div>
+    </div>
+
+    <!-- Popup JavaScript -->
+    <script>
+        // Show popup on every page load
+        window.onload = function() {
+            const popup = document.getElementById('versionPopup');
+            popup.style.display = 'flex';
+        };
+
+        function selectVersion(version) {
+            const popup = document.getElementById('versionPopup');
+            popup.style.display = 'none';
+
+            if (version === 'v2') {
+                window.location.href = 'https://david-cmrg.github.io/MeinInfoKurs/V2/'; // V2
+            }
+        }
+    </script>
 </body>
 </html>
