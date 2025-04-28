@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../seitenstyle.css">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../script.js"></script>
+    <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+    <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
+    <!-- GOOGLE ADS --> <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+    
+    <title>MeinInfoKurs | ImmobilienPreisKalkulator.java</title>
+</head>
+<body style="display: block;">  
+
+    <!-- Navigationsleiste Monitore -->
+    <nav>
+        <ul>
+            <li><a href="../../index.html"><i class="fa-solid fa-home fa-lg"></i></a></li>
+            <li class="active"><a href="Java.html"><i class="fa-brands fa-java fa-xl"></i></a></li>
+            <li><a href="fehlersuche.html"><i class="fa-solid fa-bug fa-lg"></i></a></li>
+            <li><a href="docs.html"><i class="fa-solid fa-book"></i></a></li>
+            <li><a href="https://www.w3schools.com/"><i class="fa-solid fa-school"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area --> 
+    <main>
+        <div id="nav-title-verifystatus">
+            <h1 id="titlePage">Der Immobilienpreiskalkulator</h1>
+            <div style="margin: 0.7vh 0vh 0vh 1vh" title="CHATGPT - Noch nicht verifizierter Code. Es könnte noch Fehler geben!" id="ChatSVG">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="45px" height="45px" fill-rule="nonzero">
+                    <g fill="var(--text-color)" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M45.403,25.562c-0.506,-1.89 -1.518,-3.553 -2.906,-4.862c1.134,-2.665 0.963,-5.724 -0.487,-8.237c-1.391,-2.408 -3.636,-4.131 -6.322,-4.851c-1.891,-0.506 -3.839,-0.462 -5.669,0.088c-1.743,-2.318 -4.457,-3.7 -7.372,-3.7c-4.906,0 -9.021,3.416 -10.116,7.991c-0.01,0.001 -0.019,-0.003 -0.029,-0.002c-2.902,0.36 -5.404,2.019 -6.865,4.549c-1.391,2.408 -1.76,5.214 -1.04,7.9c0.507,1.891 1.519,3.556 2.909,4.865c-1.134,2.666 -0.97,5.714 0.484,8.234c1.391,2.408 3.636,4.131 6.322,4.851c0.896,0.24 1.807,0.359 2.711,0.359c1.003,0 1.995,-0.161 2.957,-0.45c1.742,2.322 4.445,3.703 7.373,3.703c4.911,0 9.028,-3.422 10.12,-8.003c2.88,-0.35 5.431,-2.006 6.891,-4.535c1.39,-2.408 1.759,-5.214 1.039,-7.9zM35.17,9.543c2.171,0.581 3.984,1.974 5.107,3.919c1.049,1.817 1.243,4 0.569,5.967c-0.099,-0.062 -0.193,-0.131 -0.294,-0.19l-9.169,-5.294c-0.312,-0.179 -0.698,-0.177 -1.01,0.006l-10.198,6.041l-0.052,-4.607l8.663,-5.001c1.947,-1.124 4.214,-1.421 6.384,-0.841zM29.737,22.195l0.062,5.504l-4.736,2.805l-4.799,-2.699l-0.062,-5.504l4.736,-2.805zM14.235,14.412c0,-4.639 3.774,-8.412 8.412,-8.412c2.109,0 4.092,0.916 5.458,2.488c-0.105,0.056 -0.214,0.103 -0.318,0.163l-9.17,5.294c-0.312,0.181 -0.504,0.517 -0.5,0.877l0.133,11.851l-4.015,-2.258zM6.528,23.921c-0.581,-2.17 -0.282,-4.438 0.841,-6.383c1.06,-1.836 2.823,-3.074 4.884,-3.474c-0.004,0.116 -0.018,0.23 -0.018,0.348v10.588c0,0.361 0.195,0.694 0.51,0.872l10.329,5.81l-3.964,2.348l-8.662,-5.002c-1.946,-1.123 -3.338,-2.936 -3.92,-5.107zM14.83,40.457c-2.171,-0.581 -3.984,-1.974 -5.107,-3.919c-1.053,-1.824 -1.249,-4.001 -0.573,-5.97c0.101,0.063 0.196,0.133 0.299,0.193l9.169,5.294c0.154,0.089 0.327,0.134 0.5,0.134c0.177,0 0.353,-0.047 0.51,-0.14l10.198,-6.041l0.052,4.607l-8.663,5.001c-1.946,1.125 -4.214,1.424 -6.385,0.841zM35.765,35.588c0,4.639 -3.773,8.412 -8.412,8.412c-2.119,0 -4.094,-0.919 -5.459,-2.494c0.105,-0.056 0.216,-0.098 0.32,-0.158l9.17,-5.294c0.312,-0.181 0.504,-0.517 0.5,-0.877l-0.134,-11.85l4.015,2.258zM42.631,32.462c-1.056,1.83 -2.84,3.086 -4.884,3.483c0.004,-0.12 0.018,-0.237 0.018,-0.357v-10.588c0,-0.361 -0.195,-0.694 -0.51,-0.872l-10.329,-5.81l3.964,-2.348l8.662,5.002c1.946,1.123 3.338,2.937 3.92,5.107c0.581,2.17 0.282,4.438 -0.841,6.383z"/></g></g></svg>
+            </div>
+        </div>
+        <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
+
+        <!-- Das modale Fenster -->
+        <div id="history-modal">
+            <div id="history-content">
+                <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                <h3>ZULETZT ANGESEHEN</h3>
+                <ul id="recent-topics"></ul>
+            </div>
+        </div>
+        
+        <p>Die Aufgabe der heutigen Stunde ist <strong>der Immobilienpreiskalkulator!</strong> Dazu schauen wir uns mal die Aufgabe genauer an und versuchen durch intelligentes Lösen ein vollfunktionsfähiges Programm zu erstellen. <br/>
+          Die Aufgabenstellung lautet:
+        </p>
+        <p class="Aufgabenstellung">
+            <strong>A.</strong> <br/>
+            Herr Rich möchte, dass Grundstücke, die aus zusammengesetzten Flächen (Rechteck, Trapez, Raute, Dreieck) bestehen mit dem Immobilienkalkulator berechnen lassen. 
+            Erweitern Sie das Programm. <br/><br/>
+
+            <strong>B.</strong> <br/>
+            Immobilien werden auch als Wertanlage genutzt, deshalb soll das Programm von Herrn Rich um eine Gewinnkalkulation erweitert werden. 
+            Angenommen die jährliche Steigerungsrate beträgt 1,99 Prozent im Jahr. 
+            Erweitern Sie das Programm um eine Gewinnkalkulation. Herr Rich möchte den Kunden auch den Break-Even-Point nennen können. <br/><br/>
+            
+            <strong>C.</strong> <br/>
+            Berechnen Sie die prozentuale Steigerung im Vergleich zum Kaufpreis für die Jahre 2030 und 2050. 
+            Recherchieren Sie und vergleichen Sie diese Werte mit den Prognosen für diese Jahre.  
+            Erläutern Sie, ob die angenommene Preissteigerung von 1,99% realistisch bzw. welche durchschnittliche Preissteigerung Sie für realistisch halten.     
+        </p>
+        <h2 id="Lösungsprozess">Lösungsprozess der Aufgabe:</h2>
+        <div class="code-container">
+            <div class="toolbar">
+                <span><i class="fa-solid fa-code"></i>  Java</span>
+                <div class="buttons">
+                    <button class="button" onclick="copyCode()">Kopieren</button>
+                    <button class="button" onclick="downloadCode()">Herunterladen</button>
+                </div>
+            </div>
+            <div class="container">
+            <button class="show-button" onclick="revealContent()">Code Anzeigen</button>
+            <pre class="blurDivCLASS" id="blurDivID">
+            <code id="codeBlock">
+                <span class="comment">/**
+                *
+                * Das fertige Java Programm des Immobilienpreiskalkulators
+                *
+                * @version 1.0 vom 06.04.2025
+                * @MeinInfoKurs.github.io
+                */</span>
+    
+                <span class="keyword">public class</span> <span class="class-name">Immobilienpreiskalkulator</span> {
+    
+                                <span class="keyword">public static void</span> <span class="method">main</span>(string[] args) {
+                                    <span class="type">double</span> grundstuecksPreis = 0, maklergebuehr, gesamtKosten;
+                                    <span class="type">double</span> laenge, breite, hoehe, seiteA, seiteC, diagonaleE, diagonaleF;
+                                    <span class="type">double</span> quadratmeterpreis, gebuehrProzent, mehrwertsteuerProzent, mehrwertsteuerBetrag;
+                                    <span class="type">double</span> flaeche = 0;
+                                
+                                    System.out.println(<span class="string">"Makler-Firma Herr Rich – Immobilienkalkulator:"</span>);
+                                    System.out.println(<span class="string">"Erlaubt sind nur Dezimalzahlen der Punkt-Schreibweise."</span>);
+                                
+                                    System.out.println(<span class="string">"Welche Form hat das Grundstück?"</span>);
+                                    System.out.println(<span class="string">"1 - Rechteck"</span>);
+                                    System.out.println(<span class="string">"2 - Trapez"</span>);
+                                    System.out.println(<span class="string">"3 - Dreieck"</span>);
+                                    System.out.println(<span class="string">"4 - Raute"</span>);
+                                
+                                    <span class="type">int</span> form = InOut.readInt(<span class="string">"Bitte wählen Sie 1-4:"</span>);
+                                
+                                    <span class="keyword">if</span> (form == 1) {
+                                      breite = InOut.readDouble(<span class="string">"Breite in Meter: "</span>);
+                                      laenge = InOut.readDouble(<span class="string">"Länge in Meter: "</span>);
+                                      flaeche = breite * laenge;
+                                
+                                    } <span class="keyword">else if</span> (form == 2) {
+                                      seiteA = InOut.readDouble(<span class="string">"Länge der unteren Seite (a) in Meter: "</span>);
+                                      seiteC = InOut.readDouble(<span class="string">"Länge der oberen Seite (c) in Meter: "</span>);
+                                      hoehe = InOut.readDouble(<span class="string">"Höhe in Meter: "</span>);
+                                      flaeche = (seiteA + seiteC) / 2 * hoehe;
+                                
+                                    } <span class="keyword">else if</span> (form == 3) {
+                                      breite = InOut.readDouble(<span class="string">"Grundseite in Meter: "</span>);
+                                      hoehe = InOut.readDouble(<span class="string">"Höhe in Meter: "</span>);
+                                      flaeche = (breite * hoehe) / 2;
+                                
+                                    } <span class="keyword">else if</span> (form == 4) {
+                                      diagonaleE = InOut.readDouble(<span class="string">"Diagonale e in Meter: "</span>);
+                                      diagonaleF = InOut.readDouble(<span class="string">"Diagonale f in Meter: "</span>);
+                                      flaeche = (diagonaleE * diagonaleF) / 2;
+                                
+                                    } <span class="keyword">else</span> {
+                                      System.out.println(<span class="string">"Ungültige Auswahl. Das Programm wird beendet."</span>);
+                                      System.exit(0); <span class="comment">// Beendet das Programm</span>
+                                    }
+                                
+                                    quadratmeterpreis = InOut.readDouble(<span class="string">"Quadratmeterpreis in Euro: "</span>);
+                                    gebuehrProzent = InOut.readDouble(<span class="string">"Maklergebühr in Prozent: "</span>);
+                                    mehrwertsteuerProzent = InOut.readDouble(<span class="string">"Mehrwertsteuer in Prozent: "</span>);
+                                
+                                    grundstuecksPreis = flaeche * quadratmeterpreis;
+                                    maklergebuehr = grundstuecksPreis * gebuehrProzent / 100;
+                                    mehrwertsteuerBetrag = grundstuecksPreis * mehrwertsteuerProzent / 100;
+                                    gesamtKosten = grundstuecksPreis + maklergebuehr + mehrwertsteuerBetrag;
+                                
+                                    // Ausgabe
+                                    System.out.println(<span class="string">"------------Grundstückspreis------------"</span>);
+                                    System.out.println(<span class="string">"Fläche: "</span> + InOut.format2(flaeche) + <span class="string">" m²"</span>);
+                                    System.out.println(<span class="string">"Grundstückspreis: "</span> + InOut.format2(grundstuecksPreis) + <span class="string">" Euro"</span>);
+                                
+                                    System.out.println(<span class="string">"------------Steuer und Gebühr------------"</span>);
+                                    System.out.println(<span class="string">"Maklergebühr: "</span> + InOut.format2(maklergebuehr) + <span class="string">" Euro"</span>);
+                                    System.out.println(<span class="string">"Mehrwertsteuer: "</span> + InOut.format2(mehrwertsteuerBetrag) + <span class="string">" Euro"</span>);
+                                
+                                    System.out.println(<span class="string">"------------Gesamtbetrag------------"</span>);
+                                    System.out.println(<span class="string">"Gesamtkosten: "</span> + InOut.format2(gesamtKosten) + <span class="string">" Euro"</span>);
+                                
+                                    // Gewinnkalkulation
+                                    <span class="type">double</span> steigerungsrate = 1.99 / 100;
+                                    <span class="type">int</span> jahr = 0;
+                                    <span class="type">double</span> wert = grundstuecksPreis;
+                                
+                                    <span class="keyword">while</span> (wert < gesamtKosten) {
+                                      jahr++;
+                                      wert = grundstuecksPreis * Math.pow(1 + steigerungsrate, jahr);
+                                    }
+                                
+                                    System.out.println(<span class="string">"------------Gewinnkalkulation------------"</span>);
+                                    System.out.println(<span class="string">"Annahme: Jährliche Wertsteigerung von 1,99 %."</span>);
+                                    System.out.println(<span class="string">"Wert nach 10 Jahren: "</span> + InOut.format2(grundstuecksPreis * Math.pow(1.0199, 10)) + <span class="string">" Euro"</span>);
+                                    System.out.println(<span class="string">"Wert nach 20 Jahren: "</span> + InOut.format2(grundstuecksPreis * Math.pow(1.0199, 20)) + <span class="string">" Euro"</span>);
+                                    System.out.println(<span class="string">"Break-Even-Point erreicht nach ca. "</span> + jahr + <span class="string">" Jahren."</span>);
+                                
+                                    System.out.println(<span class="string">"Vielen Dank für den Auftrag. Bis zum nächsten Mal."</span>);
+                                  }
+                                }
+            </code></pre>
+        </div>
+        </div>
+        <p>
+            In der Aufgabenstellung wird gefordert, dass wir folgende Funktionen in unseren Code implementieren: <br/><br/>
+            
+            <ol class="SchritteListe">
+                <li>Nutzereingabe des Normalpreises</li>
+                <li>Nutzereingabe der reisenden Personen</li>
+                <br/>
+                <li>Gruppenreise möglichkeit (ab 6 Personen)</li>
+                <li>Rabbatt auf den Ticketkauf (bei 6+ Fahrgästen)</li>
+                <li>Maximalpreis von 36.60€ (pro Person)</li>
+                <br/>
+                <li>Ausgabe des Preises pro Person</li>
+                <li>Ausgabe des gesamten Gruppenpreises</li>
+            </ol>
+        </p>
+        <h3 class="Schritte">1. Nutzereingabe und Auswahl der Form</h3>
+        <p>
+            Der Nutzer gibt an, welche geometrische Form das Grundstück hat. Je nach Auswahl (rechteck, trapez, dreieck) werden unterschiedliche Eingaben abgefragt.
+        </p><br/>
+        <div class="code-container">
+            <pre><code> 
+                System.out.println(<span class="string">"Welche Form hat das Grundstück?"</span>);
+                System.out.println(<span class="string">"1 - Rechteck"</span>);
+                System.out.println(<span class="string">"2 - Trapez"</span>);
+                System.out.println(<span class="string">"3 - Dreieck"</span>);
+                System.out.println(<span class="string">"4 - Raute"</span>);
+                                
+                <span class="type">int</span> form = InOut.readInt(<span class="string">"Bitte wählen Sie 1-4:"</span>);
+            </code></pre>
+        </div>
+        <h3 class="Schritte">2. Berechnung der Immobilienkosten</h3>
+        <p>
+            Die Grundfläche wird mit dem Quadratmeterpreis multipliziert. Zusätzlich werden Maklergebühr und Mehrwertsteuer berechnet und aufgeschlagen.
+        </p><br/>
+        <div class="code-container">
+            <pre><code> 
+                <span class="type">double</span> grundstueckPreis = flaeche * qmPreis;
+                <span class="type">double</span> gebuehr = grundstueckPreis * gebuehrProzent / 100;
+                <span class="type">double</span> steuer = gebuehr * steuerProzent / 100;
+                <span class="type">double</span> gesamtpreis = grundstueckPreis + gebuehr + steuer;
+            </code></pre>
+        </div>
+        <h3 class="Schritte">3. Wertsteigerung berechnen</h3>
+        <p>
+            Mit einer konstanten Preissteigerung von 1,99 % jährlich wird die erwartete Preisentwicklung berechnet. Dazu verwenden wir die Potenzfunktion.
+        </p><br/>
+        <div class="code-container">
+            <pre><code> 
+                <span class="type">double</span> steigerung = 1.0199;
+                <span class="type">double</span> preis2030 = grundstueckPreis * Math.pow(steigerung, 5);
+                <span class="type">double</span> preis2050 = grundstueckPreis * Math.pow(steigerung, 25);
+            </code></pre>
+        </div>
+
+        <section class="vorherige-naechste">
+            <a href="SchulsprecherWahl.html" >
+                <article>
+                    <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
+                </article>
+            </a>
+            <a href="Variablenraetsel.html" class="error-bg">
+                <article>
+                    <h4>Nächste Aufgabe  <i class="fa-regular fa-circle-right fa-xl"></i></h4>
+                </article>
+            </a>
+        </section>
+    </main>
+    <footer>
+        <p>
+            Diese Aufgabe wurde von ChatGPT bearbeitet!
+        </p>
+    </footer>
+
+    <script>
+        function cleanCode(text) {
+            return text.replace(/\u00A0/g, ' ').trim();
+        }
+
+        function copyCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            navigator.clipboard.writeText(cleanCode(code));
+            alert('Code copied to clipboard!');
+        }
+        
+        function downloadCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            const blob = new Blob([cleanCode(code)], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'ImmobilienPreisKalkulator.java';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>

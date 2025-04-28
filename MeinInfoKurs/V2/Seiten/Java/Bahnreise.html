@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../seitenstyle.css">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../script.js"></script>
+    <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+           
+    <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
+    <!-- GOOGLE ADS --> <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script> 
+    
+    <title>MeinInfoKurs | Bahnreise.java</title>
+</head>
+<body>
+
+    <!-- Navigationsleiste für alle Endgeräte -->
+    <nav>
+        <ul>
+            <li><a href="../../index.html"><i class="fa-solid fa-home fa-lg"></i></a></li>
+            <li class="active"><a href="Java.html"><i class="fa-brands fa-java fa-xl"></i></a></li>
+            <li><a href="fehlersuche.html"><i class="fa-solid fa-bug fa-lg"></i></a></li>
+            <li><a href="docs.html"><i class="fa-solid fa-book"></i></a></li>
+            <li><a href="https://www.w3schools.com/"><i class="fa-solid fa-school"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <div id="nav-title-verifystatus">
+            <h1 id="titlePage">Die Bahnreise</h1>
+            <i class="fa-solid fa-square-check fa-xl verifiziert" title="Code fehlerfrei." id="code-status-display"></i>
+        </div>
+        <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
+
+        <!-- Das modale Fenster -->
+        <div id="history-modal">
+            <div id="history-content">
+                <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                <h3>ZULETZT ANGESEHEN</h3>
+                <ul id="recent-topics"></ul>
+            </div>
+        </div>
+        
+        <p>Die Aufgabe der heutigen Stunde ist <strong>die Bahnreise!</strong> Dazu schauen wir uns mal die Aufgabe genauer an und versuchen durch intelligentes Lösen ein vollfunktionsfähiges Programm zu erstellen. <br/>
+          Die Aufgabenstellung lautet:
+        </p>
+        <p class="Aufgabenstellung">
+          Die Bürger von Java sollen mit der Bahn fahren, damit die Umwelt geschont wird, deshalb bietet die Bahn Gruppenreisen ab 6 Personen im Tarif Gruppe&Spar 70 an.  
+          Dabei gibt es auf den Normalpreis für eine Person 70 % Rabatt, maximal bezahlt man aber 36,60 € pro Person, egal wie weit man innerhalb Deutschlands reist. Entwickle einen Preisrechner für solche Gruppenreisen.  
+          Eingegeben werden der Normalpreis für eine Person und die Anzahl der in der Gruppe reisenden Personen, ausgegeben wird der Preis für die Gruppe. Nenne das Programm Bahnreise.
+        </p>
+        <h2 id="Lösungsprozess">Lösungsprozess der Aufgabe:</h2>
+        <div class="code-container">
+            <div class="toolbar">
+                <span><i class="fa-solid fa-code"></i>  Java</span>
+                <div class="buttons">
+                    <button class="button" onclick="copyCode()">Kopieren</button>
+                    <button class="button" onclick="downloadCode()">Herunterladen</button>
+                </div>
+            </div>
+            <div class="container">
+            <button class="show-button" onclick="revealContent()">Code Anzeigen</button>
+            <pre class="blurDivCLASS" id="blurDivID">
+            <code id="codeBlock">
+                <span class="comment">/**
+                *
+                * Das fertige Java Programm der Bahnreise
+                *
+                * @version 1.0 vom 25.02.2024
+                * @MeinInfoKurs.github.io
+                */</span>
+    
+                <span class="keyword">public class</span> <span class="class-name">Bahnreise</span> {
+    
+                                <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+                                                <span class="type">int</span> PersonenAnzahl;
+                                                <span class="type">double</span> Normalpreis, Maximalpreis, GruppenPreis, PersonenEndPreis, Rabatt;
+    
+                                                PersonenAnzahl = InOut.readInt(<span class="string">"Anzahl der reisenden Personen: "</span>);
+                                                Normalpreis = InOut.readDouble(<span class="string">"Betrag des Normalpreises: "</span>);
+
+                                                Maximalpreis = 36.60;
+                                                Rabatt = 0.70;
+                                                GruppenPreis = Normalpreis*PersonenAnzahl;
+
+                                                <span class="keyword">if</span> (PersonenAnzahl >= 6) {
+                                                                GruppenPreis= GruppenPreis*Rabatt;
+                                                };
+                
+                                                PersonenEndPreis=GruppenPreis/PersonenAnzahl;
+                
+                                                <span class="keyword">if</span> (PersonenEndPreis > Maximalpreis) {
+                                                                PersonenEndPreis=Maximalpreis;
+                                                                GruppenPreis=PersonenEndPreis*PersonenAnzahl;
+                                                };
+
+                                                System.out.println(<span class="string">"Preis pro Einzelperson: "</span> + PersonenEndPreis);
+                                                System.out.println(<span class="string">"Gesamtpreis der Gruppe: "</span> + GruppenPreis);
+                                }
+                }
+            </code></pre>
+        </div>
+        </div>
+        <p>
+            In der Aufgabenstellung wird gefordert, dass wir folgende Funktionen in unseren Code implementieren: <br/><br/>
+            
+            <ol class="SchritteListe">
+                <li>Nutzereingabe des Normalpreises</li>
+                <li>Nutzereingabe der reisenden Personen</li>
+                <br/>
+                <li>Gruppenreise möglichkeit (ab 6 Personen)</li>
+                <li>Rabbatt auf den Ticketkauf (bei 6+ Fahrgästen)</li>
+                <li>Maximalpreis von 36.60€ (pro Person)</li>
+                <br/>
+                <li>Ausgabe des Preises pro Person</li>
+                <li>Ausgabe des gesamten Gruppenpreises</li>
+            </ol>
+        </p>
+        <h3 class="Schritte">Nutzereingaben (Normalpreis und Personen)</h3>
+        <p>
+            Um eine Nutzereingabe zu ermöglichen, müssen wir zuerst die Variable deklarieren, der wir einen Wert zuweisen wollen.
+            Da wir in dieser Situation eine Zahl mit Nachkommastelle als Wert (Normalpreis) eingeben wollen, nutzen wir einen DOUBLE.
+            Aber wir brauchen auch eine Variable um ihr den Wert der Personenanzahl zu geben
+        </p><br/>
+        <div class="code-container">
+            <pre><code> 
+                <span class="type">int</span> PersonenAnzahl;
+                <span class="type">double</span> Normalpreis;
+
+                PersonenAnzahl = InOut.readInt(<span class="string">"Anzahl der reisenden Personen: "</span>);
+                Normalpreis = InOut.readDouble(<span class="string">"Betrag des Normalpreises: "</span>);
+            </code></pre>
+        </div>
+        <h3 class="Schritte">Gruppenrabatt berechnung und Ausgabe</h3>
+        <p>
+            Da wir nun die Anzahl aller Reisenden haben, können wir mit unseren Berechnungen fortfahren.
+            Zuerst wollen wir überprüfen ob die Personenanzahl bei 6 oder höher liegt.
+            Wenn ja, dann wollen wir unseren Rabatt von 70% auf den Normalpreis anwenden.
+            Zuletzt überprüfen wir ob der zu zahlende Preis einer Person über dem Maximalpreis (36.60) liegt und setzen
+            den Preis gegebenfalls auf den Maximalpreis (Wenn der end Preis > Maximalpreis ist)
+        </p><br/>
+        <div class="code-container">
+            <pre><code> 
+                <span class="comment">/* Alle Variablen die wir benötigen KÖNNEN Nachkommastellen beinhalten, darum verwenden wir einen Double */</span>
+                <span class="type">double</span> Maximalpreis, GruppenPreis, PersonenEndPreis, Rabatt;
+                
+                <span class="comment">/* Wertzuweisung an die benötigten Variablen */</span>
+                Maximalpreis=36.60;
+                Rabatt = 0.70;
+                GruppenPreis=Normalpreis*PersonenAnzahl;
+
+                <span class="keyword">if</span> (PersonenAnzahl >= 6) {
+                    <span class="comment">/* Dies ist möglich, da wir bereits GruppenPreis einen Wert gegeben haben */</span>
+                    GruppenPreis= GruppenPreis*Rabatt;
+                };
+
+                PersonenEndPreis=GruppenPreis/PersonenAnzahl;    <span class="comment">/* Bestimmung des Preises pro Person */</span>
+
+                <span class="keyword">if</span> (PersonenEndPreis > Maximalpreis) {
+                    PersonenEndPreis=Maximalpreis;
+                    GruppenPreis=PersonenEndPreis*PersonenAnahl;
+                }
+
+                System.out.println(<span class="string">"Preis pro Einzelperson: "</span> + PersonenEndPreis);
+                System.out.println(<span class="string">"Gesamtpreis der Gruppe: "</span> + GruppenPreis);
+
+            </code></pre>
+        </div>
+
+        <section class="vorherige-naechste">
+            <a href="BodyMassIndex.html">
+                <article>
+                    <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
+                </article>
+            </a>
+            <a href="NotenProgramm.html">
+                <article>
+                    <h4>Nächste Aufgabe  <i class="fa-regular fa-circle-right fa-xl"></i></h4>
+                </article>
+            </a>
+        </section>
+
+
+    </main>
+    <script>
+        function cleanCode(text) {
+            return text.replace(/\u00A0/g, ' ').trim();
+        }
+
+        function copyCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            navigator.clipboard.writeText(cleanCode(code));
+            alert('Code copied to clipboard!');
+        }
+        
+        function downloadCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            const blob = new Blob([cleanCode(code)], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'Bahnreise.java';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>

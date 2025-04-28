@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../seitenstyle.css">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../script.js"></script>
+    <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+    <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
+    <!-- GOOGLE ADS --> <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+    
+    <title>MeinInfoKurs | ParkscheinAutomat.java</title>
+</head>
+<body>
+    
+    <!-- Navigationsleiste für alle Endgeräte -->
+    <nav>
+        <ul>
+            <li><a href="../../index.html"><i class="fa-solid fa-home fa-lg"></i></a></li>
+            <li class="active"><a href="Java.html"><i class="fa-brands fa-java fa-xl"></i></a></li>
+            <li><a href="fehlersuche.html"><i class="fa-solid fa-bug fa-lg"></i></a></li>
+            <li><a href="docs.html"><i class="fa-solid fa-book"></i></a></li>
+            <li><a href="https://www.w3schools.com/"><i class="fa-solid fa-school"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <div id="nav-title-verifystatus">
+            <h1 id="titlePage">Der Parkscheinautomat</h1>
+            <i class="fa-solid fa-square-check fa-xl verifiziert" title="Code fehlerfrei." id="code-status-display"></i>
+        </div>
+        <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
+
+        <!-- Das modale Fenster -->
+        <div id="history-modal">
+            <div id="history-content">
+                <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                <h3>ZULETZT ANGESEHEN</h3>
+                <ul id="recent-topics"></ul>
+            </div>
+        </div>
+
+        <p>Die Aufgabe der heutigen Stunde ist <strong>der Parkscheinautomat!</strong> Dieses Programm ist recht einfach gehalten und besteht aus einem einfachen <a href="../Java-Docs.html#eva">EVA</a> prinzip.<br/>
+          Die Aufgabenstellung lautet:
+        </p>
+        <p class="Aufgabenstellung">
+            In System gibt es zu wenig Parkplätze in der Innenstadt. Deshalb sollen sehr teure Parkplatzpreise ohne Kartenzahlungsmöglichkeit dafür sorgen, dass die Leute in der Innenstadt nur vorübergehend parken.  
+            Der verantwortliche Programmierer hatte schon angefangen und vorgestern im Lotto gewonnen. Wir haben gehört, dass er mittlerweile auf Hawaii ist. Sie erhalten von uns alle Unterlagen und Informationen um den Auftrag zu beenden:  <br/><br/>
+            
+            <strong>Beschreibung des Auftraggebers</strong><br/> 
+            Auf einem kostenpflichtigen Parkplatz gilt der Tarif 0,5 € pro angefangener Stunde, maximal 5 € pro Tag.
+        </p>
+        <h2 id="Lösungsprozess">Lösungsprozess der Aufgabe:</h2>
+        <div class="code-container">
+            <div class="toolbar">
+                <span><i class="fa-solid fa-code"></i>  Java</span>
+                <div class="buttons">
+                    <button class="button" onclick="copyCode()">Kopieren</button>
+                    <button class="button" onclick="downloadCode()">Herunterladen</button>
+                </div>
+            </div>
+            <div class="container">
+            <button class="show-button" onclick="revealContent()">Code Anzeigen</button>
+            <pre class="blurDivCLASS" id="blurDivID">
+            <code id="codeBlock">
+                <span class="comment">/**
+                *
+                * Das fertige Java Programm des "ParkscheinAutomat.java"
+                *
+                * @version 1.0 vom 26.02.2024
+                * @MeinInfoKurs.github.io
+                */</span>
+    
+                <span class="keyword">public class</span> <span class="class-name">ParkscheinAutomat</span> {
+    
+                                <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+                                                <span class="type">int</span> Stunden;
+                                                <span class="type">double</span> Geldbetrag, Parkgebühr, Zahlbetrag, Wechselgeld;
+    
+                                                Stunden = InOut.readInt(<span class="string">"Parkzeit in Stunden: "</span>);
+                                                Geldbetrag = InOut.readDouble(<span class="string">"Eingeworfener Geldbetrag in Euro: "</span>);  
+
+                                                Parkgebühr = Stunden * 0.5;
+                                                System.out.println(<span class="string">"Betrag zu Zahlen: "</span> + Parkgebühr);
+                                                <span class="keyword">if</span> (Parkgebühr > 5) {
+                                                    Parkgebühr = 5;
+                                                } 
+                                                <span class="keyword">if</span> (Geldbetrag < Parkgebühr) {
+                                                    Zahlbetrag = Parkgebühr - Geldbetrag;
+                                                    System.out.println(<span class="string">"Noch zu Zahlen: "</span> + Zahlbetrag);
+                                                }<span class="keyword">else</span> {
+                                                    <span class="keyword">if</span> (Geldbetrag > Parkgebühr) {
+                                                        Wechselgeld = Geldbetrag - Parkgebühr;
+                                                        System.out.println("Wechselgeld: " + Wechselgeld);
+                                                    } <span class="comment">// end of if</span>
+                                                    System.out.println("Parkgebühr bezahlt! :");
+                                                } <span class="comment">// end of if-else</span>
+                                    } <span class="comment">// end of main</span>
+                } <span class="comment">// end of class ParkscheinAutomat.</span>
+            </code></pre>
+        </div>
+        </div>
+        <p>
+            In der Aufgabenstellung wird gefordert, dass wir folgende Funktionen in unseren Code implementieren: <br/><br/>
+            
+            <ol class="SchritteListe">
+                <li>Nutzereingabe der geparkten Stunden</li>
+                <li>Nutzereingabe des eingeworfenen Geldbetrags</li>
+                <br/>
+                <li>Berechnung der Parkgebühr</li>
+                    <ul class="unterliste">
+                        <li>Parkgebühr = maximal 5</li>
+                        <li>Falls Geldbetrag < Parkgebühr wird mehr Geld gefordert</li>
+                        <li>Berechnung des Wechselgeldes</li>
+                    </ul>
+                <br/>
+                <li>Ausgabe des Wechselgeldes</li>
+            </ol>
+        </p>
+        <h2 class="Schritte">1. Nutzereingaben (Stunden und Geldbetrag)</h2>
+        <p>
+            Um eine Nutzereingabe zu ermöglichen, müssen wir zuerst die Variable deklarieren, der wir einen Wert zuweisen wollen.
+            Nun brauchen wir eine Variable für die Stunden. Welche nutzen wir da am besten? Einen <span class="antwort" onclick="revealAnswer(event)" style="color: green; text-decoration: underline;">Integer</span>.<br/>
+            Aber wir müssen auch den Geldbetrag eingeben lassen. Da dieser eine Nachkommastelle beinhalten kann, nutzen wir hier einen <span class="antwort" onclick="revealAnswer(event)" style="color: green; text-decoration: underline;">Double</span>.<br/>
+            Der Code dafür könnte zb so aussehen:
+        </p><br/>
+        <div class="code-container">
+            <pre><code> 
+                <span class="type">int</span> Stunden;
+                <span class="type">double</span> Geldbetrag;
+
+                Stunden = InOut.readInt(<span class="string">"Parkzeit in Stunden: "</span>);
+                Geldbetrag = InOut.readDouble(<span class="string">"Eingeworfener Geldbetrag in Euro: "</span>);
+            </code></pre>
+        </div>
+        <h2 class="Schritte">2. Berechnung der Parkgebühr</h2>
+        <p>
+            Da die Eingabe nun vollendet ist, müssen wir mit den uns zugeteilten Werten einige Rechnungen anstellen, um an das gewünschte Ergebnis zu gelangen. 
+            Dafür teilen wir uns alle Rechenschritte in verschiedene kleinere auf:
+        </p> <br/><br/><br/>
+            <div style="margin: 0px 10px 0px 30px;">
+                <h4>2.1 Parkgebühr = maximal 5</h4>
+                <p>
+                    Um zu überprüfen ob die Parkgebühr mehr als unser Maximal beträgt, benötigen wir ein <a href="docs.html#if-statement">IF Statement</a>.
+                    Die Fähigkeit ein IF Statement zu benutzen ist eine wichtige Grundlage. Kannst du dies nicht, solltest du dir nochmal vergangene Aufgaben anschauen 
+                    und die <a href="docs.html#if-statement">Dokumentation</a> durchlesen.
+                    Durch folgendes IF Statement können wir diese Bedinung (<span class="TastenKombination"> Parkgebühr > 5 </span>) überprüfen:
+                </p>
+                <div class="code-container" style="width: 90% !important; margin-top: 10px;">
+                    <pre>  
+                        Parkgebühr = Stunden * 0.5; <span class="comment">// Berechnung der Parkgebühr</span>
+
+                        <span class="keyword">if</span> (Parkgebühr > 5) {
+                            Parkgebühr = 5;
+                        } <span class="comment">// Falls Parkgebühr größer als 5 ist, wird Parkgebühr auf 5 gesetzt.</span>
+                    </pre>
+                </div>
+            </div>
+        <br/>
+        <div style="margin: 0px 0px 0px 30px !important;">
+            <h3>2.2 Berechnung des Wechselgeldes</h3>
+            <p>
+                Hat der Nutzer nun zu viel Geld eingeworfen, wollen wir ihm sein Wechselgeld geben. Hat er zu wenig eingeworfen, wollen wir das restliche Geld fordern.
+                Dazu benutzen wir ein if-else. Zuerst wollen wir schauen ob der Geldbetrag (den der Nutzer eingeworfen hat) weniger ist als die Parkgebühr, welches heißt das
+                er noch zusätzlich Geld einwerfen muss. Wir verwenden ein <a href="docs.html#if-else-statement">IF-ELSE Statement</a>
+            </p>
+            <div class="code-container" style="width: 90% !important; margin: 10px 0px 5px 0px !important;">
+                <pre><code> 
+                    <span class="keyword">if</span> (Geldbetrag < Parkgebühr) { <span class="comment">// Überprüfen ob zu wenig Geld eingeworfen wurde</span>
+                        Zahlbetrag = Parkgebühr - Geldbetrag; <span class="comment">// Falls ja, wird der noch zu zahlende Betrag ausgerechnet</span>
+                        System.out.println(<span class="string">"Noch zu Zahlen: "</span> + Zahlbetrag); <span class="comment">// Wir fordern den restlichen Betrag</span>
+                    }<span class="keyword">else</span> { <span class="comment">// Falls nicht zu wenig Geld eingeworfen wurde:</span>
+                        <span class="keyword">if</span> (Geldbetrag > Parkgebühr) { <span class="comment">// Überprüfen wir ob zu viel Geld eingeworfen wurde</span>
+                            Wechselgeld = Geldbetrag - Parkgebühr; <span class="comment">// Berechnung des Wechselgeldes</span>
+                            System.out.println("Wechselgeld: " + Wechselgeld); <span class="comment">// Wechselgeld wird ausgegeben.</span>
+                        } <span class="comment">// end of if</span>
+                        System.out.println("Parkgebühr bezahlt! :"); <span class="comment">// Bestätigung</span>
+                    } <span class="comment">// end of if-else</span>
+                </code></pre>
+            </div>
+        </div>
+        <p style="margin: 0px 0px 35px 30px;">
+            Die Bestätigung ist ganz am Ende, außerhalb des IF Statements, da falls direkt genug Geld eingeworfen wird, wir nicht in dieses IF Statement gehen müssen und 
+            somit, wenn die Bestätigung im IF Statement wäre, wir keine Bestätigung bei genauem Geldeinwurf erhalten würden. <br/>
+            Da beim ausführen eines Codes, die ausführreihenfolge immer von oben nach unten ist, hätten wir die Bestätigung auch ganz außerhalb des IF-ELSE Statements setzen können
+            und hätten die selbe Lösung.
+        </p>
+
+        <section class="vorherige-naechste">
+            <a href="OnlineKaufhaus.html" class="error-bg">
+                <article>
+                    <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
+                </article>
+            </a>
+            <a href="BodyMassIndex.html">
+                <article>
+                    <h4>Nächste Aufgabe  <i class="fa-regular fa-circle-right fa-xl"></i></h4>
+                </article>
+            </a>
+        </section>
+
+    </main>
+    <script>
+        function cleanCode(text) {
+            return text.replace(/\u00A0/g, ' ').trim();
+        }
+
+        function copyCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            navigator.clipboard.writeText(cleanCode(code));
+            alert('Code copied to clipboard!');
+        }
+        
+        function downloadCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            const blob = new Blob([cleanCode(code)], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'ParkscheinAutomat.java';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+    <script>
+        function revealAnswer(event) {
+            event.target.classList.add('anzeigen');
+        }
+    </script>
+</body>
+</html>

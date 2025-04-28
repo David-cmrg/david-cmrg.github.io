@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../seitenstyle.css">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../script.js"></script>
+    <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+    <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
+    <!-- GOOGLE ADS --> <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+    
+    <title>MeinInfoKurs | Notenprogramm.java</title>
+</head>
+<body>
+
+    <!-- Navigationsleiste für alle Endgeräte -->
+    <nav>
+        <ul>
+            <li><a href="../../index.html"><i class="fa-solid fa-home fa-lg"></i></a></li>
+            <li class="active"><a href="Java.html"><i class="fa-brands fa-java fa-xl"></i></a></li>
+            <li><a href="fehlersuche.html"><i class="fa-solid fa-bug fa-lg"></i></a></li>
+            <li><a href="docs.html"><i class="fa-solid fa-book"></i></a></li>
+            <li><a href="https://www.w3schools.com/"><i class="fa-solid fa-school"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <div id="nav-title-verifystatus">
+            <h1 id="titlePage">Das Notenprogramm</h1>
+            <i class="fa-solid fa-hourglass-half fa-xl nicht-verifiziert" title="Noch nicht verifizierter Code. Es könnte noch Fehler geben!" id="code-status-display"></i>
+        </div>
+        <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
+
+        <!-- Das modale Fenster -->
+        <div id="history-modal">
+            <div id="history-content">
+                <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                <h3>ZULETZT ANGESEHEN</h3>
+                <ul id="recent-topics"></ul>
+            </div>
+        </div>
+        
+        <p>Die Aufgabe der heutigen Stunde ist <strong>das Notenprogramm!</strong> Dazu schauen wir uns mal die Aufgabe genauer an und versuchen 
+            durch intelligentes Lösen ein vollfunktionsfähiges Programm zu erstellen. Die Aufgabenstellung lautet:
+        </p>
+        <p class="Aufgabenstellung">
+            Das Programm zur Eingabe der Noten soll für die Oberstufe erweitert werden.
+            Der Anwender trägt die erreichte Punktzahl der Klausur ein und gibt die maximale Punktzahl ein. 
+            Als Ausgabe erhält er die Note in Punkten nach der folgenden  prozentualen Verteilung, den prozentualen Wert, die Note in Worten und die Notendefinition
+        </p>
+        <h2 id="Lösungsprozess">Lösungsprozess der Aufgabe:</h2>
+        <div class="code-container">
+            <div class="toolbar">
+                <span><i class="fa-solid fa-code"></i>  Java</span>
+                <div class="buttons">
+                    <button class="button" onclick="copyCode()">Kopieren</button>
+                    <button class="button" onclick="downloadCode()">Herunterladen</button>
+                </div>
+            </div>
+            <div class="container">
+            <button class="show-button" onclick="revealContent()">Code Anzeigen</button>
+            <pre class="blurDivCLASS" id="blurDivID">
+            <code id="codeBlock">
+                <span class="comment">/**
+                    *
+                    * Das fertige Java Programm des Notenprogramms
+                    *
+                    * @version 1.0 vom 06.03.2024
+                    * @MeinInfoKurs.github.io
+                    */</span>
+                    <span class="keyword">public</span> <span class="keyword">class</span> <span class="class-name">Notenprogramm</span> <span class="andererCode">{</span>
+                      <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">void</span> <span class="method">main</span>(<span class="type">String</span><span class="andererCode">[]</span> <span class="andererCode">args</span>) <span class="andererCode">{</span>
+                        <span class="type">double</span> <span class="andererCode">EndProzent, Prozent, Punkte, MaxPunkte;</span>
+                        <span class="andererCode">Punkte = </span><span class="class-name">InOut</span>.<span class="method">readDouble</span>(<span class="string">"Wie viele Punkte konnten sie in der Klausur erzielen: "</span><span class="andererCode">);</span>
+                        <span class="andererCode">MaxPunkte = </span><span class="class-name">InOut</span>.<span class="method">readDouble</span>(<span class="string">"Was war die maximal zu erreichende Punlteanzahl: "</span><span class="andererCode">);</span>
+                        <span class="andererCode">Prozent = Punkte / MaxPunkte;</span>
+                        <span class="andererCode">EndProzent = Prozent * 100;</span>
+                        
+                        <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">Punkte > MaxPunkte</span><span class="andererCode">) {</span>
+                          <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">""</span><span class="andererCode">);</span>
+                          <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Ungültige Eingabe!"</span><span class="andererCode">);</span>
+                          <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Maximal Punktzahl darf nicht größer als die erreichte Punktzahl sein."</span><span class="andererCode">);</span>
+                        <span class="andererCode">} </span><span class="keyword">else</span> <span class="andererCode">{</span>
+                          <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">""</span><span class="andererCode">);</span>
+                          <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 95</span><span class="andererCode">) {</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 15 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist sehr gut."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen entsprechen den Anforderungen in besonderem Masse."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 90</span><span class="andererCode">) {</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 14 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist sehr gut."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen entsprechen den Anforderungen in besonderem Masse."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 85</span><span class="andererCode">) {</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 13 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist sehr gut."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen entsprechen den Anforderungen in besonderem Masse."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 80</span><span class="andererCode">) {</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 12 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist gut."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen entsprechen den Anforderungen voll."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 75</span><span class="andererCode">) {</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 11 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist gut."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen entsprechen den Anforderungen voll."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 70</span><span class="andererCode">) {</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 10 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist gut."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen entsprechen den Anforderungen voll."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 65</span><span class="andererCode">) {</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 09 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist befriedigend."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen entsprechen den Anforderungen im Allgemeinen."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 60</span><span class="andererCode">) {</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 08 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist befriedigend."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen entsprechen den Anforderungen im Allgemeinen."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 55</span><span class="andererCode">) {</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 07 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist befriedigend."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen entsprechen den Anforderungen im Allgemeinen."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 50</span><span class="andererCode">) {</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 06 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist ausreichend."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen weisen zwar Maengel auf, entsprechen aber im Ganzen noch den Anforderungen."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 45</span><span class="andererCode">) {</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 05 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist ausreichend."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen weisen zwar Maengel auf, entsprechen aber im Ganzen noch den Anforderungen."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 40</span><span class="andererCode">) {</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 04 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist ausreichend."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen weisen Maengel auf und entsprechen den Anforderungen nur noch mit Einschraenkungen."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 33</span><span class="andererCode">) {</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 03 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist mangelhaft."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen entsprechen den Anforderungen nicht, lassen jedoch erkennen, dass die notwendigen Grundkenntnisse vorhanden sind."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 27</span><span class="andererCode">) {</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 02 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist mangelhaft."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen entsprechen den Anforderungen nicht, lassen jedoch erkennen, dass die notwendigen Grundkenntnisse vorhanden sind."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 20</span><span class="andererCode">) {</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 01 Punkt erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist mangelhaft."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen entsprechen den Anforderungen nicht, lassen jedoch erkennen, dass die notwendigen Grundkenntnisse vorhanden sind."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="keyword">else</span> <span class="andererCode">{</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 00 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist ungenuegend."</span><span class="andererCode">);</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Leistungen entsprechen den Anforderungen nicht, Grundkenntnisse sind so lueckenhaft, die Maengel können nicht behoben werden."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span>
+                        <span class="andererCode">} </span><span class="comment">// end of if-else</span>
+                      <span class="andererCode">} </span><span class="comment">// end of main</span>
+                     
+                    <span class="andererCode">} </span><span class="comment">// end of class Notenprogramm</span>
+            </code></pre>
+        </div>
+        </div>
+        <p>
+            In der Aufgabenstellung wird gefordert, dass wir folgende Funktionen in unseren Code implementieren: <br/><br/>
+            
+            <ol class="SchritteListe">
+                <li>Nutzereingabe der Maximalpunktzahl</li>
+                <li>Nutzereingabe der eigenen (in der Klausur erreichten) Punktzahl</li>
+                <br/>
+                <li>Berechnung der Note</li>
+                <br/>
+                <li>Ausgabe des Notenwertes</li>
+            </ol>
+        </p>
+        <h3 class="Schritte">Nutzereingaben der Maximalpunktzahl und erreichten Punktzahl</h3>
+        <p>
+            Um eine Nutzereingabe zu ermöglichen, müssen wir zuerst die Variable deklarieren, der wir einen Wert zuweisen wollen.
+            Da wir in dieser Situation eine Zahl mit Nachkommastelle als Wert (Punkte & MaxPunkte) eingeben KÖNNEN, nutzen wir einen <a href="docs.html#Datentyp">DOUBLE</a>.
+            Das heißt, wir fragen den Nutzer nach der Maximalpunktzahl und seiner erreichten Punktzahl. Diese Werte speichern wir jeweils als Variable ab und verwenden sie bei
+            der Berechnung der Note wieder, dazu kommen wir aber gleich. Die Abfrage und das Speichern sieht dann so aus:
+        </p><br/>
+        <div class="code-container">
+            <pre><code> 
+                <span class="type">double</span> <span class="andererCode"> Punkte, MaxPunkte;</span>
+                <span class="andererCode">Punkte = </span><span class="class-name">InOut</span>.<span class="method">readDouble</span>(<span class="string">"Wie viele Punkte konnten sie in der Klausur erzielen: "</span><span class="andererCode">);</span>
+                <span class="andererCode">MaxPunkte = </span><span class="class-name">InOut</span>.<span class="method">readDouble</span>(<span class="string">"Was war die maximal zu erreichende Punlteanzahl: "</span><span class="andererCode">);</span>
+            </code></pre>
+        </div>
+        <h3 class="Schritte">Berechnung des Notenwertes</h3>
+        <p>
+            Nun haben wir dank der Nutzereingabe alle Werte die wir zur Ausrechnung des Notenwertes benötigen! Doch bevor wir irgendeine Berechnung anstellen wollen wir überprüfen, ob alle Nutzereingaben
+            korrekt sind. Dafür vergleichen wir die Maximalpunktzahl und die erreichte Punktzahl. Ist die Punktzahl höher als die Maximalpunktzahl, wird der Nutzer mit einem Fehler konfrontiert. Dieser 
+            Check ist nicht zwingend und kann auch weggelassen werden. Nun zur überprüfung. Wir rechnen die erreichte Punktzahl geteilt durch die MaxPunktzahl. Dieses Ergebnis multiplizieren es dann Mit
+            100. Dadurch erhalten wir eine gerade Zahl anstatt einer Komma Zahl. Das Ergebnis gleichen wir dann mit einer <a>IF-ELSE</a> Kette ab und anschließend wird das Ergebnis ausgegeben.
+        </p><br/>
+        <div class="code-container">
+            <pre><code> 
+                <span class="comment">/* Beispielaufgabe, wo der Nutzer 78 Punkte von 100 erreicht hat */</span>
+                <span class="andererCode">Punkte = </span><span class="andererCode">73;</span>
+                <span class="andererCode">MaxPunkte = </span><span class="andererCode">80;</span>
+                <span class="andererCode">Prozent = Punkte / MaxPunkte;</span> <span class="comment"> /* 73 / 80 = 0.9125 */</span>
+                <span class="andererCode">EndProzent = Prozent * 100;</span> <span class="comment"> /* 0.9125 * 100 = 91.25 */</span>
+
+
+                <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">Punkte > MaxPunkte</span><span class="andererCode">) {</span> <span class="comment">/* Der Check um zu überprüfen, ob die Punktzahl valide ist oder nicht (Beispiel: 91.25 < 100) */</span>
+                    <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">""</span><span class="andererCode">);</span>
+                    <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Ungültige Eingabe!"</span><span class="andererCode">);</span>
+                    <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Maximal Punktzahl darf nicht größer als die erreichte Punktzahl sein."</span><span class="andererCode">);</span>
+                  
+                    <span class="andererCode">} </span><span class="keyword">else</span> <span class="andererCode">{</span>
+                    <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">""</span><span class="andererCode">);</span>
+                    <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 95</span><span class="andererCode">) {</span> <span class="comment">/* Der vergleich zwischen Endprozent und der benötigten Prozentzahl für die Notenfindung */</span>
+                      <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 15 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist sehr gut."</span><span class="andererCode">);</span>
+                      <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen entsprechen den Anforderungen in besonderem Masse."</span><span class="andererCode">);</span>
+                    <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">EndProzent >= 90</span><span class="andererCode">) {</span>  <span class="comment">/* 91.25 > 90 && 91.25 < 95.  Das "&&" steht für "und" */</span>
+                      <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Sie haben 14 Punkte erreicht und "</span> <span class="andererCode">+ EndProzent + </span><span class="string">"% erreicht. Ihre Note ist sehr gut."</span><span class="andererCode">);</span> <span class="comment">/* Ausgabe */</span>
+                      <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Die Leistungen entsprechen den Anforderungen in besonderem Masse."</span><span class="andererCode">);</span> <span class="comment">/* Ausgabe */</span>
+                    <span class="andererCode">} </span><span class="keyword">else</span> <span class="keyword">if</span> <span class="andererCode">(EndProzent >= 85) { 
+                        ...  <span class="comment">/* Weitere Notenüberprüfungen. In unserem Beispiel aber nicht Notwendig. */</span>
+                        }</span>
+                  <span class="andererCode">} </span><span class="comment">// end of if-else</span>
+                <span class="andererCode">} </span><span class="comment">// end of main</span>
+            </code></pre>
+        </div>
+
+
+        <section class="vorherige-naechste">
+            <a href="Bahnreise.html">
+                <article>
+                    <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
+                </article>
+            </a>
+            <a href="Millionaere.html">
+                <article>
+                    <h4>Nächste Aufgabe  <i class="fa-regular fa-circle-right fa-xl"></i></h4>
+                </article>
+            </a>
+        </section>
+
+    </main>
+    <script>
+        function cleanCode(text) {
+            return text.replace(/\u00A0/g, ' ').trim();
+        }
+
+        function copyCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            navigator.clipboard.writeText(cleanCode(code));
+            alert('Code wurde in die Zwischenablage kopiert!');
+        }
+        
+        function downloadCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            const blob = new Blob([cleanCode(code)], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'NotenProgramm.java';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>

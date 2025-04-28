@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../seitenstyle.css">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../script.js"></script>
+    <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
+    <!-- GOOGLE ADS --> <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+    
+    <title>MeinInfoKurs | Java Fehlersuche</title>
+</head>
+<body>
+
+    <!-- Navigationsleiste für alle Endgeräte -->
+    <nav>
+        <ul>
+            <li><a href="../../index.html"><i class="fa-solid fa-home fa-lg"></i></a></li>
+            <li class="active"><a href="Java.html"><i class="fa-brands fa-java fa-xl"></i></a></li>
+            <li><a href="fehlersuche.html"><i class="fa-solid fa-bug fa-lg"></i></a></li>
+            <li><a href="docs.html"><i class="fa-solid fa-book"></i></a></li>
+            <li><a href="https://www.w3schools.com/"><i class="fa-solid fa-school"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <h1 id="titlePage">Fehler in Java</h1>
+        <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
+
+        <!-- Das modale Fenster -->
+        <div id="history-modal">
+            <div id="history-content">
+                <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                <h3>ZULETZT ANGESEHEN</h3>
+                <ul id="recent-topics"></ul>
+            </div>
+        </div>
+
+        
+        <h2>Einführung</h2>
+        <p id="Einfuehrung">
+            <strong>Fehler sind scheiße</strong>. <br/>
+            Man schreibt ein Programm und will es ausführen, jedoch bekommt man einen Fehler. Das kennt jeder. <br/>
+            Hier findest du die häufigsten Fehler die dir passieren können und wie du sie behebst!
+
+        </p>
+        <h2 class="Schritte">1. Syntaxfehler</h2>
+        <p>
+            Syntaxfehler entstehen, wenn der Quellcode nicht den Regeln der Java-Syntax entspricht. Diese Fehler werden vom Compiler erkannt und verhindern die erfolgreiche Kompilierung des Programms.
+            Beispiele für Syntaxfehler:</p>
+            <div class="code-container" style="margin-top: 10px;margin-bottom: 10px !important;">
+                <pre><code> 
+                    System.out.println("Hello World") <span class="comment">  // Fehler:  <p class="antwort comment" onclick="revealAnswer(event)">Fehlendes Semikolon</p></span>
+                </code></pre>
+            </div>
+            <div class="code-container" style="margin-bottom: 10px !important;">
+                <pre><code> 
+                    public class Test {
+                        public static void main(String[] args) {
+                            System.out.println("Hallo Welt");  <span class="comment">  // Fehler:  <p class="antwort comment" onclick="revealAnswer(event)">Fehlende schließende Klammer</p></span>
+                </code></pre>
+            </div>
+            <div class="code-container" style="margin-bottom: 10px !important;">
+                <pre><code> 
+                    int zahl = 5;
+                    System.out.println(zahl2); <span class="comment">  // Fehler:  <p class="antwort comment" onclick="revealAnswer(event)">zahl2 ist nicht definiert</p></span>
+                </code></pre>
+            </div>
+
+
+
+        <h2 class="Schritte">2. Kompilierungsfehler</h2>
+        <p>
+            Kompilierungsfehler treten auf, wenn der Quellcode syntaktisch korrekt ist, aber Probleme bei der Code-Übersetzung auftreten. Diese Fehler verhindern ebenfalls die erfolgreiche Kompilierung.
+            Beispiel für Kompilierungsfehler:</p>
+            <div class="code-container" style="margin-top: 10px;margin-bottom: 10px !important;">
+                <pre><code> 
+                    int zahl = "fünf"; <span class="comment">  // Fehler:  <p class="antwort comment" onclick="revealAnswer(event)">String kann nicht einem int-Wert zugewiesen werden</p></span>
+                </code></pre>
+            </div>
+
+
+
+        <h2 class="Schritte">3. Laufzeitfehler (Runtime Errors)</h2>
+        <p>
+            Laufzeitfehler treten während der Programmausführung auf. Das Programm wird erfolgreich kompiliert, aber es kommt während der Laufzeit zu unerwarteten Fehlern, die das Programm abstürzen lassen.
+            Beispiel für Laufzeitfehler:</p>
+            <div class="code-container" style="margin-top: 10px;margin-bottom: 10px !important;">
+                <pre><code> 
+                    int division = 10/0; <span class="comment">  // Fehler:  <p class="antwort comment" onclick="revealAnswer(event)">Division durch 0 nicht möglich.</p></span>
+                </code></pre>
+            </div>
+
+
+        <h2 class="Schritte">4. Logische Fehler</h2>
+        <p>
+            Laufzeitfehler treten während der Programmausführung auf. Das Programm wird erfolgreich kompiliert, aber es kommt während der Laufzeit zu unerwarteten Fehlern, die das Programm abstürzen lassen.
+            Beispiel für Laufzeitfehler:</p>
+            <div class="code-container" style="margin-top: 10px;margin-bottom: 10px !important;">
+                <pre><code> 
+                    int addition = 5 - 3; <span class="comment">  // Fehler:  <p class="antwort comment" onclick="revealAnswer(event)">Sollte eine Addition sein (5 + 3)</p></span>
+                </code></pre>
+            </div>
+
+
+        
+        <h2 class="Schritte">5. Illegale Zeichen</h2>
+        <p style="margin-bottom: 35px;">
+            Falls du den Fehler eines Illegalen Zeichen (Illegal character) erhalten solltest liegt dies wahrscheinlich daran, dass du von irgendwo den Code kopiert und in deinem Editor eingefügt hast.<br/>
+            Es kann sogar sein, dass der Fehler eines Illegalen Zeichen beim kopieren meines Codes, zustande kommt. Wenn das passiert, wirst du all den Code aus deinem Editor löschen und manuell wieder eintippen müssen.
+            Illegale Zeichen sind Zeichen die der Editor nicht kennt. Es gibt auch unsichtbare Zeichen, also nicht wundern, wenn der Editor sagt in Zeile 4 ist ein Fehler, obwohl Zeile 4 leer ist.
+        </p>
+    </main>
+    <script>
+        function revealAnswer(event) {
+            event.target.classList.add('anzeigen');
+        }
+    </script>
+</body>
+</html>

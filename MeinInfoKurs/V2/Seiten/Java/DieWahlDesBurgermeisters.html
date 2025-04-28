@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../seitenstyle.css">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../script.js"></script>
+    <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+    <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
+    <!-- GOOGLE ADS --> <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+    
+    <title>MeinInfoKurs | Buergermeisterwahl.java</title>
+</head>
+<body>
+
+    <!-- Navigationsleiste Monitore -->
+    <nav>
+        <ul>
+            <li><a href="../../index.html"><i class="fa-solid fa-home fa-lg"></i></a></li>
+            <li class="active"><a href="Java.html"><i class="fa-brands fa-java fa-xl"></i></a></li>
+            <li><a href="fehlersuche.html"><i class="fa-solid fa-bug fa-lg"></i></a></li>
+            <li><a href="docs.html"><i class="fa-solid fa-book"></i></a></li>
+            <li><a href="https://www.w3schools.com/"><i class="fa-solid fa-school"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <div id="nav-title-verifystatus">
+            <h1 id="titlePage">Die Wahl des Bürgermeisters</h1>
+            <i class="fa-solid fa-square-check fa-xl verifiziert" title="Code fehlerfrei." id="code-status-display"></i>
+        </div>
+        <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
+
+        <!-- Das modale Fenster -->
+        <div id="history-modal">
+            <div id="history-content">
+                <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                <h3>ZULETZT ANGESEHEN</h3>
+                <ul id="recent-topics"></ul>
+            </div>
+        </div>
+
+        
+        <p>
+            Die Aufgabe der heutigen Stunde ist <strong>Die Wahl des Bürgermeisters!</strong> Das Programm der Bürgermeisterwahl ist ein recht einfach gehaltenes Programm, durch welches wir einen guten Einblick in EVA Programme erhalten. EVA steht für<span class="TastenKombination">Eingabe - Verarbeitung - Ausgabe</span> 
+            <br/>Die Aufgabenstellung lautet:
+        </p>
+        <p class="Aufgabenstellung">
+            Es sind Bürgermeisterwahlen in der Hauptstadt System. Ein guter Start für unsere Reise nach Java. Der König von Java hat abstimmen lassen, wer das Bürgermeisteramt der Hauptstadt System übernimmt.  
+            Zur Wahl standen Bill Makes, Mark Tuckerberg, Larry Rage. 
+            Der König war des Rechnens müde und hat ein Programm in Auftrag gegeben, das ihm die prozentualen Werte zur Verkündung des Ergebnisses auf zwei Nachkommastellen berechnet. 
+            Leider ist der Programmierer an einem Kaffeeschock vor Beendigung seiner Arbeit gestorben und der ganze Kaffee ist über den Laptop gelaufen, aber es wurde glücklicherweise ein Zettel beim Programmierer gefunden.  
+        </p>
+        <h2 id="Lösungsprozess">Lösungsprozess der Aufgabe:</h2>
+        <div class="code-container">
+            <div class="toolbar">
+                <span><i class="fa-solid fa-code"></i>  Java</span>
+                <div class="buttons">
+                    <button class="button" onclick="copyCode()">Kopieren</button>
+                    <button class="button" onclick="downloadCode()">Herunterladen</button>
+                </div>
+            </div>
+            <div class="container">
+                <button class="show-button" onclick="revealContent()">Code Anzeigen</button>
+                <pre class="blurDivCLASS" id="blurDivID"><code id="codeBlock">
+                <span class="comment">
+                /**
+                *
+                * Das fertige Java Programm "Buergermeisterwahl.java"
+                *
+                * @version 1.0 vom 25.02.2024
+                * @MeinInfoKurs.github.io
+                */</span>
+    
+                <span class="keyword">public class</span> <span class="class-name">Buergermeisterwahl</span> {
+  
+                    <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+                        <span class="type">int</span> Stimmen1=0, Stimmen2=0, Stimmen3=0;
+                        <span class="type">double</span>  Summe, Anteil1, Anteil2, Anteil3;
+                      
+                        Stimmen1 = InOut.readInt("Stimmen Billy Makes: ");
+                        Stimmen2 = InOut.readInt("Stimmen Mark Tuckerberg: ");
+                        Stimmen3 = InOut.readInt("Stimmen Larry Rage: ");
+                    
+                        Summe = Stimmen1 + Stimmen2 + Stimmen3;
+                        Anteil1 = Stimmen1 / Summe * 100;
+                        Anteil2 = Stimmen2 / Summe * 100;
+                        Anteil3 = 100 - Anteil1 - Anteil2;
+                    
+                        System.out.println(<span class="string">""</span>);
+                        System.out.println(<span class="string">"Anteil Billy Makes: "</span> + InOut.format2(Anteil1) + <span class="string">" %"</span>);
+                        System.out.println(<span class="string">"Anteil Mark Tuckerberg: "</span> + InOut.format2(Anteil2) + <span class="string">" %"</span>);
+                        System.out.println(<span class="string">"Anteil Larry Rage: "</span> + InOut.format2(Anteil3) + <span class="string">" %"</span>);
+                    
+                    } <span class="comment">// end of main</span>
+                    
+                  } <span class="comment">// end of class Buergermeisterwahl</span>
+            </code></pre>
+        </div>
+        </div>
+        <p>
+            In der Aufgabenstellung wird gefordert, dass wir folgende Funktionen in unseren Code implementieren: <br/><br/>
+            
+            <ol class="SchritteListe">
+                <li>Tippe das Programm (siehe OneNote) ab</li>
+                <li>Führe das Programm aus</li>
+                <li>Beseitige ggf. Fehler</li>
+                <li>Überlege, welche Fehler bei der Eingabe des Stimmzettels passieren können</li>
+            </ol>
+        </p>
+        <h3 class="Schritte">Ausführen und Fehler finden</h3>
+        <p>
+            Der oben gegebene Code sollte bereits fehlerfrei sein. Das heißt, dass der Code problemlos ausgeführt werden kann. Falls du doch eine Fehlermeldung erhalten solltest überprüfe diesen bitte. <br/>
+            Es gibt verschiedene Arten von Fehlern in Java: <br/>
+            Es kann sein, dass der Name unter welchem du die Datei gespeichert hast und die Namensdeklaration im <span class="TastenKombination">public class NameDerDatei {</span> nicht übereinstimmen. Es kann aber auch sein, dass du in deinem Code Umlaute verwendest <span class="TastenKombination">( Ä; Ö; Ü; ß )</span>. Auch diese können eine korrekte Ausgabe verhindern.
+            Wenn du meinen oben angegebenen Code kopiert hast und in deinen Editor eingefügt hast, kann es selten zur Fehlermeldung "Illegaler Charakter" kommen. Falls dies bei dir der Fall sein sollte, wirst du meinen Code wieder aus deiner Console löschen und manuell abtippen müssen.
+            Falls ein anderer Fehler vorhanden ist und du Ihn nicht finden kannst, bitte Mitschüler oder deine Lehrkraft um hilfe. 
+        </p><br/>
+        <h3 class="Schritte">Fehler bei der Konsoleneingabe</h3>
+        <p>
+            In Java gibt es verschiedene Variablentypen (auch Datentypen genannt), welche jeweils eine Funktion haben.
+            Integer können nur Zahlen ohne Nachkommastellen aufnehmen.<br/>
+            Doubles können Zahlen mit und ohne Nachkommastellen aufnehmen.<br/>
+            Boolean können nur <span class="TastenKombination">True</span> oder <span class="TastenKombination">False</span> <br/>
+            Strings können nur Zeichenketten aufnehmen. 
+            etc... <br/><br/>
+            Wenn wir nun einem Variablentypen etwas zuweisen, was es nicht aufnehmen kann, erhalten wir einen Laufzeitfehler <span class="TastenKombination">Run-Time-Error</span>
+        </p>
+
+        <section class="vorherige-naechste">
+            <a href="MeinNameIst.html" >
+                <article>
+                    <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
+                </article>
+            </a>
+            <a href="bewaehrungsfragen.html">
+                <article>
+                    <h4>Nächste Aufgabe  <i class="fa-regular fa-circle-right fa-xl"></i></h4>
+                </article>
+            </a>
+        </section>
+
+    </main>
+    <script>
+        function cleanCode(text) {
+            return text.replace(/\u00A0/g, ' ').trim();
+        }
+
+        function copyCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            navigator.clipboard.writeText(cleanCode(code));
+            alert('Code copied to clipboard!');
+        }
+        
+        function downloadCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            const blob = new Blob([cleanCode(code)], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'Buergermeisterwahl.java';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>
