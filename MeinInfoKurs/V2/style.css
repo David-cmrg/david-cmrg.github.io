@@ -386,6 +386,9 @@ canvas {
         font-size: 0.8rem;
         padding: 0.4rem 0.8rem;
     }
+   main{
+        padding: 10vh 0vh !important;
+    }
 }
 @media (max-width: 480px) {
     #model-title {
