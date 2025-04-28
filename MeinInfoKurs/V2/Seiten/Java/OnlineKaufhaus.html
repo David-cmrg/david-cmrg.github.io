@@ -12,9 +12,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         
-    <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
-    <!-- GOOGLE ADS --> <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+    <meta name="google-adsense-account" content="ca-pub-3759386961615231">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script>
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script>
+    <script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
     
     <title>MeinInfoKurs | OnlineKaufhaus.java</title>
 </head>
@@ -42,30 +43,130 @@
         <!-- Das modale Fenster -->
         <div id="history-modal">
             <div id="history-content">
-                <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                <span id="close-history">×</span>
                 <h3>ZULETZT ANGESEHEN</h3>
                 <ul id="recent-topics"></ul>
             </div>
         </div>
-
-        <p>
-            Bitte warten Sie auf erstellung der Seite. (Zuletzt aktualisiert: 08.03.2025)
+        
+        <p>Die Aufgabe der heutigen Stunde ist <strong>das OnlineKaufhaus!</strong> Wir werden ein Programm erstellen, das die Kosten eines Einkaufs berechnet,
+             wobei Rabatte und Versandkosten berücksichtigt werden. Schauen wir uns die Aufgabe genauer an, um ein vollfunktionsfähiges Programm zu erstellen. 
+             Die Aufgabenstellung lautet:
         </p>
-
-
+        <p class="Aufgabenstellung">
+            Beim Online-Kaufhaus zahlt man bei einem Auftragswert unter 100 € die Versandpauschale 3,50 €. Ab 100 € entfällt die Pauschale, 
+            zudem erhält man dann einen Rabatt von 2 %. Nach Eingabe des Auftragswertes soll der Gesamtbetrag ermittelt werden.
+        </p>
+        <h2 id="Lösungsprozess">Lösungsprozess der Aufgabe:</h2>
+        <div class="code-container">
+            <div class="toolbar">
+                <span><i class="fa-solid fa-code"></i> Java</span>
+                <div class="buttons">
+                    <button class="button" onclick="copyCode()">Kopieren</button>
+                    <button class="button" onclick="downloadCode()">Herunterladen</button>
+                </div>
+            </div>
+            <div class="container">
+                <button class="show-button" onclick="revealContent()">Code Anzeigen</button>
+                <pre class="blurDivCLASS" id="blurDivID">
+                    <code id="codeBlock">
+                        /<span class="comment">**
+                         *
+                         * Beschreibung
+                         *
+                         * @version 1.0 vom 28.04.2025
+                         * @MeinInfoKurs.github.io
+                         */</span>
+                        <span class="keyword">public</span> <span class="keyword">class</span> <span class="class-name">OnlineKaufhaus</span> <span class="andererCode">{</span>
+                          
+                          <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">void</span> <span class="method">main</span>(<span class="type">String</span><span class="andererCode">[]</span> <span class="andererCode">args</span>) <span class="andererCode">{</span>
+                        
+                            <span class="type">double</span> <span class="andererCode">Versandpauschale;</span>
+                            <span class="type">double</span> <span class="andererCode">Rabatt;</span>
+                            <span class="type">double</span> <span class="andererCode">Preis;</span>
+                            <span class="type">double</span> <span class="andererCode">Auftragswert;</span>
+                            <span class="type">String</span> <span class="andererCode">Ausgabe;</span>
+                        
+                            <span class="andererCode">Versandpauschale = 3.5;</span>
+                            <span class="andererCode">Rabatt = 0.02;</span>
+                            <span class="andererCode">Preis = 100;</span>
+                            <span class="andererCode">Auftragswert = </span><span class="class-name">InOut</span>.<span class="method">readDouble</span>(<span class="string">"Wie hoch belaufen sich ihre gesamten Einkaufskosten?: "</span><span class="andererCode">);</span>
+                            <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">Auftragswert > Preis</span><span class="andererCode">) {</span>
+                              <span class="andererCode">Rabatt = Auftragswert * Rabatt;</span>
+                              <span class="andererCode">Auftragswert = Auftragswert - Rabatt;</span>
+                              <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Ihr Gesamtpreis (nach Abzug von Rabatt) beträgt: "</span> <span class="andererCode">+ Auftragswert</span><span class="andererCode">);</span>
+                            <span class="andererCode">} </span><span class="keyword">else</span> <span class="andererCode">{</span>
+                              <span class="andererCode">Auftragswert = Auftragswert + Versandpauschale;</span>
+                              <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Ihr Gesamtpreis beträgt: "</span> <span class="andererCode">+ Auftragswert</span><span class="andererCode">);</span>
+                            <span class="andererCode">}</span>
+                           
+                          <span class="andererCode">} </span><span class="comment">// end of main</span>
+                        
+                        <span class="andererCode">} </span><span class="comment">// end of class OnlineKaufhaus</span>
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <p>
+            In der Aufgabenstellung wird gefordert, dass wir folgende Funktionen in unseren Code implementieren: <br/><br/>
+            <ol class="SchritteListe">
+                <li>Nutzereingabe der gesamten Einkaufskosten</li>
+                <li>Berechnung des Rabatts oder Hinzufügen der Versandpauschale</li>
+                <li>Ausgabe des finalen Gesamtpreises</li>
+            </ol>
+        </p>
+        <h3 class="Schritte">Nutzereingabe der Einkaufskosten</h3>
+        <p>
+            Um die Einkaufskosten vom Nutzer zu erhalten, deklarieren wir zunächst Variablen für die relevanten Werte. Da die Kosten, Rabatte und Versandpauschalen Nachkommastellen haben können, verwenden wir den Datentyp <a href="docs.html#Datentyp">double</a>. Wir setzen außerdem feste Werte für die Versandpauschale (3,50 €), den Rabatt (2%) und die Preisgrenze (100 €). Die Eingabe der Einkaufskosten erfolgt über eine Eingabemethode, die den eingegebenen Wert speichert. Der Code dafür sieht so aus:
+        </p><br/>
+        <div class="code-container">
+            <pre><code>
+                <span class="type">double</span> <span class="andererCode">Versandpauschale;</span>
+                <span class="type">double</span> <span class="andererCode">Rabatt;</span>
+                <span class="type">double</span> <span class="andererCode">Preis;</span>
+                <span class="type">double</span> <span class="andererCode">Auftragswert;</span>
+                <span class="type">String</span> <span class="andererCode">Ausgabe;</span>
+                
+                <span class="andererCode">Versandpauschale = 3.5;</span>
+                <span class="andererCode">Rabatt = 0.02;</span>
+                <span class="andererCode">Preis = 100;</span>
+                <span class="andererCode">Auftragswert = </span><span class="class-name">InOut</span>.<span class="method">readDouble</span>(<span class="string">"Wie hoch belaufen sich ihre gesamten Einkaufskosten?: "</span><span class="andererCode">);</span>
+            </code></pre>
+        </div>
+        <h3 class="Schritte">Berechnung des Gesamtpreises</h3>
+        <p>
+            Nachdem wir die Einkaufskosten haben, prüfen wir, ob der Auftragswert über der Preisgrenze von 100 € liegt. Dafür verwenden wir eine <a href="docs.html#IfElse">if-else</a>-Bedingung. Wenn der Auftragswert größer als 100 € ist, berechnen wir den Rabatt (2% des Auftragswerts) und ziehen ihn vom Auftragswert ab. Liegt der Auftragswert darunter, addieren wir die Versandpauschale von 3,50 €. Anschließend geben wir den finalen Gesamtpreis aus. Hier ist ein Beispiel, wie das funktioniert:
+        </p><br/>
+        <div class="code-container">
+            <pre><code>
+                <span class="comment">/* Beispiel: Der Nutzer gibt 150 € als Auftragswert ein */</span>
+                <span class="andererCode">Versandpauschale = 3.5;</span>
+                <span class="andererCode">Rabatt = 0.02;</span>
+                <span class="andererCode">Preis = 100;</span>
+                <span class="andererCode">Auftragswert = 150;</span> <span class="comment">/* Nutzereingabe */</span>
+                
+                <span class="keyword">if</span> <span class="andererCode">(</span><span class="andererCode">Auftragswert > Preis</span><span class="andererCode">) {</span> <span class="comment">/* Prüft, ob 150 > 100 */</span>
+                  <span class="andererCode">Rabatt = Auftragswert * Rabatt;</span> <span class="comment">/* Rabatt = 150 * 0.02 = 3 */</span>
+                  <span class="andererCode">Auftragswert = Auftragswert - Rabatt;</span> <span class="comment">/* Auftragswert = 150 - 3 = 147 */</span>
+                  <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Ihr Gesamtpreis (nach Abzug von Rabatt) beträgt: "</span> <span class="andererCode">+ Auftragswert</span><span class="andererCode">);</span> <span class="comment">/* Ausgabe: 147 */</span>
+                <span class="andererCode">} </span><span class="keyword">else</span> <span class="andererCode">{</span>
+                  <span class="andererCode">Auftragswert = Auftragswert + Versandpauschale;</span> <span class="comment">/* Wird hier nicht ausgeführt */</span>
+                  <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Ihr Gesamtpreis beträgt: "</span> <span class="andererCode">+ Auftragswert</span><span class="andererCode">);</span>
+                <span class="andererCode">}</span>
+            </code></pre>
+        </div>
         <section class="vorherige-naechste">
-            <a href="Marklerfirma.html" class="error-bg">
+            <a href="Marklerfirma.html">
                 <article>
-                    <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
+                    <h4><i class="fa-regular fa-circle-left fa-xl"></i> Vorherige Aufgabe</h4>
                 </article>
             </a>
             <a href="ParkscheinAutomat.html">
                 <article>
-                    <h4>Nächste Aufgabe  <i class="fa-regular fa-circle-right fa-xl"></i></h4>
+                    <h4>Nächste Aufgabe <i class="fa-regular fa-circle-right fa-xl"></i></h4>
                 </article>
             </a>
         </section>
-
     </main>
     <script>
         function cleanCode(text) {
@@ -75,7 +176,7 @@
         function copyCode() {
             const code = document.getElementById('codeBlock').innerText;
             navigator.clipboard.writeText(cleanCode(code));
-            alert('Code copied to clipboard!');
+            alert('Code wurde in die Zwischenablage kopiert!');
         }
         
         function downloadCode() {
