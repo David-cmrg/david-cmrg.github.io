@@ -387,7 +387,7 @@ canvas {
         padding: 0.4rem 0.8rem;
     }
    main{
-        padding: 14vh 0vh !important;
+        padding: 14vh 1.2vh !important;
     }
 }
 @media (max-width: 480px) {
