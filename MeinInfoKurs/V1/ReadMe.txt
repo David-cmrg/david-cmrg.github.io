@@ -1,0 +1,1 @@
+This is just incase a User changes the V2 to V1 in the url. He will be redirected to the DE, which is the V1
