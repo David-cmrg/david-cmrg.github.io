@@ -195,7 +195,7 @@
         </p>
 
         <section class="vorherige-naechste">
-            <a href="OnlineKaufhaus.html" class="error-bg">
+            <a href="OnlineKaufhaus.html">
                 <article>
                     <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
                 </article>
@@ -216,7 +216,7 @@
         function copyCode() {
             const code = document.getElementById('codeBlock').innerText;
             navigator.clipboard.writeText(cleanCode(code));
-            alert('Code copied to clipboard!');
+            alert('Code wurde in die Zwischenablage kopiert!');
         }
         
         function downloadCode() {
