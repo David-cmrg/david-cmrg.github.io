@@ -16,7 +16,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
     <!-- GOOGLE ADS --> <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
     
-    <title>MeinInfoKurs | Variablenrätsel.java</title>
+    <title>MeinInfoKurs | Ratespiel.java</title>
 </head>
 <body>
 
@@ -48,20 +48,114 @@
             </div>
         </div>
 
-        <p>
-            Bitte warten Sie auf erstellung der Seite. (Zuletzt aktualisiert: 16.03.2025)
+        <p>Die Aufgabe der heutigen Stunde ist <strong>das Ratespiel!</strong> Es handelt sich um eine einfache
+            Konsolenanwendung, die eine Zufallszahl generiert und den Nutzer auffordert, diese zu erraten. Das Programm
+            folgt dem <a href="docs.html#Eingabe-Ausgabe">EVA-Prinzip (Eingabe, Verarbeitung, Ausgabe)</a> und zählt die
+            Versuche des Nutzers. Die Aufgabenstellung lautet: </p>
+        <p class="Aufgabenstellung">
+            In dieser Form ist das Ratespiel etwas langweilig. Besser wird es, wenn man in der Schleife ausgibt, ob die
+            geratene Zahl kleiner oder größer als die gesuchte Zahl ist.
+            Ergänze eine entsprechende Fallunterscheidung. Durch intelligentes Fragen kann man jetzt viel schneller die
+            Zahl erraten, auch wenn du den Zahlbereich von 10 auf 100 vergrößerst.
         </p>
 
-
+        <h2 id="Lösungsprozess">Lösungsprozess der Aufgabe:</h2>
+        <div class="code-container">
+            <div class="toolbar">
+                <span><i class="fa-solid fa-code"></i> Java</span>
+                <div class="buttons">
+                    <button class="button" onclick="copyCode()">Kopieren</button>
+                    <button class="button" onclick="downloadCode()">Herunterladen</button>
+                </div>
+            </div>
+            <div class="container">
+                <button class="show-button" onclick="revealContent()">Code Anzeigen</button>
+                <pre class="blurDivCLASS" id="blurDivID">
+                    <code id="codeBlock">
+                        <span class="comment">/**
+                         *
+                         * Das fertige Ratespiel Programm
+                         *
+                         * @version 1.0 vom 04.06.2025
+                         * @MeinInfoKurs.github.io
+                         */</span>
+                        <span class="keyword">public</span> <span class="keyword">class</span> <span class="class-name">RateSpiel</span> <span class="andererCode">{</span>
+                          <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">void</span> <span class="method">main</span>(<span class="type">String</span><span class="andererCode">[] args</span>) <span class="andererCode">{</span>
+                            <span class="type">int</span> <span class="andererCode">GesuchteZahl = (<span class="type">int</span>) (Math.random() * 10);</span> <span class="comment">// Zufallszahl zwischen 0 und 9</span>
+                            <span class="type">int</span> <span class="andererCode">GerateneZahl = -1;</span> <span class="comment">// Initialwert, um Schleife zu starten</span>
+                            <span class="type">int</span> <span class="andererCode">Rateversuche = 0;</span> <span class="comment">// Zähler für Versuche</span>
+                            <span class="keyword">while</span> <span class="andererCode">(GerateneZahl != GesuchteZahl) {</span>
+                              <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">""</span><span class="andererCode">);</span>
+                              <span class="andererCode">GerateneZahl = </span><span class="class-name">InOut</span>.<span class="method">readInt</span>(<span class="string">"Gib eine Zahl ein: "</span><span class="andererCode">);</span>
+                              <span class="andererCode">Rateversuche++;</span> <span class="comment">// Zählt die Versuche hoch</span>
+                            <span class="andererCode">}</span>
+                            <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Du hast die gesuchte Zahl "</span> <span class="andererCode">+ GesuchteZahl + </span><span class="string">" nach "</span> <span class="andererCode">+ Rateversuche + </span><span class="string">" Versuchen gefunden."</span><span class="andererCode">);</span>
+                          <span class="andererCode">} </span><span class="comment">// end of main</span>
+                        <span class="andererCode">} </span><span class="comment">// end of class RateSpiel</span>
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <p>
+            In der Aufgabenstellung wird gefordert, dass wir folgende Funktionen in unseren Code implementieren:
+            <br /><br />
+        <ol class="SchritteListe">
+            <li>Generierung einer Zufallszahl</li>
+            <li>Nutzereingabe einer Zahl für jeden Rateversuch</li>
+            <li>Zählung der Versuche, bis die gesuchte Zahl gefunden wird</li>
+            <li>Ausgabe der gesuchten Zahl und die Anzahl der Versuche</li>
+        </ol>
+        </p>
+        <h3 class="Schritte">Nutzereingabe und Zufallszahl</h3>
+        <p>
+            Das Programm generiert eine Zufallszahl zwischen 0 und 9 mit <span class="TastenKombination">Math.random() *
+                10</span>, die in der INT Variable <span class="TastenKombination">GesuchteZahl</span> gespeichert wird.
+            Die Variable GerateneZahl wird auf -1 initialisiert, um sicherzustellen, dass die Schleife startet, da -1
+            nicht im Bereich der Zufallszahl liegt. Das heißt egal welche (positive) Zahl generiert wird, dass Programm
+            wird weiterhin funktionieren, da die -1 <a href="docs.html#bedingungen"> != (Ungleich)</a> der generierten
+            positiven Zahl ist. Die Eingaben erfolgen über die Methode <a
+                href="docs.html#Eingabe-Ausgabe">InOut.readInt</a>, die den Nutzer in der Konsole nach einer Zahl fragt.
+            Der Code dafür sieht so aus:
+        </p><br />
+        <div class="code-container">
+            <pre><code>
+                <span class="type">int</span> <span class="andererCode">GesuchteZahl = (<span class="type">int</span>) (Math.random() * 10);</span> <span class="comment">// Zufallszahl zwischen 0 und 9</span>
+                <span class="type">int</span> <span class="andererCode">GerateneZahl = -1;</span> <span class="comment">// -1 Damit die initialisierung der Variable das Spiel nicht versehentlich beendet</span>
+                <span class="type">int</span> <span class="andererCode">Rateversuche = 0;</span> <span class="comment">// Zähler für Versuche</span>
+                <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">""</span><span class="andererCode">);</span>
+                <span class="andererCode">GerateneZahl = </span><span class="class-name">InOut</span>.<span class="method">readInt</span>(<span class="string">"Gib eine Zahl ein: "</span><span class="andererCode">);</span> <span class="comment">// Die Eingabe des Nutzers wird unter der Variable "GerateneZahl" gespeichert</span>
+            </code></pre>
+        </div>
+        <h3 class="Schritte">Verarbeitung und Zählung der Versuche</h3>
+        <p>
+            Eine <a href="docs.html#Schleifen">While-Schleife</a> vergleicht die geratene Zahl mit der gesuchten Zahl.
+            Solange sie nicht übereinstimmen, wird der Nutzer aufgefordert eine neue Zahl einzugeben und die Variable
+            "Rateversuche" wird inkrementiert. Sobald die richtige Zahl geraten wird, endet die Schleife, und die
+            Ergebnisse werden ausgegeben. Hier ist ein Beispiel, wie die Verarbeitung funktioniert:
+        </p><br />
+        <div class="code-container">
+            <pre><code>
+                <span class="comment">/* Beispiel: GesuchteZahl = 7 */</span>
+                <span class="type">int</span> <span class="andererCode">GesuchteZahl = 7;</span>
+                <span class="type">int</span> <span class="andererCode">GerateneZahl = -1;</span>
+                <span class="type">int</span> <span class="andererCode">Rateversuche = 0;</span>
+                <span class="keyword">while</span> <span class="andererCode">(GerateneZahl != GesuchteZahl) {</span>
+                  <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">""</span><span class="andererCode">);</span>
+                  <span class="andererCode">GerateneZahl = </span><span class="class-name">InOut</span>.<span class="method">readInt</span>(<span class="string">"Gib eine Zahl ein: "</span><span class="andererCode">);</span> <span class="comment">/* Nutzereingaben: 3, 8, 7 */</span>
+                  <span class="andererCode">Rateversuche++;</span> <span class="comment">/* Rateversuche: 1, 2, 3 */</span>
+                <span class="andererCode">}</span>
+                <span class="class-name">System</span>.<span class="andererCode">out.</span><span class="method">println</span>(<span class="string">"Du hast die gesuchte Zahl 7 nach 3 Versuchen gefunden."</span><span class="andererCode">);</span>
+            </code></pre>
+        </div>
         <section class="vorherige-naechste">
             <a href="Millionaere.html">
                 <article>
-                    <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
+                    <h4><i class="fa-regular fa-circle-left fa-xl"></i> Vorherige Aufgabe</h4>
                 </article>
             </a>
             <a href="StiftUndPapier.html">
                 <article>
-                    <h4>Nächste Aufgabe  <i class="fa-regular fa-circle-right fa-xl"></i></h4>
+                    <h4>Nächste Aufgabe <i class="fa-regular fa-circle-right fa-xl"></i></h4>
                 </article>
             </a>
         </section>
@@ -75,9 +169,9 @@
         function copyCode() {
             const code = document.getElementById('codeBlock').innerText;
             navigator.clipboard.writeText(cleanCode(code));
-            alert('Code copied to clipboard!');
+            alert('Code wurde in die Zwischenablage kopiert!');
         }
-        
+
         function downloadCode() {
             const code = document.getElementById('codeBlock').innerText;
             const blob = new Blob([cleanCode(code)], { type: 'text/plain' });
@@ -90,4 +184,5 @@
         }
     </script>
 </body>
+
 </html>
