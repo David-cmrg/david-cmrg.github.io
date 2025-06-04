@@ -176,12 +176,12 @@
         </div>
 
         <section class="vorherige-naechste">
-            <a href="Variablenraetsel.html" class="error-bg">
+            <a href="Variablenraetsel.html">
                 <article>
                     <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
                 </article>
             </a>
-            <a href="FibonacciZahlen.html" class="error-bg">
+            <a href="FibonacciZahlen.html">
                 <article>
                     <h4>Nächste Aufgabe  <i class="fa-regular fa-circle-right fa-xl"></i></h4>
                 </article>
@@ -198,7 +198,7 @@
         function copyCode() {
             const code = document.getElementById('codeBlock').innerText;
             navigator.clipboard.writeText(cleanCode(code));
-            alert('Code copied to clipboard!');
+            alert('Code wurde in die Zwischenablage kopiert!');
         }
         
         function downloadCode() {
