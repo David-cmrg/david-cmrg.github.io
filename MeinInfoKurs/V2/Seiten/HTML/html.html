@@ -4,72 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../../../DE/style.css"> <!-- ALTE DATEIEN -->
-    <script src="../../../DE/script.js"></script>        <!-- ALTE DATEIEN -->
-    <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../seitenstyle.css">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../script.js"></script>
+    
+    <title>MeinInfoKurs | Web Development</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a587449559.js" crossorigin="anonymous"></script>
+        
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css">
+      
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        
-    <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
-    
-    <title>MeinInfoKurs | Web Development</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <!-- Navigationsleiste Smartphones -->
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <!-- Navigationsleiste Monitore -->
-    <nav id="sidebar">
-        <h2 class="titleMain" style="margin:2.3vh 0vh 15vh 0vh;">MeinInfoKurs</h2>
+    <!-- Navigationsleiste für alle Endgeräte -->
+    <nav>
         <ul>
-            <li><i class="fa-solid fa-house"></i>  <a href="../../index.html">Startseite</a></li>
-            <li><i class="fa-brands fa-html5 fa-xl"></i>  <a href="#">HTML</a></li>
-            <!-- <li><i class="fa-solid fa-bug fa-lg"></i>  <a href="fehlersuche.html">Fehler Suche</a></li>
-            <li><i class="fa-solid fa-book"></i>  <a href="docs.html">Dokumentation</a></li> -->
-            <li><i class="fa-solid fa-school"></i>  <a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
-            <li><i class="fa-solid fa-circle-info fa-lg"></i>  <a href="../support.html">Support</a></li>
+            <li><a href="../../index.html"><i class="fa-solid fa-home fa-lg"></i></a></li>
+            <li class="active"><a href="#"><i class="fa-brands fa-html5 fa-xl"></i></i></a></li>
+            <li><a href="fehlersuche.html"><i class="fa-solid fa-bug fa-lg"></i></a></li>
+            <li><a href="docs.html"><i class="fa-solid fa-book"></i></a></li>
+            <li><a href="https://www.w3schools.com/"><i class="fa-solid fa-school"></i></a></li>
         </ul>
-        <!-- From Uiverse.io by satyamchaudharydev --> 
-        <label class="switch">
-            <input type="checkbox">
-            <span class="slider"></span>
-        </label>
     </nav>
 
     <!-- Main Content Area -->
     <main>
-        <h1 id="titlePage">Die Welt des Web-Developments</h1>
-        <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
+        <h1 id="AufgabenTitel">Die Welt des Web-Developments</h1>
 
-        <!-- Das modale Fenster -->
-        <div id="history-modal">
-            <div id="history-content">
-                <span id="close-history">&times;</span> <!-- Schließen-Button -->
-                <h3>ZULETZT ANGESEHEN</h3>
-                <ul id="recent-topics"></ul>
-            </div>
-        </div>
-        
-        <h2>Einführung</h2>
-        <p id="Einfuehrung">
-            <strong>Willkommen in der Welt des Web Developments!</strong><br/>
-            Bereite dich vor auf eine spannende Reise voller Herausforderungen und Entdeckungen, an deren Ende eine wertvolle Belohnung auf dich wartet: die Fähigkeit, atemberaubende Websites und 
-            leistungsstarke Webanwendungen zu erstellen! Nein, es geht nicht um eine Expedition ins Unbekannte – sondern um das Erlernen der Kunst des Web Developments.
-            Vielleicht hast du dir schon einmal vorgestellt, deine eigene Website zu bauen oder ein beeindruckendes Online-Projekt zu realisieren. Nun, diese Reise wird dich genau dorthin führen! Und 
-            keine Sorge – ich bin dein Reisebegleiter, während du die Grundbausteine des modernen Internets kennenlernst.
-            Doch bevor wir loslegen, lohnt sich ein Blick zurück: Die Geschichte des Web Developments begann in den frühen 90ern, als Sir Tim Berners-Lee das World Wide Web erfand. Anfangs bestand das 
-            Web nur aus einfachen HTML-Dokumenten, aber mit der Zeit entwickelten sich Technologien wie CSS für das Design, JavaScript für interaktive Elemente und leistungsstarke Backend-Sprachen wie 
-            PHP, Python und Node.js.
-            Heute gibt es unzählige Frameworks und Tools, die die Arbeit erleichtern – von React und Vue für moderne Benutzeroberflächen bis hin zu Django und Express für performante Backends. Das Web 
-            ist allgegenwärtig, und mit den richtigen Fähigkeiten kannst du es mitgestalten!
-            Nun, genug der Theorie – lass uns die ersten Schritte in die faszinierende Welt des Web Developments wagen.<br/>
-            <strong>Viel Spaß beim Lernen und eine erfolgreiche Reise ins Web Development! 🚀</strong>
-        </p>
         <h2>Hyper Text Markup Language (HTML)</h2>
         <div class="AufgabenMain">
             <section class="aufgaben-section">
@@ -241,7 +214,7 @@
                     </article>
                 </a>
             </section>
-        </div>   
+        </div>
     </main>
 </body>
 </html>
