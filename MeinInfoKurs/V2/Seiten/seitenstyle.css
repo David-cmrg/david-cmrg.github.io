@@ -459,7 +459,6 @@ h1{font-size: normal;}
 */
 
 .error-bg {
-    background-color: var(--error-background-color) !important;
     filter: brightness(65%) grayscale(40%);
 
     i, h4{
