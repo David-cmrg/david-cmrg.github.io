@@ -16,6 +16,25 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
     <!-- GOOGLE ADS --> <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
     
+    
+    <meta name="description" content="Brauchst du hilfe beim Variablenrätsel? Hier findest du Ansatz, Erklärung und Lösung!">
+    <meta name="keywords" content="MeinInfoKurs, MeinInfoKurs V2, meininfokurs, Variablenrätsel">
+    <meta name="author" content="David Gomez Camargo">
+    
+    <meta property="og:title" content="MeinInfoKurs V2 – Variablenrätsel">
+    <meta property="og:description" content="Brauchst du hilfe beim Variablenrätsel? Hier findest du Ansatz, Erklärung und Lösung!">
+    <meta property="og:image" content="https://david-cmrg.github.io/MeinInfoKurs/V2/Logo.png">
+    <meta property="og:url" content="https://david-cmrg.github.io/MeinInfoKurs/V2/">
+    <meta property="og:type" content="website">
+    
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://david-cmrg.github.io/MeinInfoKurs/V2/">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../../Logo.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../../../Logo.png">
+
+
     <title>MeinInfoKurs | Variablenrätsel.java</title>
 </head>
 <body>
@@ -27,7 +46,7 @@
             <li class="active"><a href="Java.html"><i class="fa-brands fa-java fa-xl"></i></a></li>
             <li><a href="fehlersuche.html"><i class="fa-solid fa-bug fa-lg"></i></a></li>
             <li><a href="docs.html"><i class="fa-solid fa-book"></i></a></li>
-            <li><a href="https://www.w3schools.com/"><i class="fa-solid fa-school"></i></a></li>
+            <li><a href="https://www.w3schools.com/" target="_blank"><i class="fa-solid fa-school"></i></a></li>
         </ul>
     </nav>
 
@@ -49,9 +68,52 @@
         </div>
 
         <p>
-            Bitte warten Sie auf erstellung der Seite. (Zuletzt aktualisiert: 08.03.2025)
-        </p>
+            Wertzuweisungen sind wichtig um Daten abzuspeichern. Das Variablenrätsel soll sicherstellen, dass du Wertzuweisungen richtig verstanden hast.
+            Damit du für das Rätsel gut gerüstet bist, gibt es vor dem Rätsel eine kurze Beschreibung der Zuweisungen:
+        </p><br/>
+        <div id="TextFeld" style="margin-left: 2%;">
+            <span>Der Verarbeitungsteil des Programms Handykosten besteht aus drei</span> <p class="antwort comment" onclick="revealAnswer(event)"> Wertzuweisungen </p>.
+            <span>Eine Wertzuweisungs sorgt dafür, dass</span> <p class="antwort comment" onclick="revealAnswer(event)"> eine Variable einen Wert erhält </p>,
+            <span>beziehungsweise das der bisherige Wert</span> <p class="antwort comment" onclick="revealAnswer(event)"> geändert </p> wird.
+            <span>Bei der Wertzuweisung</span> <span class="Tastenkombination">KostenGesamt = KostenSMS + KostenMMS;</span> <span>wird also zunächst die <p class="antwort comment" onclick="revealAnswer(event)"> Summe </p> berechnet und dann der Wert in der Variable <p class="antwort comment" onclick="revealAnswer(event)"> KostenGesamt </p> gespeichert.</span>
+        </div>
 
+        <br/><br/>
+        <p>
+            Der allgemeine Aufbau einer Wertzuweisung lässt sich als Syntaxdiagramm wie folgt darstellen:
+        </p><br/>
+        <center><img src="bilder/Wertzuweisung-Syntax.png"></center><br/><br/>
+
+        <div style="margin-bottom: 8%">
+            <span>
+                Eine Wertzuweisung fängt zwar mit der Variable an, die einen neuen Wert erhalten soll, aber wenn der Computer eine 
+                Wertzuweisung erhalten soll, rechnet er erst den 
+                <a href="https://www.bing.com/search?qs=UT&pq=arithmetischer+ausdruck&sk=CSYN1LT1&sc=3-23&pglt=427&PC=U523&q=arithmetischer+ausdruck+informatik&FORM=ANNTA1&ucpdpc=UCPD&adppc=EDGEDBB#:~:text=About%2036%2C500%20results-,Ein%20arithmetischer%20Ausdruck%20darf%20Zahlen%2C%20%C3%B6ffnende%20und%20schlie%C3%9Fende%20Klammern%20(%20%5B%20%7B%7D%5D)%2C%20die%20Symbole%20f%C3%BCr%20die%20vier%20Grundrechenarten%20%2B%20%E2%88%92%20*%20/%20und%20das%20Potenzieren%20%5E%2C%20die%20Namen%20der%20Konstanten%20PI%20und%20E%20und%20Standardfunktionen%20(mit%20Argumenten%20in%20Klammern)%20enthalten.,-Arithmetischer%20Ausdruck%20%2D%20tm" target="_blank">arithmetischen Ausdruck</a> 
+                aus und speichert erst dann das Ergebnis in der Variable.
+                Der Ausdruck wird also von <p class="antwort comment" onclick="revealAnswer(event)"> rechts </p> nach <p class="antwort comment" onclick="revealAnswer(event)"> links </p> ausgewertet.
+            </span>
+        </div>
+
+        <p>Die Aufgabe der heutigen Stunde ist <strong>das Variablenrätsel!</strong> Dazu schauen wir uns mal die Aufgabe genauer an und versuchen durch reine Mathematik die Ausgaben des Programmes zu ermitteln.
+            Die Aufgabenstellung lautet:
+          </p>
+          <p class="Aufgabenstellung">
+            Bestimme welchen Wert die Variablen nach den einzelnen Schritten ab Zeile 13 haben. <br/>
+            Erstelle nach Lösung dein eigenes Variablenrätsel!
+          </p>
+
+          <img src="bilder/Variablenraetsel.png" style="border-radius:8px; position:relative; left:50% !important; transform: translate(-50%, -30%); margin-top: 7%; width: 35%; min-width: 45svh; height: auto;">
+        
+
+            <div style="position:relative; left:50% !important; transform: translate(-55%, -0%); margin-bottom: 10px !important; text-align: left; width: 50%">
+                <span style="color: gray !important; text-decoration: underline;">Zeile 13:</span> Summe = <span style="color: #6a9955 !important">undefiniert</span> und Produkt = <span style="color: #6a9955 !important">undefiniert</span>  <br/>
+                <span style="color: gray !important; text-decoration: underline;">Zeile 14:</span> Summe = <span style="color: #6a9955 !important">"2"</span> und Produkt = <span style="color: #6a9955 !important">undefiniert</span> <br/><br/>
+                <span style="color: gray !important; text-decoration: underline;">Zeile 15:</span> Summe = <p class="antwort comment" onclick="revealAnswer(event)">"3"</p> und Produkt = <p class="antwort comment" onclick="revealAnswer(event)">undefiniert</p> <br/>
+                <span style="color: gray !important; text-decoration: underline;">Zeile 16:</span> Summe = <p class="antwort comment" onclick="revealAnswer(event)">"3"</p> und Produkt = <p class="antwort comment" onclick="revealAnswer(event)">"3"</p> <br/>
+                <span style="color: gray !important; text-decoration: underline;">Zeile 17:</span> Summe = <p class="antwort comment" onclick="revealAnswer(event)">"3"</p> und Produkt = <p class="antwort comment" onclick="revealAnswer(event)">"9"</p>  <br/>
+                <span style="color: gray !important; text-decoration: underline;">Zeile 18:</span> Summe = <p class="antwort comment" onclick="revealAnswer(event)">"3"</p> und Produkt = <p class="antwort comment" onclick="revealAnswer(event)">"27"</p>  <br/> 
+                <span style="color: gray !important; text-decoration: underline;">Zeile 19:</span> Summe = <p class="antwort comment" onclick="revealAnswer(event)">"30"</p> und Produkt = <p class="antwort comment" onclick="revealAnswer(event)">"27"</p>  <br/>
+            </div>
 
         <section class="vorherige-naechste">
             <a href="Immobilienpreis.html">
@@ -75,7 +137,7 @@
         function copyCode() {
             const code = document.getElementById('codeBlock').innerText;
             navigator.clipboard.writeText(cleanCode(code));
-            alert('Code copied to clipboard!');
+            alert('Code wurde in die Zwischenablage kopiert!');
         }
         
         function downloadCode() {
