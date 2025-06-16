@@ -1,8 +1,57 @@
 @media (min-width: 1024px) { 
-    *{
-        font-size: 1.2rem; 
+    *{font-size: 1.1rem;}
+}
+@media (max-width: 806px) { 
+    *{font-size: 1rem;}
+}
+@media (max-width: 700px) { 
+    *{font-size: 0.95rem;}
+}
+@media (max-width: 699px) { 
+    #projects{
+        display: flex !important;
+        flex-direction: column !important;
+        width: 90% !important;
+        border-radius: 0 !important;
+    }
+    #projects a{
+        width: 90% !important;
+        transition: ease-in-out 0.3s;
+    }
+
+
+    #projects a:first-child{
+        border-radius: 12px 12px 0 0; /* top left -> top right -> bottom right -> bottom left */
+    }
+    #projects a:last-child{
+        border-radius: 0 0 12px 12px; /* top left -> top right -> bottom right -> bottom left */
+    }
+
+
+
+    #projects a:hover{
+        width: 100% !important;
+        transition: ease-in-out 0.3s;
+    }
+
+    .section:hover {
+        width: 100% !important; /* hovered one grows */
+        filter: grayscale(0%) !important;
+      }
+      .section:not(:hover) {
+        flex-grow: 0 !important; /* not hover shrinks */
+      }
+}
+
+@media (max-width: 450px) { 
+    .parent{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important;
     }
 }
+
+
 
 @media (max-height: 500px) { 
    #startscreen-dynamic div{
@@ -11,7 +60,7 @@
     left: 50%;
     transform: translate(-50%, -50%); 
     border-radius: 10px;
-}
+    }
 }
 
 
@@ -119,9 +168,34 @@ nav ul li.active i {
 
 
 
-.intro{width: 100%;}
-.intro p:first-child{font-size: 2.5rem; text-align: center; margin:0}
-.intro p:nth-child(2){font-size: 1.3rem; text-align: center; margin:0}
+/* Styles for the Text on the main splash screen */
+.intro{
+    width: 100%;
+    color: var(--text-color) !important;
+    text-align: center;
+
+    position: absolute;
+    z-index: 5; /* So that Z-Index works, we need position != static */
+
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* For proper translate: absolute */
+}
+
+
+.intro p:first-child{font-size: 2.5rem;}
+.intro p:nth-child(2){font-size: 1.3rem;}
+.intro p:nth-child(3){font-size: 0.8rem;}
+
+.intro p::not(:nth-child(3)){
+    text-align: center; 
+    margin:0 !important;
+}
+.intro p:nth-child(3){margin-top: 1rem;}
+
+
+
+
 
 
 
@@ -131,6 +205,29 @@ nav ul li.active i {
     gap: 10px;
     margin: 0rem 1.5rem;
 }
+
+@media (max-width: 806px) { 
+    .What-I-Do div:nth-child(2){
+        flex-direction: column !important;
+    }
+    .What-I-Do div img{
+        margin: 1.5% auto 0.5% auto !important;
+    }
+    .What-I-Do article:first-child{
+        margin: 0 auto !important;
+        width: 65% !important;
+        padding: 1.2rem !important;
+    }
+ }
+
+@media (max-width: 475px) { 
+    .What-I-Do div img{
+        margin: 1.5% auto 0.5% auto !important;
+        min-width: 55%;
+    }
+}
+
+
 .What-I-Do div hr {
     flex-grow: 1; 
     border: none;
@@ -140,14 +237,14 @@ nav ul li.active i {
 }
 
 .What-I-Do article{
-    margin: 1rem auto 2rem auto;
+    margin: 0% 2%;
     width: 80%;
     padding: 1.5rem;
     background-color: var(--nav-color);
     border-radius: 13px;
     flex-grow: 1; 
     max-width: 850px; 
-    min-width: 300px; 
+    min-width: 250px; 
 }
 
 #startscreen-dynamic {
@@ -169,25 +266,6 @@ nav ul li.active i {
     z-index: -1; 
 }
 
-.intro {
-    position: relative; 
-    color: var(--text-color);
-    text-align: center;
-    z-index: 1; 
-}
-
-
-
-
-#startscreen-dynamic div{
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    border-radius: 10px;
-}
-
-
 
 /* From Uiverse.io by javierBarroso */ 
 .parent {
@@ -199,8 +277,13 @@ nav ul li.active i {
   }
   
   .child {
-    width: 50px;
-    height: 50px;
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+    min-height: 50px !important;
+    max-width: 50px !important;
+    max-height: 50px !important;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -226,10 +309,13 @@ nav ul li.active i {
     box-shadow: 0px 10px 10px #1e90ff;
   }
   .child-3:hover {
-    box-shadow: 0px 10px 10px #000;
+    box-shadow: 0px 10px 10px #fff;
   }
   .child-4:hover {
     box-shadow: 0px 10px 10px #4267b2;
+  }
+  .child-2:hover {
+    box-shadow: 0px 10px 10px rgb(183, 42, 49);
   }
   
   .button {
@@ -333,4 +419,79 @@ nav ul li.active i {
 
 .dropdown:focus-within .dropdown-content {
     display: block;
+}
+
+
+#projects{
+    display: flex;
+    margin: 0 auto;
+    width: 70%;
+    overflow: hidden;
+    border-radius: 12px;
+    gap: 0px;
+}
+
+
+  .section {
+    width: 25%;
+    min-height: 35vh;
+    flex-grow: 1;
+    flex-basis: 0;
+    transition: flex-grow 0.3s ease;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 !important;
+  }
+
+.section:hover {
+    flex-grow: 3; /* hovered one grows */
+    filter: grayscale(0%) !important;
+  }
+  .section::not(:hover) {
+    flex-grow: -1; /* not hover shrinks */
+  }
+
+  .section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* or contain, depending on the layout */
+    border-radius: 12px;
+  }
+
+
+
+#MeinInfoKurs{
+    background-image: url('img/MeinInfoKurs.PNG') !important;
+    background-size: cover; /* or contain */
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(70%);
+}
+#Linux{
+    background-image: url('img/Kali2.jpg') !important;
+    background-size: cover; /* or contain */
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(65%);
+}
+#Networking{
+    background-image: url('img/Networking.png') !important;
+    background-size: cover; /* or contain */
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(85%);
+}
+  
+
+
+.section h1,h2,h3,h4,h5,h6{
+    position: absolute;
+    left: 50%;
+    top: 78%;
+    transform: translateX(-50%);
+    color: white !important;
 }
