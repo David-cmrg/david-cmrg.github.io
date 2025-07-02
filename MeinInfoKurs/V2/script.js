@@ -172,19 +172,19 @@
             title: "Mein Portfolio",
             content: "Erfahre mehr über mich und meine Arbeit!",
             link: "https://david-cmrg.github.io/AboutDavid/DE/",
-            image: "bilder/David.jpeg"
+            image: "../Bilder/David.jpeg"
           },
           {
             title: "Meine Projekte",
             content: "Sieh dir meinen Code an!",
             link: "https://github.com/David-cmrg",
-            image: "bilder/GitHub.webp"
+            image: "../Bilder/GitHub.webp"
           },
           {
             title: "Bewerte MeinInfoKurs",
             content: "Schreibe eine Bewertung!",
             link: "https://docs.google.com/forms/d/e/1FAIpQLSdIS0osFMUzrgBYM7p84xiIwi_Io9ycmjyyiFF9a-1Ukb_xgw/viewform",
-            image: "bilder/stern.png"
+            image: "../Bilder/stern.png"
           }
         ];
 
