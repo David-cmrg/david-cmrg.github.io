@@ -1,5 +1,5 @@
 @media (min-width: 1024px) { 
-    *{font-size: 1.1rem;}
+    What-I-Do p,a,span,u,article,.section,h1,h2,h3,h4,h5,h6{font-size: 1.1rem;}
 }
 
 @media (min-width: 807px) { 
@@ -7,13 +7,13 @@
 }
 
 @media (max-width: 806px) { 
-    *{font-size: 1rem !important;}
+    What-I-Do p,a,span,u,article,.section,h1,h2,h3,h4,h5,h6{font-size: 1rem !important;}
     .What-I-Do #projects{flex-direction: column !important;}
     .section{width:100% !important;}
 }
 
 @media (max-width: 700px) { 
-    *{font-size: 0.95rem;}
+    What-I-Do p,a,span,u,article,.section,h1,h2,h3,h4,h5,h6{font-size: 0.95rem;}
 }
 
 @media (max-width: 699px) { 
