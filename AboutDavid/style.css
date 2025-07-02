@@ -1,13 +1,21 @@
 @media (min-width: 1024px) { 
     *{font-size: 1.1rem;}
 }
-@media (max-width: 806px) { 
-    *{font-size: 1rem;}
-   .What-I-Do div{flex-direction: column !important;}
+
+@media (min-width: 807px) { 
+    *{font-size: 1rem !important;}
 }
+
+@media (max-width: 806px) { 
+    *{font-size: 1rem !important;}
+    .What-I-Do div{flex-direction: column !important;}
+    .section{width:100% !important;}
+}
+
 @media (max-width: 700px) { 
     *{font-size: 0.95rem;}
 }
+
 @media (max-width: 699px) { 
     #projects{
         display: flex !important;
