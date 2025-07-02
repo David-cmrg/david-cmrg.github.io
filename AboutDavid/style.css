@@ -3,6 +3,7 @@
 }
 @media (max-width: 806px) { 
     *{font-size: 1rem;}
+   .What-I-Do div{flex-direction: column !important;}
 }
 @media (max-width: 700px) { 
     *{font-size: 0.95rem;}
@@ -358,11 +359,12 @@ nav ul li.active i {
 }
 
 .dropbtn {
-    backdrop-filter: blur(30px);
+   backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     background-color: rgba(255, 255, 255, 0.03);
+   
     box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 24px 0px, rgba(255, 255, 255, 0.04) 0px -8px 24px 0px;
     opacity: 1;
-
     color: white;
     padding: 10px 15px;
     font-size: 16px;
