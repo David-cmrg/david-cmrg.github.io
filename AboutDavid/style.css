@@ -8,7 +8,7 @@
 
 @media (max-width: 806px) { 
     *{font-size: 1rem !important;}
-    .What-I-Do div{flex-direction: column !important;}
+    .What-I-Do #projects{flex-direction: column !important;}
     .section{width:100% !important;}
 }
 
@@ -443,6 +443,8 @@ nav ul li.active i {
 
 
   .section {
+     position: relative;
+
     width: 25%;
     min-height: 35vh;
     flex-grow: 1;
