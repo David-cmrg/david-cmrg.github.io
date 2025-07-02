@@ -9,6 +9,7 @@
 @media (max-width: 806px) { 
     What-I-Do p,a,span,u,article,.section,h1,h2,h3,h4,h5,h6{font-size: 1rem !important;}
     .What-I-Do #projects{flex-direction: column !important;}
+    .skills-windows{flex-direction: column !important;}
     .section{width:100% !important;}
 }
 
