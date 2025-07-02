@@ -1,93 +1,289 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="../seitenstyle.css">
-    <link rel="stylesheet" href="../../style.css">
-    <script src="../../script.js"></script>
-    <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        
-    <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script> <!-- GOOGLE ADS -->
-    <!-- GOOGLE ADS --> <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
-        
-    <title>MeinInfoKurs | FahrscheinAutomat.java</title>
-</head>
-<body>
-
-    <!-- Navigationsleiste für alle Endgeräte -->
-    <nav>
-        <ul>
-            <li><a href="../../index.html"><i class="fa-solid fa-home fa-lg"></i></a></li>
-            <li class="active"><a href="Java.html"><i class="fa-brands fa-java fa-xl"></i></a></li>
-            <li><a href="fehlersuche.html"><i class="fa-solid fa-bug fa-lg"></i></a></li>
-            <li><a href="docs.html"><i class="fa-solid fa-book"></i></a></li>
-            <li><a href="https://www.w3schools.com/"><i class="fa-solid fa-school"></i></a></li>
-        </ul>
-    </nav>
-
-    <!-- Main Content Area -->
-    <main>
-        <div id="nav-title-verifystatus">
-            <h1 id="titlePage">Der Fahrscheinautomat</h1>
-            <i class="fa-solid fa-hourglass-half fa-xl nicht-verifiziert" title="Noch nicht verifizierter Code. Es könnte noch Fehler geben!" id="code-status-display"></i>
-        </div>
-        <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
-
-        <!-- Das modale Fenster -->
-        <div id="history-modal">
-            <div id="history-content">
-                <span id="close-history">&times;</span> <!-- Schließen-Button -->
-                <h3>ZULETZT ANGESEHEN</h3>
-                <ul id="recent-topics"></ul>
-            </div>
-        </div>
-
-        <p>
-            Bitte warten Sie auf erstellung der Seite. (Zuletzt aktualisiert: 28.03.2025)
-        </p>
+        <!DOCTYPE html>
+        <html lang="de">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-        <section class="vorherige-naechste">
-            <a href="CodeLuecken.html">
-                <article>
-                    <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
-                </article>
-            </a>
-            <a href="SimulationPopulation.html">
-                <article>
-                    <h4>Nächste Aufgabe  <i class="fa-regular fa-circle-right fa-xl"></i></h4>
-                </article>
-            </a>
-        </section>
+                <meta name="description" content="Schwierigkeiten im Info Kurs? Auf dieser Seite findest du alle Aufgaben inklusive Lösungsweg und Erklärungen!">
+                <meta name="keywords" content="MeinInfoKurs, MeinInfoKurs V2, meininfokurs, Humboldt Schule, Humboldt Schule gymnasium Hessen, Humboldt Schule Gymnasium, Humboldt Schule Informatik, Herr Sauter, Sven Sauter, Herr Kizina, Markus Kizina, Code Lücken, Code Luecken">
+                <meta name="author" content="David Gomez Camargo">
+                
+                <meta property="og:title" content="MeinInfoKurs V2 – Aufgaben mit Lösungen und Erklärungen">
+                <meta property="og:description" content="Schwierigkeiten im Info Kurs? Auf dieser Seite findest du alle Aufgaben inklusive Lösungsweg und Erklärungen!">
+                <meta property="og:image" content="https://david-cmrg.github.io/MeinInfoKurs/V2/Logo.png">
+                <meta property="og:url" content="https://david-cmrg.github.io/MeinInfoKurs/V2/">
+                <meta property="og:type" content="website">
+                
+                <meta name="robots" content="index, follow">
+                <link rel="canonical" href="https://david-cmrg.github.io/MeinInfoKurs/V2/Seiten/Java/Fahrscheinautomat.html">
+                
+                <!-- Favicon -->
+                <link rel="icon" href="../../Logo.ico" type="image/x-icon">
+                <link rel="apple-touch-icon" href="../../Logo.png">
 
-    </main>
-    <script>
-        function cleanCode(text) {
-            return text.replace(/\u00A0/g, ' ').trim();
-        }
+                
+                <!-- Externe Ressourcen -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                
+                <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+                <script src="https://kit.fontawesome.com/a587449559.js" crossorigin="anonymous"></script>
+                <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css">
+                
+                <!-- Schriftart -->
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-        function copyCode() {
-            const code = document.getElementById('codeBlock').innerText;
-            navigator.clipboard.writeText(cleanCode(code));
-            alert('Code wurde in die Zwischenablage kopiert!');
-        }
-        
-        function downloadCode() {
-            const code = document.getElementById('codeBlock').innerText;
-            const blob = new Blob([cleanCode(code)], { type: 'text/plain' });
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = 'FahrscheinAutomat.java';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
-    </script>
-</body>
-</html>
+                <!-- Eigene Styles und Scripts -->
+                <link rel="stylesheet" href="../seitenstyle.css">
+                <link rel="stylesheet" href="../../style.css">
+                <script src="../../script.js"></script>
+                
+                
+                <!-- Werbung -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script>
+                <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script> 
+                <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
+
+                <title>MeinInfoKurs | FahrscheinAutomat</title>
+
+            </head>
+        <body>
+
+            <!-- Navigationsleiste für alle Endgeräte -->
+            <nav>
+                <ul>
+                    <li><a href="../../index.html"><i class="fa-solid fa-home fa-lg"></i></a></li>
+                    <li class="active"><a href="Java.html"><i class="fa-brands fa-java fa-xl"></i></a></li>
+                    <li><a href="fehlersuche.html"><i class="fa-solid fa-bug fa-lg"></i></a></li>
+                    <li><a href="docs.html"><i class="fa-solid fa-book"></i></a></li>
+                    <li><a href="https://www.w3schools.com/"><i class="fa-solid fa-school"></i></a></li>
+                </ul>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main>
+                <div id="nav-title-verifystatus">
+                    <h1 id="titlePage">Der Fahrscheinautomat</h1>
+                    <i class="fa-solid fa-hourglass-half fa-xl nicht-verifiziert" title="Noch nicht verifizierter Code. Es könnte noch Fehler geben!" id="code-status-display"></i>
+                </div>
+                <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
+
+                <!-- Das modale Fenster -->
+                <div id="history-modal">
+                    <div id="history-content">
+                        <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                        <h3>ZULETZT ANGESEHEN</h3>
+                        <ul id="recent-topics"></ul>
+                    </div>
+                </div>
+
+
+                <!-- Custom Ad Modal -->
+                <div id="ad-modal" class="hidden">
+                    <div id="ad-content">
+                        <span id="close-ad" class="disabled">&times;</span>
+                        <div id="ad-timer">Bitte warten Sie <span id="countdown">7</span> Sekunden</div>
+                        <div id="ad-display"></div>
+                    </div>
+                </div>
+  
+
+                <p>Die Aufgabe der heutigen Stunde ist <strong>der Fahrscheinautomat!</strong> Dazu schauen wir uns mal die Aufgabe genauer an und versuchen durch intelligentes Lösen ein vollfunktionsfähiges Programm zu erstellen. <br/>
+                    Die Aufgabenstellung lautet:
+                </p>
+                <p class="Aufgabenstellung">
+                    Ein Fahrscheinautomat gibt Wechselgeld in Münzen zurück und soll dabei möglichst wenige Münzen benutzen.
+                    Bei einem Fahrpreis von 13.20$ und einer Eingabe von 20$ gibt er als Wechselgeld drei 2$-Münzen, eine 50 Cent,
+                    eine 20 Cent und eine 10 Cent Münze zurück. Mit dem vorgegebenen Programm, welches du in deinem Heft finden kannst,
+                    kann der Fahrscheinautomat simuliert werden. <br/>
+
+                    Analysiere die Funktionsweise des Programms und vervollständige das Programm.
+                </p>
+                <h2 id="Lösungsprozess">Lösungsprozess der Aufgabe:</h2>
+                <div class="code-container">
+                    <div class="toolbar">
+                        <span><i class="fa-solid fa-code"></i>  Java</span>
+                        <div class="buttons">
+                            <button class="button" onclick="copyCode()">Kopieren</button>
+                            <button class="button" onclick="downloadCode()">Herunterladen</button>
+                        </div>
+                    </div>
+                    <div class="container">
+                    <button class="show-button" onclick="revealContent()">Code Anzeigen</button>
+                    
+                    
+                    <pre class="blurDivCLASS" id="blurDivID"><code id="codeBlock">
+  <span class="comment">/**
+    *
+    * Das fertige Java Programm des Fahrscheinautomats
+    *
+    * @version 1.0 vom 2.07.2025
+    * @MeinInfoKurs.github.io
+    */</span>
+                
+    <span class="keyword">public class</span> <span class="class-name">FahrscheinAutomat</span> {
+        <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+            <span class="type">double</span> Fahrscheinpreis, Gezahlt, Wechselgeld;
+                
+            Fahrscheinpreis = InOut.readDouble(<span class="string">"Fahrscheinpreis: "</span>);
+            Gezahlt = InOut.readDouble(<span class="string">"Gezahlt: "</span>);
+                
+            <span class="keyword">while</span> (Gezahlt < Fahrscheinpreis) {
+                <span class="type">double</span> ZuZahlen = Fahrscheinpreis - Gezahlt;
+                System.out.println(<span class="string">"Noch "</span> + ZuZahlen + <span class="string">" zu zahlen!"</span>);
+                Gezahlt = Gezahlt + InOut.readDouble(<span class="string">"Zahle: "</span>);
+            } <span class="comment">// end of while</span>
+                
+            Wechselgeld = Gezahlt - Fahrscheinpreis;
+                
+            <span class="keyword">if</span> (Wechselgeld > 0) {
+                System.out.println(<span class="string">"Wechselgeld "</span> + InOut.format2(Wechselgeld));
+                System.out.print(<span class="string">"Rückgabe: "</span>);
+            } <span class="comment">// end of if</span>
+                
+                <span class="keyword">while</span> (Wechselgeld >= 2) {
+                    System.out.print(<span class="string">"2 Euro "</span>);
+                    Wechselgeld = Wechselgeld - 2;
+                } <span class="comment">// end of while</span>
+
+
+                <span class="comment">// Am Ende dieses IFs Statements kommt keine schließende Klammer hin. Das ist aus folgenden Gründen:</span>
+                <span class="comment">// 1. Wir überprüfen ob der gezahlte Preis > 0 ist;</span>
+                <span class="comment">// 2. Wir geben die Anzahl des Wechselgeldes aus und "print" (nicht "println") die Rückgabe der Münzen</span>
+                <span class="comment">// 3. Wir müssen jetzt noch die Rückgabe der Münzen ausrechnen</span>
+                <span class="comment">// -> Diese Berechnung muss im IF laufen, weil wenn sie außerhalb wäre, würde sie Konditionslos (also bei jeder ausführung)</span>
+                <span class="comment">//  laufen. Doch wenn der Nutzer passend zahlt, brauchen wir diese Rechnungen garnicht. Also nutzen wir hier ein IF-ELSE</span>
+                <span class="comment">//  So vergleichen wir die Bedingungen und es wird nur der Code ausgeführt, welcher wirklich ausgeführt werden muss</span>
+                
+                <span class="keyword">if</span> (Wechselgeld >= 1) {
+                    System.out.print(<span class="string">"1 Euro "</span>);
+                    Wechselgeld = Wechselgeld - 1;
+                } <span class="comment">// end of if</span>
+                
+                <span class="keyword">if</span> (Wechselgeld >= 0.50) {
+                    System.out.print(<span class="string">"50 Cent "</span>);
+                    Wechselgeld = Wechselgeld - 0.50;
+                } <span class="comment">// end of if</span>
+                
+                <span class="keyword">if</span> (Wechselgeld >= 0.20) {
+                    System.out.print(<span class="string">"20 Cent "</span>);
+                    Wechselgeld = Wechselgeld - 0.20;
+                } <span class="comment">// end of if</span>
+                
+                <span class="keyword">if</span> (Wechselgeld >= 0.10) {
+                    System.out.println(<span class="string">"10 Cent "</span>);
+                    Wechselgeld = Wechselgeld - 0.10;
+                } <span class="comment">// end of if</span>
+                
+                <span class="keyword">if</span> (Wechselgeld >= 0.05) {
+                    System.out.print(<span class="string">"5 Cent "</span>);
+                    Wechselgeld = Wechselgeld - 0.05;
+                } <span class="comment">// end of if</span>
+                
+                <span class="keyword">while</span> (Wechselgeld >= 0.01) {
+                    System.out.print(<span class="string">"2 Cent "</span>);
+                    Wechselgeld = Wechselgeld - 0.02;
+                } <span class="comment">// end of while</span>
+                
+                <span class="keyword">if</span> (Wechselgeld > 0.0) {
+                    System.out.println(<span class="string">"1 Cent"</span>);
+                    Wechselgeld = Wechselgeld - 0.01;
+                } <span class="comment">// end of if</span>
+            } <span class="keyword">else</span> {
+                System.out.println(<span class="string">"Passend bezahlt!"</span>);
+            } <span class="comment">// end of if-else</span>
+        } <span class="comment">// end of main</span>
+    } <span class="comment">// end of class FahrscheinAutomat</span>
+        </code></pre>
+                </div>
+                </div>
+                <p>
+                    In der Aufgabenstellung wird gefordert, dass wir folgende Funktionen in unseren Code implementieren: <br/><br/>
+                    
+                    <ol class="SchritteListe">
+                        <li>Nutzereingabe des Fahrscheinpreises</li>
+                        <li>Nutzereingabe des Gezahlten</li>
+                        <br/>
+                        <li>Ermittlung des Wechselgeldes</li>
+                        <li>Rückgabe in möglichst wenig Münzen</li>
+                        <br/>
+                        <li>Ausgabe des Wechselgeldes</li>
+                    </ol>
+                </p>
+                <h3 class="Schritte">Berechnung des Wechselgeldes</h3>
+                <p>
+                    Da wir bereits wissen wie man eine Eingabe vom Nutzer erfordern kann und eine Konsolenausgabe erstellen können, gehen
+                    wir direkt zur Berechnung über. Als erstes Überprüfen wir ob wir überhaupt Wechselgeld ausgeben müssen indem wir den vom
+                    Nutzer gezahlten Betrag minus den Fahrscheinpreis rechnen. Wenn zu viel Geld gezahlt wurde, muss Wechselgeld gegeben werden.
+                    Wir nutzen also ein IF-ELSE Statement um zu prüfen ob Wechselgeld ausgegeben werden muss oder nicht. Wir nutzen das IF-ELSE um
+                    verschiedene Rückmeldung in der Konsole ausgeben zu können (je nach szenario).
+
+                </p><br/>
+
+
+
+                <div class="code-container">
+                    <pre><code> 
+    Wechselgeld = Gezahlt - Fahrscheinpreis;  <span class="comment">// Beispiel: 08.01$ = 20.00$ - 11.99$ </span>
+                
+    <span class="keyword">if</span> (Wechselgeld > 0) {  <span class="comment">// 08.01 > 00.00 = true -> IF Code wird ausgeführt</span>
+        System.out.println(<span class="string">"Wechselgeld "</span> + InOut.format2(Wechselgeld)); <span class="comment">// Konsolenausgabe</span>
+        System.out.print(<span class="string">"Rückgabe: "</span>); <span class="comment">// Konsolenausgabe</span>
+
+        <span class="comment">// Hier die Berechnung der genauen Münzen</span>
+
+    } <span class="keyword">else</span> { <span class="comment">// 08.01 > 00.00 = true -> ELSE Code wird NICHT ausgeführt</span>
+        System.out.println(<span class="string">"Passend bezahlt!"</span>); <span class="comment">// Keine Konsolenausgabe</span>
+    }
+                    </code></pre>
+                </div>
+
+
+
+                <section class="vorherige-naechste">
+                    <a href="CodeLuecken.html">
+                        <article>
+                            <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
+                        </article>
+                    </a>
+                    <a href="SimulationPopulation.html">
+                        <article>
+                            <h4>Nächste Aufgabe  <i class="fa-regular fa-circle-right fa-xl"></i></h4>
+                        </article>
+                    </a>
+                </section>
+
+            </main>
+            <script>
+                function cleanCode(text) {
+                    return text.replace(/\u00A0/g, ' ').trim();
+                }
+
+                function copyCode() {
+                    const code = document.getElementById('codeBlock').innerText;
+                    navigator.clipboard.writeText(cleanCode(code));
+                    alert('Code wurde in die Zwischenablage kopiert!');
+                }
+                
+                function downloadCode() {
+                    const code = document.getElementById('codeBlock').innerText;
+                    const blob = new Blob([cleanCode(code)], { type: 'text/plain' });
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = 'FahrscheinAutomat.java';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }
+            </script>
+        </body>
+        </html>
