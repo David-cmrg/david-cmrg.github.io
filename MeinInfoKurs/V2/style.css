@@ -172,6 +172,16 @@ li a:hover {
         width: 75% !important;
         max-height: 85% !important;
     }
+   #ad-content img{
+        width: 246px !important;
+        height: 246px !important;
+    }
+   #warning-bar{
+        width: 75% !important;
+        left: 0% !important;
+        transform: translateX(0%) !important;
+        margin: 3% 6% 0% 6%; 
+    }
 }
 
 body {
@@ -506,7 +516,7 @@ canvas {
     max-width: 600px;
 
     max-width: 45%;
-    max-height: 75%;
+    max-height: fit-content;
 
     text-align: center;
     position: relative;
@@ -537,3 +547,27 @@ canvas {
   #countdown{
     font-size: 14px;
   }
+
+
+  #warning-bar{
+    background: rgba(233, 17, 17, 0.28);
+    border-radius: 8px;
+    text-align: center;
+    justify-content: center;
+    min-width: fit-content;
+    z-index: 102;
+    position: fixed;
+    bottom: 35px;
+    padding: 0.8% 1.6%;
+    left: 50%;
+    transform: translateX(-55%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+  #close-warning {
+    font-size: 23px;
+    margin: auto;
+    cursor: pointer;
+}
