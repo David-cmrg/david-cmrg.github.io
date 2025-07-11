@@ -11,11 +11,11 @@
     <meta property="og:title" content="MeinInfoKurs V2 – Aufgaben mit Lösungen und Erklärungen">
     <meta property="og:description" content="Schwierigkeiten im Info Kurs? Auf dieser Seite findest du alle Aufgaben inklusive Lösungsweg und Erklärungen!">
     <meta property="og:image" content="https://david-cmrg.github.io/MeinInfoKurs/V2/Logo.png">
-    <meta property="og:url" content="https://david-cmrg.github.io/MeinInfoKurs/V2/">
+    <meta property="og:url" content="https://david-cmrg.github.io/">
     <meta property="og:type" content="website">
 
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://david-cmrg.github.io/MeinInfoKurs/V2/">
+    <link rel="canonical" href="https://david-cmrg.github.io/">
 
     <!-- Favicon -->
     <link rel="icon" href="../../Logo.ico" type="image/x-icon">
@@ -96,14 +96,175 @@
         </div>
 
         
+<div id="warning-bar">
+            <p>Die Inhalte der Webseite werden bald hinzugefügt! <span id="close-warning">&times;</span></p>
+        </div>
 
-        <p>
-            Bitte warten Sie auf erstellung der Seite. (Zuletzt aktualisiert: 02.07.2025)
+        <p>Die Aufgabe der heutigen Stunde ist <strong>der GUI SMSRechner!</strong><br/><br/>
+            Aber <strong>Vorsicht, diese Aufgabe ist anders als alle bisherigen!</strong> Statt das wir einen Code programmieren, welcher
+            in der Konsole angezeigt wird, programmieren wir jetzt unsere eigene "Konsole". Wenn du dir die 
+            <a href="GUI-Einfuehrung.html">GUI Einführung</a> noch nicht angesehen hast, empfehle ich dir sie durchzulesen, damit du ein groben Überblick über die verschiedenen
+            Unterschiede zwischen GUI und Konsole erhälst. Diese sind sehr wichtig für die Bearbeitung der Aufgabe! <br/>
+            Die Aufgabenstellung lautet:
         </p>
+        <p class="Aufgabenstellung">
+            X
+        </p>
+        <h2 id="Lösungsprozess">Lösungsprozess der Aufgabe:</h2>
+        <div class="code-container">
+            <div class="toolbar">
+                <span><i class="fa-solid fa-code"></i> Java</span>
+                <div class="buttons">
+                    <button class="button" onclick="copyCode()">Kopieren</button>
+                    <button class="button" onclick="downloadCode()">Herunterladen</button>
+                </div>
+            </div>
+            <div class="container">
+                <button class="show-button" onclick="revealContent()">Code Anzeigen</button>
 
+
+                <pre class="blurDivCLASS" id="blurDivID"><code id="codeBlock">
+            <span class="comment">/**
+            *
+            * Das fertige Programm des GUI SMS Rechners
+            *
+            * @version 1.0 vom 11.07.2025
+            * @MeinInfoKurs.github.io
+            */</span>
+
+            <span class="keyword">import</span> <span class="gui">java.awt.*</span>;
+            <span class="keyword">import</span> <span class="gui">java.awt.event.*</span>;
+            <span class="keyword">import</span> <span class="gui">javax.swing.*</span>;
+            <span class="keyword">import</span> <span class="gui">javax.swing.event.*</span>;
+
+            <span class="keyword">public class</span> <span class="class-name">SMSRechner</span> <span class="keyword">extends</span> <span class="gui">JFrame</span> {
+                <span class="comment">// Anfang Attribute</span>
+                <span class="keyword">private</span> <span class="gui">JLabel</span> lSMSRechner = <span class="keyword">new</span> <span class="gui">JLabel</span>();
+                <span class="keyword">private</span> <span class="gui">JNumberField</span> nfAnzahl = <span class="keyword">new</span> <span class="gui">JNumberField</span>();
+                <span class="keyword">private</span> <span class="gui">JNumberField</span> nfKosten = <span class="keyword">new</span> <span class="gui">JNumberField</span>();
+                <span class="keyword">private</span> <span class="gui">JButton</span> bBerechnen = <span class="keyword">new</span> <span class="gui">JButton</span>();
+                <span class="keyword">private</span> <span class="gui">JLabel</span> lAnzahl = <span class="keyword">new</span> <span class="gui">JLabel</span>();
+                <span class="keyword">private</span> <span class="gui">JLabel</span> lKosten = <span class="keyword">new</span> <span class="gui">JLabel</span>();
+                <span class="keyword">private</span> <span class="gui">JLabel</span> lCent = <span class="keyword">new</span> <span class="gui">JLabel</span>();
+                <span class="comment">// Ende Attribute</span>
+
+                <span class="keyword">public</span> <span class="class-name">SMSRechner</span>() {
+                    <span class="comment">// Frame-Initialisierung</span>
+                    <span class="keyword">super</span>();
+                    setDefaultCloseOperation(<span class="gui">WindowConstants</span>.DISPOSE_ON_CLOSE);
+                    <span class="type">int</span> frameWidth = 295;
+                    <span class="type">int</span> frameHeight = 298;
+                    setSize(frameWidth, frameHeight);
+                    <span class="gui">Dimension</span> d = <span class="gui">Toolkit</span>.getDefaultToolkit().getScreenSize();
+                    <span class="type">int</span> x = (d.width - getSize().width) / 2;
+                    <span class="type">int</span> y = (d.height - getSize().height) / 2;
+                    setLocation(x, y);
+                    setTitle(<span class="string">"SMSRechner"</span>);
+                    setResizable(<span class="literal">false</span>);
+                    <span class="gui">Container</span> cp = getContentPane();
+                    cp.setLayout(<span class="literal">null</span>);
+    
+                    <span class="comment">// Anfang Komponenten</span>
+                    lSMSRechner.setBounds(77, 36, 110, 20);
+                    lSMSRechner.setText(<span class="string">"SMS-Rechner"</span>);
+                    lSMSRechner.setFont(<span class="keyword">new</span> <span class="gui">Font</span>(<span class="string">"Arial"</span>, <span class="gui">Font</span>.BOLD, 12));
+                    cp.add(lSMSRechner);
+    
+                    nfAnzahl.setBounds(97, 88, 75, 20);
+                    nfAnzahl.setText(<span class="string">""</span>);
+                    cp.add(nfAnzahl);
+    
+                    nfKosten.setBounds(95, 137, 75, 20);
+                    nfKosten.setText(<span class="string">""</span>);
+                    cp.add(nfKosten);
+    
+                    bBerechnen.setBounds(94, 184, 75, 25);
+                    bBerechnen.setText(<span class="string">"Berechnen"</span>);
+                    bBerechnen.setMargin(<span class="keyword">new</span> <span class="gui">Insets</span>(2, 2, 2, 2));
+                    
+                    bBerechnen.addActionListener(<span class="keyword">new</span> <span class="gui">ActionListener</span>() {
+                        <span class="keyword">public void</span> actionPerformed(<span class="gui">ActionEvent</span> evt) {
+                            bBerechnen_ActionPerformed(evt);
+                        }
+                    });
+                    cp.add(bBerechnen);
+    
+                    lAnzahl.setBounds(25, 90, 54, 20);
+                    lAnzahl.setText(<span class="string">"Anzahl"</span>);
+                    cp.add(lAnzahl);
+    
+                    lKosten.setBounds(20, 138, 54, 20);
+                    lKosten.setText(<span class="string">"Kosten"</span>);
+                    cp.add(lKosten);
+    
+                    lCent.setBounds(182, 136, 62, 20);
+                    lCent.setText(<span class="string">"Cent"</span>);
+                    cp.add(lCent);
+                    <span class="comment">// Ende Komponenten</span>
+
+                    setVisible(<span class="literal">true</span>);
+                } <span class="comment">// end of public SMSRechner</span>
+
+                <span class="comment">// Anfang Methoden</span>
+                <span class="keyword">public static void</span> <span class="method">main</span>(<span class="type">String</span>[] args) {
+                    <span class="keyword">new</span> <span class="class-name">SMSRechner</span>();
+                } <span class="comment">// end of main</span>
+
+                <span class="keyword">public void</span> <span class="method">bBerechnen_ActionPerformed</span>(<span class="gui">ActionEvent</span> evt) {
+                    <span class="comment">// TODO hier Quelltext einfuegen</span>
+                    <span class="type">int</span> FreieSMS = <span class="number">25</span>;
+                    <span class="type">int</span> AnzahlSMS;
+                    <span class="type">double</span> Kosten;
+
+                    AnzahlSMS = nfAnzahl.getInt();
+
+                    <span class="keyword">if</span> (AnzahlSMS &lt;= FreieSMS) {
+                    Kosten = <span class="number">0</span>;
+                    } <span class="keyword">else</span> {
+                    Kosten = (AnzahlSMS - FreieSMS) * <span class="number">5.9</span>;
+                } <span class="comment">// end of if-else</span>
+
+                nfKosten.setDouble(Kosten, <span class="number">2</span>);
+            } <span class="comment">// end of bBerechnen_ActionPerformed</span>
+
+          <span class="comment">// Ende Methoden</span>
+        } <span class="comment">// end of class SMSRechner</span>
+
+
+ 
+</code></pre>
+            </div>
+        </div>
+        <p>
+            In der Aufgabenstellung wird gefordert, dass wir folgende Funktionen in unseren Code implementieren:
+            <br /><br />
+
+        <ol class="SchritteListe">
+            <li>X</li>
+            <li>X</li>
+            <br />
+            <li>X</li>
+            <li>X</li>
+            <br />
+            <li>X</li>
+        </ol>
+        </p>
+        <h3 class="Schritte">X</h3>
+        <p>
+            X
+
+        </p><br />
+
+
+
+        <div class="code-container">
+            <pre><code> 
+                X
+            </code></pre>
+        </div>
 
         <section class="vorherige-naechste">
-            <a href="SimulationPopulation.html">
+            <a href="GUI-Einfuehrung.html">
                 <article>
                     <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
                 </article>
