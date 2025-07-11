@@ -1,7 +1,7 @@
 /* DEVICE DIFFERENTIATION */
-@media (min-width: 1024px) { 
-    *{
-        font-size: 1.1rem; 
+@media (min-width: 1024px) {
+    *:not(.comment):not(.keyword):not(.class-name):not(.method):not(.type):not(.string):not(.gui) {
+        font-size: 1.1rem;
     }
 }
 
