@@ -35,6 +35,7 @@
 .method { color: #dcdcaa !important; }
 .type { color: #4ec9b0 !important; }
 .string { color: #ce9178 !important; }
+.gui {color: #c187e2 !important;}
 code { text-align: left; align-items: start;} /* Ändert nichts -_- */
 .verifiziert { color: #4ec9b0 !important; }
 .nicht-verifiziert { color: #d7ba7d !important;}
