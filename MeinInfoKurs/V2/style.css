@@ -571,3 +571,7 @@ canvas {
     margin: auto;
     cursor: pointer;
 }
+
+.hidden{
+    display: none !important;
+}
