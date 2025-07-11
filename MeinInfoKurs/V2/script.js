@@ -210,9 +210,9 @@
           // Inject ad content
           adDisplay.innerHTML = `
             <h2>${ad.title}</h2>
-            <img src="${ad.image}" alt="${ad.title}" id="ad-img" style="width:276px; height:276px; border-radius:8px; margin: 0 auto; aspect-ratio: 1 / 1 !important;" />
+            <img src="${ad.image}" alt="${ad.title}" id="ad-img" style="width:276px; height:276px; border-radius:8px; margin: 0 auto; aspect-ratio: 1 / 1 !important; min-width: 246px; min-height: 246px; " />
             <p style="margin-top: 10px;">${ad.content}</p>
-            <a href="${ad.link}" target="_blank" style="display:inline-block; margin-top:10px; padding:8px 15px; background-color: rgba(255, 255, 255, 0.06); border-radius:5px; text-decoration:none;">Mehr erfahren</a>
+            <a href="${ad.link}" target="_blank" style="display:inline-block; margin-top: 10px; padding: 8px 15px; background-color: rgba(255, 255, 255, 0.06); border-radius:5px; text-decoration:none;">Mehr erfahren</a>
           `;
 
           // Show modal
@@ -237,6 +237,31 @@
 
 
 
+
+
+
+
+
+
+
+        
+
+
+ document.addEventListener("DOMContentLoaded", function () {
+          let WarningModal = document.getElementById("warning-bar");
+          let WarningCloseButton = document.getElementById("close-warning");
+
+          WarningCloseButton.addEventListener("click", function () {
+              WarningModal.classList.add("hidden");
+          });
+
+          // Fenster schließen, wenn außerhalb des Inhalts geklickt wird
+          window.addEventListener("click", function (event) {
+              if (event.target === WarningModal) {
+                  WarningModal.classList.add("hidden");
+              }
+          });
+      });
 
 
 
