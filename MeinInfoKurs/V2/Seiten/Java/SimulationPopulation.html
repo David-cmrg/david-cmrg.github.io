@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +12,11 @@
     <meta property="og:title" content="MeinInfoKurs V2 – Aufgaben mit Lösungen und Erklärungen">
     <meta property="og:description" content="Schwierigkeiten im Info Kurs? Auf dieser Seite findest du alle Aufgaben inklusive Lösungsweg und Erklärungen!">
     <meta property="og:image" content="https://david-cmrg.github.io/MeinInfoKurs/V2/Logo.png">
-    <meta property="og:url" content="https://david-cmrg.github.io/MeinInfoKurs/V2/">
+    <meta property="og:url" content="https://david-cmrg.github.io/">
     <meta property="og:type" content="website">
 
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://david-cmrg.github.io/MeinInfoKurs/V2/">
+    <link rel="canonical" href="https://david-cmrg.github.io/">
 
     <!-- Favicon -->
     <link rel="icon" href="../../Logo.ico" type="image/x-icon">
@@ -38,7 +39,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
     <!-- Eigene Styles und Scripts -->
     <link rel="stylesheet" href="../seitenstyle.css">
@@ -47,13 +49,16 @@
 
 
     <!-- Werbung -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script>
-    <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script> 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231"
+        crossorigin="anonymous"></script>
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script>
+    <script>(function () { function signalGooglefcPresent() { if (!window.frames['googlefcPresent']) { if (document.body) { const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe); } else { setTimeout(signalGooglefcPresent, 0); } } } signalGooglefcPresent(); })();</script>
     <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
 
-    
+
     <title>MeinInfoKurs | SimulationPopulation.java</title>
 </head>
+
 <body>
 
     <!-- Navigationsleiste für alle Endgeräte -->
@@ -71,7 +76,8 @@
     <main>
         <div id="nav-title-verifystatus">
             <h1 id="titlePage">Die Simulation der Population</h1>
-            <i class="fa-solid fa-hourglass-half fa-xl nicht-verifiziert" title="Noch nicht verifizierter Code. Es könnte noch Fehler geben!" id="code-status-display"></i>
+            <i class="fa-solid fa-hourglass-half fa-xl nicht-verifiziert"
+                title="Noch nicht verifizierter Code. Es könnte noch Fehler geben!" id="code-status-display"></i>
         </div>
         <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
 
@@ -93,21 +99,105 @@
             </div>
         </div>
 
-        
-        <p>
-            Bitte warten Sie auf erstellung der Seite. (Zuletzt aktualisiert: 29.03.2025)
+        <div id="warning-bar">
+            <p>Die Inhalte der Webseite werden bald hinzugefügt! <span id="close-warning">&times;</span></p>
+        </div>
+
+        <p>Die Aufgabe der heutigen Stunde ist <strong>die Simulation der Population!</strong> Dazu schauen wir uns mal
+            die Aufgabe genauer an und versuchen durch intelligentes Lösen ein vollfunktionsfähiges Programm zu
+            erstellen. <br />
+            Die Aufgabenstellung lautet:
         </p>
+        <p class="Aufgabenstellung">
+            X
+        </p>
+        <h2 id="Lösungsprozess">Lösungsprozess der Aufgabe:</h2>
+        <div class="code-container">
+            <div class="toolbar">
+                <span><i class="fa-solid fa-code"></i> Java</span>
+                <div class="buttons">
+                    <button class="button" onclick="copyCode()">Kopieren</button>
+                    <button class="button" onclick="downloadCode()">Herunterladen</button>
+                </div>
+            </div>
+            <div class="container">
+                <button class="show-button" onclick="revealContent()">Code Anzeigen</button>
+
+
+                <pre class="blurDivCLASS" id="blurDivID"><code id="codeBlock">
+            <span class="comment">/**
+            *
+            * Die fertige Aufgabe von der Simulation einer Population
+            *
+            * @version 1.0 vom 12.07.2025
+            * @MeinInfoKurs.github.io
+            */</span>
+
+            <span class="keyword">public class</span> <span class="class-name">PopulationSimulation</span> {
+
+                <span class="keyword">public static void</span> <span class="method">main</span>(String[] args) {
+
+                    <span class="type">double</span> MaximalEinwohner = 350.00;
+                    <span class="type">double</span> Reproduktionsrate = 0.06;
+                    <span class="type">double</span> AktuelleBewohner = 50;
+                    <span class="type">double</span> x = 0;
+                    <span class="type">int</span> Jahre = 0;
+
+                    System.out.println(<span class="string">"Zu beginn der Simulation leben "</span> + AktuelleBewohner + <span class="string">" Fische im Teich."</span>);
+
+                    <span class="keyword">while</span> (AktuelleBewohner < (MaximalEinwohner - 0.01)) {
+                        x = (MaximalEinwohner - AktuelleBewohner) * Reproduktionsrate + AktuelleBewohner;
+                        AktuelleBewohner = x;
+                        System.out.println(<span class="string">"    Aktuelle Bewohnerzahl"</span> + <span class="string">" (Jahr: "</span> + Jahre + <span class="string">"): "</span> + InOut.format2(AktuelleBewohner));
+                        Jahre++;
+                    } <span class="comment">// end of while</span>
+
+                } <span class="comment">// end of main</span>
+
+            } <span class="comment">// end of class PopulationSimulation</span>
+
+ 
+</code></pre>
+            </div>
+        </div>
+        <p>
+            In der Aufgabenstellung wird gefordert, dass wir folgende Funktionen in unseren Code implementieren:
+            <br /><br />
+
+        <ol class="SchritteListe">
+            <li>X</li>
+            <li>X</li>
+            <br />
+            <li>X</li>
+            <li>X</li>
+            <br />
+            <li>X</li>
+        </ol>
+        </p>
+        <h3 class="Schritte">X</h3>
+        <p>
+            X
+
+        </p><br />
+
+
+
+        <div class="code-container">
+            <pre><code> 
+                X
+            </code></pre>
+        </div>
 
 
         <section class="vorherige-naechste">
             <a href="Fahrscheinautomat.html">
                 <article>
-                    <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
+                    <h4><i class="fa-regular fa-circle-left fa-xl"></i> Vorherige Aufgabe</h4>
                 </article>
             </a>
             <a href="GUI-SMSRechner.html">
                 <article>
-                    <h4>Nächste Aufgabe  <i class="fa-regular fa-circle-right fa-xl"></i></h4>
+                    <h4>Nächste Aufgabe <i class="fa-regular fa-circle-right fa-xl"></i></h4>
                 </article>
             </a>
         </section>
@@ -123,7 +213,7 @@
             navigator.clipboard.writeText(cleanCode(code));
             alert('Code wurde in die Zwischenablage kopiert!');
         }
-        
+
         function downloadCode() {
             const code = document.getElementById('codeBlock').innerText;
             const blob = new Blob([cleanCode(code)], { type: 'text/plain' });
@@ -136,4 +226,5 @@
         }
     </script>
 </body>
+
 </html>
