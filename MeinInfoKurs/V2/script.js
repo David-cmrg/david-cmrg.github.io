@@ -189,7 +189,7 @@
           {
             title: "Dein Werbespot!",
             content: "Lade deine Werbung hoch, die hier angezeigt wird!",
-            link: "mailto:david.cmrg@proton.me?subject=Anfrage zur Werbeschaltung auf MeinInfoKurs.github.io&body=Sehr geehrter Herr Gomez C.,%0D%0A%0D%0Aich interessiere mich für die Möglichkeit, Werbung auf Ihrer Website MeinInfoKurs.github.io zu platzieren.%0D%0ABitte lassen Sie mir weitere Informationen zu Konditionen, Formaten und Reichweite zukommen.%0D%0A%0D%0AMit freundlichen Grüßen,%0D%0A[Ihr Name]",
+            link: "mailto:meininfokurs@gmail.com?subject=Anfrage zur Werbeschaltung auf MeinInfoKurs.github.io&body=Sehr geehrter Herr Gomez C.,%0D%0A%0D%0Aich interessiere mich für die Möglichkeit, Werbung auf Ihrer Website MeinInfoKurs.github.io zu platzieren.%0D%0ABitte lassen Sie mir weitere Informationen zu Konditionen, Formaten und Reichweite zukommen.%0D%0A%0D%0AMit freundlichen Grüßen,%0D%0A[Ihr Name]",
             image: "../Bilder/deineWerbung.png"
           }
         ];
