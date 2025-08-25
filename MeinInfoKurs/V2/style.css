@@ -150,6 +150,15 @@ li a:hover {
     li a {
         font-size: 0.9rem;
     }
+
+   
+   .Geschichte {
+        padding-left: 50px !important; 
+        padding-right: 50px !important;
+    } 
+    .Geschichte::before {
+        left: 30px !important;
+    }
 }
 @media (max-width: 480px) {
     nav ul li a {
@@ -595,3 +604,4 @@ canvas {
     background-color: rgba(255, 255, 255, 0.1) !important;
     border-radius: 6px;      
 }
+
