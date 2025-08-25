@@ -587,6 +587,8 @@ h1{font-size: normal;}
     text-decoration: none;
     flex: 1 1 30px; 
     max-width: 250px; 
+
+    margin-bottom: 35px; /* Correct Spacing for thr elements when stackedd */
 }
 
 .vorherige-naechste a:hover{
