@@ -1,6 +1,6 @@
 /* DEVICE DIFFERENTIATION */
 @media (min-width: 1024px) {
-    *:not(.comment):not(.keyword):not(.class-name):not(.method):not(.type):not(.string):not(.gui):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+    *:not(.comment):not(.keyword):not(.class-name):not(.method):not(.type):not(.string):not(.gui):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(#code-status-display) {
         font-size: 1.1rem;
     }
 }
@@ -604,4 +604,5 @@ canvas {
     background-color: rgba(255, 255, 255, 0.1) !important;
     border-radius: 6px;      
 }
+
 
