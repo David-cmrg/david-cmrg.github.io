@@ -56,7 +56,7 @@
     <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
 
 
-    <title>MeinInfoKurs | AutoHaus.java</title>
+    <title>MeinInfoKurs | OOP in Java</title>
 </head>
 
 <body>
@@ -75,9 +75,9 @@
     <!-- Main Content Area -->
     <main>
         <div id="nav-title-verifystatus">
-            <h1 id="titlePage">Das Autohaus</h1>
-            <i class="fa-solid fa-user-graduate fa-xl nicht-verifiziert"
-                title="Leistungskursaufgabe. Noch nicht verifizierter Code. Es könnte noch Fehler geben!" id="code-status-display"></i>
+            <h1 id="titlePage">Objekt Orientierte Programmierung</h1>
+            <i class="fa-solid fa-book fa-2xl verifiziert"
+                title="Grundkursaufgabe. Einstieg in die OOP." id="code-status-display"></i>
         </div>
         <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
 
@@ -103,69 +103,94 @@
             <p>Die Inhalte der Webseite werden bald hinzugefügt! <span id="close-warning">&times;</span></p>
         </div>
 
-        <p>Die Aufgabe der heutigen Stunde ist das <strong>Autohaus</strong> Dazu schauen wir uns mal
-            die Aufgabe genauer an und versuchen durch intelligentes Lösen ein vollfunktionsfähiges Programm zu
-            erstellen. <br />
-            Die Aufgabenstellung lautet:
+        <p>In der heutigen Lektion schauen wir uns die Objekt Orientierte Programmierung an! Das hier ist die Einführung dazu.<br />
         </p>
-        <p class="Aufgabenstellung">
-            X
-        </p>
-        <h2 id="Lösungsprozess">Lösungsprozess der Aufgabe:</h2>
-        <div class="code-container">
-            <div class="toolbar">
-                <span><i class="fa-solid fa-code"></i> Java</span>
-                <div class="buttons">
-                    <button class="button" onclick="copyCode()">Kopieren</button>
-                    <button class="button" onclick="downloadCode()">Herunterladen</button>
+
+        
+        
+        <h2 id="Lösungsprozess">Was ist die OOP?</h2>
+        
+        <div class="trennstrich-zwei-items">
+            <div class="item-selector">
+                <h4 class="selector-active" data-target="Sven">Hr Sauter</h4>
+                <h4 data-target="KI">ChatGPT</h4>
+            </div>
+            <div class="content-container-selector">
+                <div id="Sven" class="content selector-active">
+                    <p>
+                        <strong>Klassen und Objekte</strong><br/>
+
+                        Objektorientierung ist ein ganz natürliches Konzept, das wir täglich benutzen, um mit der Komplexität der Umwelt zurechtzukommen. Wir betrachten die Welt als eine Menge von Objekten, die zueinander in Beziehung stehen und gegebenenfalls miteinander kommunizieren. 
+                        Fährt man z.B. mit dem Auto oder Fahrrad durch die Stadt, so wird man die meisten Verkehrsteilnehmer nur insoweit wahrnehmen, dass man nicht kollidiert oder sich gegenseitig behindert. Man nimmt die Autos/Fahrräder nur als Ganzes - als Objekt - wahr und blendet die Details i.d.R. aus.  
+                        Ein weiteres Bsp. ist die Geschäftsleitung eines Einkaufszentrums. Sie sieht in den einkaufenden Menschen im wesentlichen Kunden. Dabei wird ebenfalls von den Eigenheiten der einzelnen Individuen abstrahiert und auf das Wesentliche reduziert: Ein Kunde ist ein Mensch, der einkauft. Der Begriff Kunde ist daher eine Abstraktion für einen einkaufenden Menschen. In objektorientierter Terminologie spricht man von der Klasse Kunde. 
+                        Die wichtigsten Bestandteile eines objektorientierten Programms sind Objekte und Klassen. Objekte sind Elemente, die in einem Anwendungsbereich von Bedeutung sind. In einem Personalverwaltungsprogramm könnte ein Objekt beispielsweise einen bestimmten Mitarbeiter repräsentieren. In einer Finanzbuchhaltung ist die Bilanz des Monats November ein mögliches Objekt und bei einem Auftragsverwaltungssystem wird man es mit Objekten wie Kunden und Aufträgen zu tun haben. 
+                        Aus der Sicht des Benutzers haben Objekte bestimmte Eigenschaften und stellen Funktionalitäten zur Verfügung. Ein Aufzug beispielsweise besitzt die Funktionalität, auf- und abwärts zu fahren, und eine seiner Eigenschaften ist die augenblickliche Position oder anzufahrende Stockwerke. Aus der Sicht des Programmierers sind Objekte Bestandteile eines Programms, die zusammenarbeiten, um eine gewünschte Funktionalität zur Verfügung zu stellen. 
+                        Eine Klasse entsteht durch die Abstraktion von den konkreten Eigenschaften gleichartiger Objekte und beschreibt die Menge nahezu gleicher Objekte. Als Beispiel können wir uns hier eine Klasse Auto vorstellen, aus der verschiedenste konkrete Autos hervorgehen können. Gleichartige Objekte werden also durch eine gemeinsame Klasse zusammengefasst und beschrieben.  
+                        Die Objekte sind Exemplare dieser gemeinsamen Klasse und werden auch Instanzen (der Klasse) genannt. Die Möglichkeit, von einer Menge ähnlicher Objekte Gemeinsamkeiten zu abstrahieren und in einer Klasse allgemein zu beschreiben, ist ein entscheidendes Merkmal der objektorientierten Programmierung. 
+                        Eine Klasse ist ein Bauplan für gleichartige Objekte. <br/><br/>
+                    
+                        <strong>Attribute und Methoden</strong><br/>
+                        Die gleichberechtigte Betrachtung von Daten und Funktionen innerhalb der objektorientierten Programmierung kommt durch den Aufbau von Objekten zur Geltung. Jedes Objekt besteht aus Attributen (Eigenschaften) und Methoden (Funktionalitäten). 
+                        Die Attribute stellen den Datenbereich eines Objekts dar. In der zugehörigen Klasse wird die Datenstruktur dieses Datenbereichs beschrieben. Als Attribute der Klasse Kunde könnte man beispielsweise Name, Adresse und Bonität verwenden. Objekte dieser Klasse werden dann durch bestimmte Wertbelegung charakterisiert. Diese Wertbelegung legt den Zustand von Objekten fest. 
+                        Methoden stellen die Operationen dar, mit denen Objekte manipuliert werden können. Sie kommen in Form von Prozeduren und Funktionen vor. Über Prozeduren kann der Zustand von Objekten, charakterisiert durch die Attributwerte, geändert werden. Mit Funktionen lässt sich Auskunft über den Zustand von Objekten einholen.<br/><br/> 
+                    
+                        <strong>Modellierung von Autos</strong><br/> 
+                        Nun sollen Autos modelliert werden. Modellieren heißt von den konkreten Details eines Autos zu abstrahieren und eine vereinfachte Beschreibung der Wirklichkeit zu finden. Wie diese Beschreibung aussieht hängt natürlich auch davon ab, zu welchem Zweck modelliert wird. In einer Simulation sollen die Autos im Wesentlichen betankt werden und dann fahren können. Wir reduzieren daher auf die Attribute Kennzeichen, Kilometerstand, Tankvolumen, Kraftstoffverbrauch und Kraftstoffmenge.
+                    </p>    
+                </div>
+
+                <div id="KI" class="content">
+                    <p>
+                        Objektorientierte Programmierung (OOP) ist ein Programmierparadigma, bei dem Programme als Zusammenspiel von Objekten 
+                        gedacht werden — also kleinen Einheiten, die Daten (Eigenschaften/Felder) und Verhalten (Methoden) zusammenhalten; 
+                        das Ziel ist, Programme übersichtlicher, wiederverwendbar und leichter wartbar zu machen. Die vier Kernideen, die man dabei 
+                        immer wieder trifft, sind Kapselung (Daten werden geschützt und nur über definierte Methoden zugänglich gemacht), Abstraktion 
+                        (nur das Wesentliche nach außen zeigen, oft über Interfaces oder abstrakte Klassen), Vererbung (eine Klasse übernimmt 
+                        Eigenschaften/Verhalten einer anderen) und Polymorphie (ein Aufruf kann je nach Objekt unterschiedliche Implementierungen 
+                        ausführen). In Java setzt du OOP praktisch so um, dass du für jede klar abgegrenzte Aufgabe eine Klasse schreibst, Felder 
+                        <code>private</code> machst und über Getter/Setter oder Methoden kontrollierten Zugriff gewährst — das nennt man Kapselung; 
+                        abstrakte Klassen und Interfaces helfen, gemeinsame Verträge zu definieren; Vererbung (<code>extends</code>) und Überschreiben 
+                        von Methoden ermöglichen Wiederverwendung; und durch Polymorphie kannst du z. B. eine Variable vom Typ einer Oberklasse benutzen, 
+                        die zur Laufzeit ein konkretes Unterklassen-Objekt hält und so die passende Methode aufruft. Ein sehr kleines Java-Beispiel 
+                        dazu ist unten eingebettet: <br/><br/>
+                        <div class="code-container">
+                                    <pre><code> 
+                                        // Basisklasse
+                                        class Tier {
+                                            void lautGeben(){ System.out.println("..."); }
+                                        }
+                                        // Subklasse
+                                        class Hund extends Tier {
+                                            @Override
+                                            void lautGeben(){ System.out.println("Wuff"); }
+                                        }
+                        
+                                        // Verwendung
+                                        public class Demo {
+                                            public static void main(String[] args){
+                                                Tier t = new Hund();
+                                                t.lautGeben(); // Ausgabe: Wuff  (Polymorphie)
+                                            }
+                                        }
+                                    </code></pre>
+                                </div>
+                        Wenn du mit einem Java-Editor oder einer IDE aus dem Jahr 2021 arbeitest (typischerweise IntelliJ IDEA, Eclipse oder NetBeans), unterstützen diese Tools das OOP-Arbeiten massiv: sie erzeugen Boilerplate-Code wie Getter/Setter oder Konstruktoren automatisch (in IntelliJ z. B. über <code>Alt+Insert</code> / mac: <code>⌘N</code> im Generate-Menü), was das Kapseln von Feldern einfach macht. IDEs bieten außerdem sichere, projektweite Refactorings (z. B. „Extract Superclass“, „Extract Interface“, „Extract Method“ oder „Pull Members Up“), mit denen du gemeinsame Funktionalität in Superklassen auslagern kannst, ohne manuell viele Dateien zu ändern; solche Refactorings und Inspektions-/Transform-Werkzeuge sind in NetBeans und Eclipse ebenso integriert. Praktisch arbeitest du so: schreibe zuerst kleine, klare Klassen (Single Responsibility), benutze die Generierungsfunktionen der IDE, wenn du Felder kapselst, und nutze Refactorings sobald du Duplikate oder ähnliche Klassen entdeckst; mit der Type-Hierarchy-Ansicht oder „Go to Implementation“ findest du schnell, wo Vererbungen und Implementierungen liegen. Die IDEs enthalten auch Debugger (Haltepunkte, Variableninspektion) und Test-Integration (JUnit, Maven/Gradle), was wichtig ist, um Objektzustand zur Laufzeit zu verstehen und Klassen durch Tests abzusichern. Kurz: OOP ist eine Denkweise, die Java von Haus aus unterstützt; moderne Java-Editoren aus 2021 machen das Leben leichter, indem sie Boilerplate erzeugen, Refactorings sicher ausführen, Navigation/Hierarchie visualisieren und Debugging sowie Testlauf nahtlos integrieren — nutze diese Features, schreibe kleine Klassen mit klarer Verantwortung, kapsle Felder und refactore früh, um sauberen, wiederverwendbaren Code zu erhalten.
+                        </p>
+                        
                 </div>
             </div>
-            <div class="container">
-                <button class="show-button" onclick="revealContent()">Code Anzeigen</button>
-
-
-                <pre class="blurDivCLASS" id="blurDivID"><code id="codeBlock">
-            <span class="comment">X
- 
-</code></pre>
-            </div>
         </div>
-        <p>
-            In der Aufgabenstellung wird gefordert, dass wir folgende Funktionen in unseren Code implementieren:
-            <br /><br />
-
-        <ol class="SchritteListe">
-            <li>X</li>
-            <li>X</li>
-            <br />
-            <li>X</li>
-            <li>X</li>
-            <br />
-            <li>X</li>
-        </ol>
-        </p>
-        <h3 class="Schritte">X</h3>
-        <p>
-            X
-
-        </p><br />
 
 
-
-        <div class="code-container">
-            <pre><code> 
-                X
-            </code></pre>
-        </div>
 
 
         <section class="vorherige-naechste">
-            <a href="Fahrscheinautomat.html">
+            <a href="Aktienanalyse.html">
                 <article>
                     <h4><i class="fa-regular fa-circle-left fa-xl"></i> Vorherige Aufgabe</h4>
                 </article>
             </a>
-            <a href="GUI-Einfuehrung.html">
+            <a href="Autohaus.html">
                 <article>
                     <h4>Nächste Aufgabe <i class="fa-regular fa-circle-right fa-xl"></i></h4>
                 </article>
@@ -189,7 +214,7 @@
             const blob = new Blob([cleanCode(code)], { type: 'text/plain' });
             const a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
-            a.download = 'AutoHaus.java';
+            a.download = 'OOP.java';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
