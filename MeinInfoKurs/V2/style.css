@@ -575,3 +575,23 @@ canvas {
 .hidden{
     display: none !important;
 }
+
+
+
+/* Für wenn ich mal eigene Stories auspacke */
+.Geschichte {
+    position: relative;
+    padding-left: 70px; /* Abstand zwischen Mauer und Text */
+    padding-right: 70px;
+  }
+  
+.Geschichte::before {
+    content: "";
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    width: 4px;           
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px;      
+}
