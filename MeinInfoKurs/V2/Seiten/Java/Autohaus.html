@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Schwierigkeiten im Info Kurs? Auf dieser Seite findest du alle Aufgaben inklusive Lösungsweg und Erklärungen!">
+    <meta name="keywords" content="MeinInfoKurs, MeinInfoKurs V2, meininfokurs, Humboldt Schule, Humboldt Schule gymnasium Hessen, Humboldt Schule Gymnasium, Humboldt Schule Informatik, Herr Sauter, Sven Sauter, Herr Kizina, Markus Kizina, Code Lücken, Code Luecken">
+    <meta name="author" content="David Gomez Camargo">
+
+    <meta property="og:title" content="MeinInfoKurs V2 – Aufgaben mit Lösungen und Erklärungen">
+    <meta property="og:description" content="Schwierigkeiten im Info Kurs? Auf dieser Seite findest du alle Aufgaben inklusive Lösungsweg und Erklärungen!">
+    <meta property="og:image" content="https://david-cmrg.github.io/MeinInfoKurs/V2/Logo.png">
+    <meta property="og:url" content="https://david-cmrg.github.io/MeinInfoKurs/V2/">
+    <meta property="og:type" content="website">
+
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://david-cmrg.github.io/MeinInfoKurs/V2/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../../Logo.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../../Logo.png">
+
+
+    <!-- Externe Ressourcen -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/a587449559.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css">
+
+    <!-- Schriftart -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Eigene Styles und Scripts -->
+    <link rel="stylesheet" href="../seitenstyle.css">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../script.js"></script>
+
+
+    <!-- Werbung -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script>
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script> 
+    <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
+
+    
+    <title>MeinInfoKurs | DasAutoHaus.java</title>
+</head>
+<body>
+
+    <!-- Navigationsleiste Monitore -->
+    <nav>
+        <ul>
+            <li><a href="../../index.html"><i class="fa-solid fa-home fa-lg"></i></a></li>
+            <li class="active"><a href="Java.html"><i class="fa-brands fa-java fa-xl"></i></a></li>
+            <li><a href="fehlersuche.html"><i class="fa-solid fa-bug fa-lg"></i></a></li>
+            <li><a href="docs.html"><i class="fa-solid fa-book"></i></a></li>
+            <li><a href="https://www.w3schools.com/"><i class="fa-solid fa-school"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main style="@media (max-width: 768px) {padding: 14vh 1.2vh 14vh 2.7vh !important;}">
+        
+        <div id="nav-title-verifystatus">
+            <h1 id="titlePage">Das Autohaus (OOP in Java)</h1>
+            <i class="fa-solid fa-user-graduate fa-2xl nicht-verifiziert" title="Grundkursaufgabe! Sie ist noch nicht verifiziert! Es könnte Fehler geben!" id="code-status-display"></i>
+        </div>
+        <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
+
+        <!-- Das modale Fenster -->
+        <div id="history-modal">
+            <div id="history-content">
+                <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                <h3>ZULETZT ANGESEHEN</h3>
+                <ul id="recent-topics"></ul>
+            </div>
+        </div>
+
+        <!-- Custom Ad Modal -->
+        <div id="ad-modal" class="hidden">
+            <div id="ad-content">
+                <span id="close-ad" class="disabled">&times;</span>
+                <div id="ad-timer">Bitte warten Sie <span id="countdown">7</span> Sekunden</div>
+                <div id="ad-display"></div>
+            </div>
+        </div>
+
+        <div id="warning-bar">
+            <p>Fehlende Inhalte werden bald hinzugefügt! <span id="close-warning">&times;</span></p>
+        </div>
+
+
+
+        
+        <ol id="Fragen">        
+            <li><strong>Was ist eine Klasse?</strong></li> 
+            <div><p><i class="fa-solid fa-square-check verifiziert"></i> Antwort:&nbsp;&nbsp;&nbsp;</p><p class="antwort" onclick="revealAnswer(event)">Eine Klasse ist eine Art Vorgabe für Objekte. Sie definiert welche Attribute einem Objekt zugewiesen werden. Hier zum Beispiel die Klasse "Auto"</p></div>
+            
+            
+            <li><strong>Was ist ein Objekt?</strong></li>
+            <div><p><i class="fa-solid fa-square-check verifiziert"></i> Antwort:&nbsp;&nbsp;&nbsp;</p><p class="antwort" onclick="revealAnswer(event)">Ein Objekt ist an seine Klasse gebunden und enthält Werte für alle von der Klasse definierten und im Objekt initialisierten Attribute. Hier zb alle von "Auto" generierten Objekte</p></div>
+            
+            
+            <li><strong>Was ist ein Attribut? </strong></li> 
+            <div><p><i class="fa-solid fa-square-check verifiziert"></i> Antwort:&nbsp;&nbsp;&nbsp;</p><p class="antwort" onclick="revealAnswer(event)">Ein Attribut ist ein Datenwert der das Objekt "charakterisiert". Beispielweise Kennzeichen, Kilometerstand oder TankVolumen </p></div>
+
+
+            <li><strong>Was ist eine Methode (Funktion/Prozedur)?</strong></li> 
+            <div><p><i class="fa-solid fa-square-check verifiziert"></i> Antwort:&nbsp;&nbsp;&nbsp;</p><p class="antwort" onclick="revealAnswer(event)">Eine Funktion wird verwendet wenn ein Wert zurückgegeben werden soll. Integer, String, Double, Void (keinen Wert), und weitere. Beispielsweise rufen wir eine Funktion und erhalten einen Wert zurück. Eine Prozedur hingegen ist Code der ausgeführt wird und keinen Rückgabewert hat. Also eine Aktion ohne Rückgabewert Diese beiden werden in Java als Methode zusammengefasst. Beispielsweise die getX() oder setX() Methoden. Im Falle des AutoHauses ist "getKennzeichen()" eine Methode</p></div>
+
+
+            <li><strong>Wozu dient ein „Konstruktor“? </strong></li> 
+            <div><p><i class="fa-solid fa-square-check verifiziert"></i> Antwort:&nbsp;&nbsp;&nbsp;</p><p class="antwort" onclick="revealAnswer(event)">Der Konstruktor initalisiert die Objekte und Attribute der Klasse. Man kann einen eigenen Konstruktor in den Code programmieren. Falls doch keiner vorhanden ist übernimmt das der Kompiler.</p></div>
+        </ol><br/><br/><br/><br/>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <p>Das war es jetzt aber nicht mit der Aufgabe! Wir müssen ja noch die Zusatzaufgabe bearbeiten! Diese Aufgabe unterscheidet sich sehr zu den Aufgaben die ihr in der E-Phase noch hattet! Auf den ersten Blick sieht es sehr komplex aus, doch wenn man es sich genauer ansieht ist es garnicht so komplex :)</p><br/><br/>
+        
+        <p class="Geschichte">Ich nutze mal die Gelegenheit um euch eine kurze Geschichte zu erzählen. Zur Zeit in welcher ich das gerade schreibe (25.08.2025) bin ich in die Q Phase gekommen. Noch in der ersten Info Stunde dachte ich mir "Was bitte ist das?!". Ich hatte solche Codes zwar schon gesehen und war ein kleines wenig mit Ihnen vertraut, aber ich hatte sie mir noch nie wirklich näher angeschaut. Auch im Unterricht noch nie (Zumindest nicht bei Herr Kizina). Ich hatte die Aufgabe gesehen und wusste erst nicht was ich machen soll. Nicht nur ich, der gesamte Informatik Kurs war am verzweifeln, da die meisten von uns Herr Kizina als Lehrkraft in den vorherigen Jahren hatten. Doch es gab einen Informatik "Crackhead", welcher so gut in Info war das er nicht nur dem GESAMTEN INFORMATIK KURS die Aufgabe erklärt hat, sondern auch noch Fehler in der Aufgabe gefunden hat! Ich habe es inzwischen weitgehend verstanden. Es war nur der Anfang den man braucht um es richtig verstehen zu können! Darum gib nicht direkt auf, wenn du diese Art von Aufgaben siehst! Hier bin ich der "Crackhead" der dir die Aufgabe näher bringen und erklären wird! Darum lass uns zurück zur Aufgabe.
+        </p>
+        
+        
+        <p class="Aufgabenstellung">
+     	  Die Aufgabenstellung lautet: <br/>
+          Ergänzen Sie den Inhalt der Methoden tanken und fahren in der Klasse „Auto“ sinnvoll. 
+        </p>
+        
+        
+        
+        <h2 id="Lösungsprozess">Lösungsprozess der Aufgabe:</h2>
+        <div class="code-container">
+            <div class="toolbar">
+                <span><i class="fa-solid fa-code"></i>  Java</span>
+                <div class="buttons">
+                    <button class="button" onclick="copyCode()">Kopieren</button>
+                    <button class="button" onclick="downloadCode()">Herunterladen</button>
+                </div>
+            </div>
+            <div class="container">
+            <button class="show-button" onclick="revealContent()">Code Anzeigen</button>
+            <pre class="blurDivCLASS" id="blurDivID">
+            <code id="codeBlock">
+                <span class="comment">/**
+                *
+                * Das fertige Java Programm des Autohauses (OOP in Java)
+                *
+                * @version 1.0 vom 25.08.2025
+                * @MeinInfoKurs.github.io
+                */</span>
+    
+                X
+            </code></pre>
+        </div>
+        </div>
+        <p>
+            In der Aufgabenstellung wird gefordert, dass wir folgende Funktionen in unseren Code implementieren: <br/><br/>
+            
+            <ol class="SchritteListe">
+                <li>X</li>
+                <li>X</li>
+                <br/>
+                <li>X</li>
+                <li>X</li>
+                <li>X</li>
+                <br/>
+                <li>X</li>
+                <li>X</li>
+            </ol>
+        </p>
+        <h3 class="Schritte">X</h3>
+        <p>
+            X
+        </p><br/>
+        <div class="code-container">
+            <pre><code> 
+                X
+            </code></pre>
+        </div>
+        <h3 class="Schritte">X</h3>
+        <p>
+            X
+        </p><br/>
+        <div class="code-container">
+            <pre><code> 
+                X
+            </code></pre>
+        </div>
+        
+        
+        
+        
+        
+        
+
+        <section class="vorherige-naechste">
+            <a href="OOP-Einstieg.html" >
+                <article>
+                    <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
+                </article>
+            </a>
+            <a href="Geometrische-Figuren.html.html">
+                <article>
+                    <h4>Nächste Aufgabe  <i class="fa-regular fa-circle-right fa-xl"></i></h4>
+                </article>
+            </a>
+        </section>
+
+
+    </main>
+    <script>
+        function revealAnswer(event) {
+            event.target.classList.add('anzeigen');
+        }
+    </script>
+    
+    
+    <script>
+        function cleanCode(text) {
+            return text.replace(/\u00A0/g, ' ').trim();
+        }
+
+        function copyCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            navigator.clipboard.writeText(cleanCode(code));
+            alert('Code wurde in die Zwischenablage kopiert!');
+        }
+        
+        function downloadCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            const blob = new Blob([cleanCode(code)], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'AutoHaus.java';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html> 
