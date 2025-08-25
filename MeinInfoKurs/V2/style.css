@@ -606,3 +606,41 @@ canvas {
 }
 
 
+
+/* ITEM SELECTOR */
+.item-selector { 
+    display: flex;
+    justify-content: center;       
+    gap: 0vh;                      
+    flex-wrap: wrap;               /* erlaubt Umbruch auf kleinen Bildschirmen */
+    margin-bottom: 2vh;           
+    background-color: rgba(255, 255, 255, 0.1);
+
+    justify-self: center;
+
+    width: fit-content;
+    border-radius: 16px;
+}
+
+.item-selector h4 {
+    cursor: pointer;
+    padding: 0.5em 1em;
+    border-radius: 16px;
+    transition: background-color 0.2s;
+    margin: 0;
+    user-select: none;
+}
+
+.item-selector h4.selector-active {
+    background: rgba(255, 255, 255, 0.0825);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 24px 0px, rgba(255, 255, 255, 0) -20px -20px 24px 0px;
+}
+
+/* CONTENT AREA */
+.content-container-selector .content {
+    display: none;                 
+}
+
+.content-container-selector .content.selector-active {
+    display: block;               
+}
