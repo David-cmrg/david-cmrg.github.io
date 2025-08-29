@@ -164,7 +164,97 @@
                 * @MeinInfoKurs.github.io
                 */</span>
     
-                X
+                /**
+*
+* Beschreibung
+*
+* @version 1.0 vom 20.08.2025
+* @David   
+*/
+
+public class Auto {
+
+// Anfang Attribute
+// Hier setzen wir die Attribute, welche unsere Objekte haben soll
+private String Kennzeichen;
+private double Kilometerstand;
+private double TankVolumen;
+private double Kraftstoffverbrauch;  // L / 100km
+private double Kraftstoffmenge;
+// Ende Attribute
+
+
+// Unsere Main Methode mit welcher wir die Objekte "initialisieren". Das ist unser Konstruktor
+public static void main(String[] args) {
+   Auto auto1 = new Auto("WI - EN 107" /* Kennzeichen */, 40 /* TankVolumen */, 5 /* KraftStoffVerbrauch pro 100KM */);     
+
+   auto1.tanken(30);  // Wir tanken unser Auto mit 30 L Tank
+   auto1.fahren(10);  // Wir fahren 10 Kilometer 
+   System.out.println(auto1.getKilometerstand());  // Wir rufen die Funktion der getKilometerstand() für das Objekt auto1 -> Wir drucken den gefahrenen Kilometerstand von auto1 in die Konsole aus
+
+   }
+
+public Auto(String Kennzeichen, double TankVolumen, double Kraftstoffverbrauch) {
+   this.Kennzeichen = Kennzeichen;
+   this.Kraftstoffverbrauch = Kraftstoffverbrauch;
+   this.TankVolumen = TankVolumen;
+   this.Kilometerstand = 0;
+   this.Kraftstoffmenge = 0;
+ }
+
+// Anfang Methoden
+public String getKennzeichen() {
+   return Kennzeichen;
+ }
+
+public double getKilometerstand() {
+   return Kilometerstand;
+ }
+
+public double getTankVolumen() {
+   return TankVolumen;
+ }
+
+public double getKraftstoffverbrauch() {
+   return Kraftstoffverbrauch;
+ }
+
+public double getKraftstoffmenge() {
+   return Kraftstoffmenge;
+ }
+
+
+
+public void tanken(double Menge){
+   // TODO
+   double restVolumen = TankVolumen - Kraftstoffmenge;          // Wir berechnen den noch übrigen Tank
+   if (Menge > restVolumen) {                                   // "Menge" heißt hier wie viel Menge wir noch tanken können
+     System.out.println("Geht nicht.");                         // Zu wenig platz im Tank
+     return;
+   } // end of if
+   System.out.println("Du bist am Tanken");
+   Kraftstoffmenge += Menge;
+   }
+
+
+
+public void fahren(double Strecke){
+   //TODO
+   double davidThievonFahrenVerbrauch /* Wert soll in Liter sein */ = (Strecke / 100) * Kraftstoffverbrauch;        // Wir berechnen hier wie viel Liter die Strecke beansprucht
+
+   if (davidThievonFahrenVerbrauch > Kraftstoffmenge) {
+     System.out.println("Geht nicht. Zu wenig Tank");
+     return;
+   } // end of if
+
+   System.out.println("Auf gehts. Die Fahrt hat begonnen!!");
+   Kraftstoffmenge -= davidThievonFahrenVerbrauch;
+
+   Kilometerstand += Strecke;
+   }
+
+// Ende Methoden
+} // end of Auto
             </code></pre>
         </div>
         </div>
