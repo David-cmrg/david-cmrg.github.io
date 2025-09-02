@@ -722,3 +722,22 @@ footer p:first-child{margin-top: 5vh;} /* Bringt nichts */
     -webkit-text-fill-color: transparent;
 }
 
+
+
+
+
+#codeBlockContainer,
+#preview {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+#preview {
+  display: none; /* Standard */
+  height: 400px;
+
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  transition: 0.4s ease-in-out;
+}
