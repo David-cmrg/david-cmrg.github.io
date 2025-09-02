@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Schwierigkeiten im Info Kurs? Auf dieser Seite findest du alle Aufgaben inklusive Lösungsweg und Erklärungen!">
+    <meta name="keywords" content="MeinInfoKurs, MeinInfoKurs V2, meininfokurs, Humboldt Schule, Humboldt Schule gymnasium Hessen, Humboldt Schule Gymnasium, Humboldt Schule Informatik, Herr Sauter, Sven Sauter, Herr Kizina, Markus Kizina, Code Lücken, Code Luecken">
+    <meta name="author" content="David Gomez Camargo">
+
+    <meta property="og:title" content="MeinInfoKurs V2 – Aufgaben mit Lösungen und Erklärungen">
+    <meta property="og:description" content="Schwierigkeiten im Info Kurs? Auf dieser Seite findest du alle Aufgaben inklusive Lösungsweg und Erklärungen!">
+    <meta property="og:image" content="https://david-cmrg.github.io/MeinInfoKurs/V2/Logo.png">
+    <meta property="og:url" content="https://david-cmrg.github.io/MeinInfoKurs/V2/">
+    <meta property="og:type" content="website">
+
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://david-cmrg.github.io/MeinInfoKurs/V2/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../../Logo.ico" type="image/x-icon">    <!-- ../../Logo.ico -->
+    <link rel="apple-touch-icon" href="../../Logo.png">            <!-- ../../Logo.png -->
+
+
+    <!-- Externe Ressourcen -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/a587449559.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c629f9a56e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css">
+
+    <!-- Schriftart -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Eigene Styles und Scripts -->
+    <link rel="stylesheet" href="../seitenstyle.css"> <!-- ../seitenstyle.css -->
+    <link rel="stylesheet" href="../../style.css"> <!-- ../../style.css -->
+    <script src="../../script.js"></script>   <!-- ../../script.js  -->
+
+
+    <!-- Werbung -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3759386961615231" crossorigin="anonymous"></script>
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-3759386961615231?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script> 
+    <meta name="google-adsense-account" content="ca-pub-3759386961615231"> <!-- GOOGLE ADS -->
+
+    
+    <title>MeinInfoKurs | Grundgeruest.html</title>
+</head>
+<body>
+
+    <!-- Navigationsleiste für alle Endgeräte -->
+    <nav>
+        <ul>
+            <li><a href="../../index.html"><i class="fa-solid fa-home fa-lg"></i></a></li>
+            <li class="active"><a href="html.html"><i class="fa-brands fa-html5 fa-xl" aria-hidden="true"></i></a></li>
+   <!--         <li><a href="fehlersuche.html"><i class="fa-solid fa-bug fa-lg"></i></a></li>
+            <li><a href="docs.html"><i class="fa-solid fa-book"></i></a></li> -->
+            <li><a href="https://www.w3schools.com/"><i class="fa-solid fa-school"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <div id="nav-title-verifystatus">
+            <h1 id="titlePage">Das Grundgerüst</h1>
+            <i class="fa-solid fa-square-check fa-xl verifiziert" title="Code fehlerfrei." id="code-status-display"></i>
+        </div>
+        <button id="toggle-history"><i class="fa-solid fa-clock-rotate-left fa-xl"></i></button>
+
+        <!-- Das modale Fenster -->
+        <div id="history-modal">
+            <div id="history-content">
+                <span id="close-history">&times;</span> <!-- Schließen-Button -->
+                <h3>ZULETZT ANGESEHEN</h3>
+                <ul id="recent-topics"></ul>
+            </div>
+        </div>
+
+        <!-- Custom Ad Modal -->
+        <div id="ad-modal" class="hidden">
+            <div id="ad-content">
+                <span id="close-ad" class="disabled">&times;</span>
+                <div id="ad-timer">Bitte warten Sie <span id="countdown">7</span> Sekunden</div>
+                <div id="ad-display"></div>
+            </div>
+        </div>
+
+        
+        
+        <p>
+            Die Aufgabe der heutigen Stunde ist <strong>das Grundgerüst!</strong> <br/> 
+            Heute beschäftigen wir uns mit HMTL, welches die kurzform von <strong>H</strong>yper <strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage ist.
+            Alles was du im Internet suchst, aufrufst oder dir anschaust basiert auf HTML. Es ist die Programmiersprache der Webentwickelung! Meiner Meinung nach
+            ist sie sehr einfach zu verstehen und anzuwenden. Schauen wir uns mal an wie ein ".html" Dokument aufgebaut ist. Dazu bearbeiten wir die heutige Aufgabe.
+            <br/>
+        </p>
+
+        <!-- 
+            Die Aufgabenstellung lautet:
+        </p>
+        <p class="Aufgabenstellung">
+          Die Bürger von Java sollen mit der Bahn fahren, damit die Umwelt geschont wird, deshalb bietet die Bahn Gruppenreisen ab 6 Personen im Tarif Gruppe&Spar 70 an.  
+          Dabei gibt es auf den Normalpreis für eine Person 70 % Rabatt, maximal bezahlt man aber 36,60 € pro Person, egal wie weit man innerhalb Deutschlands reist. Entwickle einen Preisrechner für solche Gruppenreisen.  
+          Eingegeben werden der Normalpreis für eine Person und die Anzahl der in der Gruppe reisenden Personen, ausgegeben wird der Preis für die Gruppe. Nenne das Programm Bahnreise.
+        </p>
+        -->
+
+        <h2 id="Lösungsprozess">Lösungsprozess der Aufgabe:</h2>
+        <div class="code-container">
+            <div class="toolbar">
+                <span><i class="fa-solid fa-code"></i>  HTML</span>
+                <div class="buttons">
+                    <button class="button" onclick="runHtmlCode()" id="toggleBtn">Webseite Anzeigen</button>
+                    <button class="button" onclick="copyCode()">Kopieren</button>
+                    <button class="button" onclick="downloadCode()">Herunterladen</button>
+                </div>
+            </div>
+            <div class="container">
+                <div id="codeBlockContainer">
+                    <button class="show-button" onclick="revealContent()">Code Anzeigen</button>
+                    <pre class="blurDivCLASS" id="blurDivID">
+                <code id="codeBlock">
+
+                &lt;!DOCTYPE html&gt;
+                        &lt;html lang="en"&gt;
+                        &lt;head&gt;
+                                &lt;meta charset="UTF-8"&gt;
+                                &lt;title&gt;Meine erste Webseite&lt;/title&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                                &lt;h1 style="color: white;"&gt;Willkommen bei meiner Webseite!&lt;/h1&gt;
+                                &lt;p style="color: white;"&gt;Das hier ist ein Paragraph.&lt;/p&gt;
+                        &lt;/body&gt;
+                &lt;/html&gt;
+
+                    </code></pre>
+                </div>
+                <!-- Vorschau-Frame -->
+                <iframe id="preview" style="width:100%; height:400px; border:1px solid #ccc; display:none;"></iframe>
+            </div>
+        </div>
+        <p>
+            Das Grundgerüst einer Webseite hat immer folgende Bestandteile: <br/><br/>
+            
+            <ol class="SchritteListe">
+                <li>&lt;!DOCTYPE html&gt;</li> <br/>
+                <li>&lt;html lang="en"&gt;</li>
+                <li>&lt;head&gt;</li>
+                <li>&lt;/head&gt;</li>
+                <li>&lt;body&gt;</li>
+                <li>&lt;/body&gt;</li>
+                <li>&lt;/html&gt;</li>
+            </ol>
+        </p>
+        <h3 class="Schritte">&lt;!DOCTYPE html&gt;</h3>
+        <p>
+            Dieser "Tag" steht am Anfang hedes HTML-Dokuments.
+            Es ist kein richtiger Tag, sondern eine Anweisung für deinen Browser.
+            Damit weiß der Browser, dass es sich um ein modernes HTML5-Dokument handelt und wie der Inhalt richtig angezeigt, 
+            beziehungsweise interpretiert, wird.
+        </p><br/>
+
+        <h3 class="Schritte">&lt;html lang="en"&gt;</h3>
+        <p>
+            Der Start des eigentlichen HTML-Dokumentes (vom Inhalt her) beginnt hier.
+            Mit "lang=en" gibst du an, dass die Sprache der Inhalte deiner Webseite Englisch ist. Dies ist für Suchmaschienen 
+            oder der Vorlesehilfe sehr hilfreich!
+        </p><br/>
+        
+        <h3 class="Schritte">&lt;head&gt;</h3>
+        <p>
+           In dem sogenannten "Kopfbereich" der Webseite stehen die Informationen über die Seite, die man im Browser nicht 
+           direkt sieht / angezeigt bekommt. Hier legt man zum Beispiel den Titel der Webseite fest, bindet verschiedene CSS, 
+           JS oder weitere Dateien an und einiges mehr. Im Grunde kann man sich merken, dass alles was es an Informationen für die
+           Funktionalität der Webseite im "&lt;head&gt;" Tag angegeben wird.
+        </p><br/>
+
+        <h3 class="Schritte">&lt;body&gt;</h3>
+        <p>
+           der Body ist der sichtbare Bereich der Webseite. Alles, was Nutzer sehen sollen (Texte, Bilder, Links, Überschriften, Tabellen, Videos, usw.)
+           wird hier angegeben. Das ist also die Oberfläche mit welcher der Nutzer interagieren kann und sie angezeigt bekommt. 
+           Desweiteren kann man den "&lt;body&gt;" Tag in 3 weitere Abschnitte unterteilen. "&lt;header&gt;", "&lt;main&gt;" und "&lt;footer&gt;" helfen den
+           Entwicklern der Seite ein übersichtlicheres layout für die Webseite zu erstellen. Wenn man zum Beispiel eine Fußzeile haben möchte, kann man
+           diese einfach in den &lt;body&gt; schreiben und schon wird der Inhalt des footer Tags am unteren Ende der Webseite angezeigt.
+        </p><br/>
+
+
+        <h3 class="Schritte">Schließende Tags</h3>
+        <p>
+           In HTML gibt es <strong>öffnende</strong>, sowie <strong>schließende Tags</strong>.
+           Ein öffnender Tag ist so aufgebaut: <span class="TastenKombination">&lt;tagname&gt;</span>, während ein schließender Tag so aussieht: 
+           <span class="TastenKombination">&lt;/tagname&gt;</span>. Alles was sich zwischen den öffnenden und schließenden Tags befindet gehört
+           zu diesem Element. Schließende Klammern sind wichtig, damit der Browser genau weiß, wo ein Element aufhört.  <br/> <br/>
+           
+            <div class="code-container">
+                <pre><code> 
+                    &lt;p&gt; Das hier ist ein Paragraph! &lt;/p&gt;
+                </code></pre>
+            </div>
+
+           Hier beginnt <span class="TastenKombination">&lt;p&gt;</span> unser Textelement, während <span class="TastenKombination">&lt;/p&gt;</span>
+           es schließt und beendet. Ohne die schließenden Klammern würde der Browser den Inhalt oft falsch darstellen.
+        </p><br/>
+       
+
+        <section class="vorherige-naechste">
+            <a href="html.html" style="visibility: hidden;">
+                <article>
+                    <h4><i class="fa-regular fa-circle-left fa-xl"></i>  Vorherige Aufgabe</h4>
+                </article>
+            </a>
+            <a href="Hyperlinks.html">
+                <article>
+                    <h4>Nächste Aufgabe  <i class="fa-regular fa-circle-right fa-xl"></i></h4>
+                </article>
+            </a>
+        </section>
+
+
+    </main>
+    <script>
+        function cleanCode(text) {
+            return text.replace(/\u00A0/g, ' ').trim();
+        }
+
+        function copyCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            navigator.clipboard.writeText(cleanCode(code));
+            alert('Code wurde in die Zwischenablage kopiert!');
+        }
+        
+        function downloadCode() {
+            const code = document.getElementById('codeBlock').innerText;
+            const blob = new Blob([cleanCode(code)], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'Grundgeruest.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>
