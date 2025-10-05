@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KlausurenManager | David Gomez C.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="fonts/FontAwesome/css/all.css" rel="stylesheet">
+  <meta name="description"
+    content="Der KlausurenManager unterstützt Lehrkräfte mit einer digitalen Uhr, einem konfigurierbaren Timer und einer Notizfunktion für die Durchführung von Prüfungen.">
+  <meta name="keywords"
+    content="KlausurenManager, Prüfungsaufsicht Tool, Timer für Lehrer, digitale Uhr Prüfung, Lehrer Zeitmanagement, Schulprüfung Timer, Prüfungsassistent, digitales Tool für Lehrer, Humboldt Schule Wiesbaden, Humboldt Schule, Wiesbaden, Hessen, Wiesbaden Hessen, Markus Griebling, Prüfungen, Arbeiten, Lehrassistent, Humboldt, Schule">
+  <meta name="author" content="David Gomez C.">
+  <meta charset="UTF-8">
+  
+  <!-- Open Graph Meta-Tags (für Teilen auf Social Media / Messenger) -->
+  <meta property="og:title" content="KlausurenManager – Digitaler Prüfungsassistent für Lehrkräfte" />
+  <meta property="og:description"
+    content="Mit integrierter Uhr, Timer und Schreibfläche ist der Klausurenmanager die perfekte Lösung für die Prüfungsaufsicht." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://david-cmrg.github.io/KlausurenManager" />
+  <meta property="og:image" content="https://david-cmrg.github.io/KlausurenManager/bilder/open_graph_vorschau.png" />
+  <meta property="og:site_name" content="KlausurenManager">
+
+  <!-- Responsives Design sicherstellen -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KlausurenManager – Digitaler Prüfungsassistent für Lehrkräfte">
+  <meta name="twitter:description"
+    content="Lehrkräfte erhalten mit Klausurenmanager ein minimalistisches, hilfreiches Tool für Prüfungsaufsicht.">
+  <meta name="twitter:image" content="https://david-cmrg.github.io/KlausurenManager/bilder/open_graph_vorschau.png">
+
+  <meta name="robots" content="index, follow">
+
+
+  <!-- Favicon -->
+  <link rel="icon" href="bilder/open_graph-vorschau.ico" type="image/x-icon">
+
+  <!-- PNG Favicon (better for modern browsers) -->
+  <link rel="icon" href="bilder/open_graph-vorschau.png" type="image/png">
+
+  <!-- Apple Touch Icon (for iOS home screen) -->
+  <link rel="apple-touch-icon" href="bilder/apple-touch-icon.png" sizes="180x180">
+
+
+
+  <!-- Font Family Imports -->
+  <style>
+    /* montserrat-100 - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 100;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-100.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-100italic - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: italic;
+      font-weight: 100;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-100italic.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-200 - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 200;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-200.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-200italic - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: italic;
+      font-weight: 200;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-200italic.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-300 - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 300;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-300.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-300italic - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: italic;
+      font-weight: 300;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-300italic.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-regular - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-regular.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-italic - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: italic;
+      font-weight: 400;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-italic.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-500 - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-500.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-500italic - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: italic;
+      font-weight: 500;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-500italic.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-600 - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-600.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-600italic - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: italic;
+      font-weight: 600;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-600italic.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-700 - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-700.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-700italic - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: italic;
+      font-weight: 700;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-700italic.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-800 - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 800;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-800.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-800italic - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: italic;
+      font-weight: 800;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-800italic.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-900 - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 900;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-900.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* montserrat-900italic - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Montserrat';
+      font-style: italic;
+      font-weight: 900;
+      src: url('../fonts/Montserrat/montserrat-v31-latin-900italic.woff2') format('woff2');
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+  </style>
+
+
+
+
+
+
+
+
+
+  <!-- General Site Styles -->
+  <style>
+    @media only screen and (max-width: 767px) {
+      main {
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #clockAndTimer {
+        max-width: fit-content;
+        max-height: fit-content;
+      }
+
+      iframe {
+        width: 90% !important;
+        margin: 8% 0 5% 0 !important;
+      }
+
+    }
+
+    * {
+      font-family: 'Montserrat', Arial;
+      text-align: center;
+      color: white;
+    }
+
+    .siteHeader,
+    .authorHeader {
+      text-align: center;
+    }
+
+    .siteHeader {
+      margin: 4svh 0svh 0.6svh 0svh;
+    }
+
+    .authorHeader {
+      margin: 0svh 0svh 4svh 0svh;
+    }
+
+
+
+    main {
+      display: flex;
+      width: 100% !important;
+      height: 75svh !important;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .clockAndTimer {
+      width: 40% !important;
+    }
+
+    #Clock {
+      width: 100% !important;
+      margin-bottom: 8%;
+    }
+
+
+    #clockTimeMain {
+      font-size: clamp(1.2rem, 6.5vw, 14rem) !important;
+    }
+
+    #clockTimeSeconds {
+      font-size: clamp(1rem, 2vw, 2.5rem) !important;
+    }
+
+    #hours,
+    #minutes,
+    #seconds {
+      font-size: clamp(1.2rem, 3vw, 4rem) !important;
+    }
+
+
+
+    .time-setter {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      font-size: clamp(0.75rem, 1.25vw, 3rem) !important;
+      text-align: center;
+    }
+
+    .unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    button {
+      width: 40px;
+      height: 30px;
+      margin: 2px;
+    }
+
+    #controls {
+      margin-top: 20px;
+    }
+
+    body {
+      margin: 0;
+      color: white !important;
+      min-height: 100vh;
+    }
+
+    html,
+    body {
+      overflow: scroll;
+      scrollbar-width: none;
+      /* Firefox */
+      -ms-overflow-style: none;
+      /* Internet Explorer und Edge */
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari, Opera */
+    }
+
+
+
+
+    /* Background blur */
+
+    #clockAndTimer {
+      border-radius: 56.00000000000001px;
+      position: relative;
+      isolation: isolate;
+      box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.2);
+
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: none;
+      padding: 0.85rem 1.25rem 4rem 1.25rem;
+      margin: 0;
+      text-decoration: none;
+    }
+
+    #clockAndTimer:focus {
+      outline: none;
+    }
+
+    #clockAndTimer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      border-radius: 56.00000000000001px;
+      box-shadow: inset 0 0 15px -6px #ffffff;
+      background-color: rgba(255, 255, 255, 0);
+      pointer-events: none;
+    }
+
+    #clockAndTimer::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: 56.00000000000001px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      filter: url(#glass-distortion);
+      -webkit-filter: url(#glass-distortion);
+      pointer-events: none;
+    }
+
+
+
+
+    .addTime,
+    .remTime {
+      font-size: clamp(20px, 2vw, 28px) !important;
+      width: 1.3em;
+      height: 1.3em;
+      border-radius: 50%;
+    }
+
+    .addTime,
+    .remTime {
+      width: 1.15em;
+      height: 1.15em;
+      border-radius: 50px;
+      position: relative;
+      isolation: isolate;
+      box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: none;
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      cursor: pointer;
+      transition: ease-in-out 0.3s all;
+    }
+
+    .addTime:focus,
+    .remTime:focus {
+      outline: none;
+    }
+
+    .addTime::before,
+    .remTime::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      border-radius: 50px;
+      box-shadow: inset 0 0 16px -6px rgb(255, 0, 0, 0.4);
+      background-color: rgba(255, 255, 255, 0);
+    }
+
+    .addTime::before {
+      box-shadow: inset 0 0 16px -6px rgba(0, 255, 55, 0.4) !important;
+    }
+
+    .addTime::after,
+    .remTime::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: 50px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      filter: url(#glass-distortion);
+      -webkit-filter: url(#glass-distortion);
+
+    }
+
+    .addTime:hover,
+    .remTime:hover {
+      background-color: rgba(255, 255, 255, 0.175);
+      transform: scale(1.05);
+      transition: ease-in-out 0.3s all;
+    }
+
+
+
+
+    .addTime {
+      color: green;
+    }
+
+    .remTime {
+      color: red;
+    }
+
+    #controls {
+      text-align: center;
+      align-self: center;
+    }
+
+    /*
+#toggle{
+    border: none;
+    background: none;
+    border-bottom: 1px solid white;
+    color: white;
+} */
+    #toggle {
+      position: relative; /* establishes reference for ::after */
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: white;
+      width: fit-content;
+      margin: 5px 10px;
+      padding: 0px 10px;
+    }
+
+
+    #toggle::after {
+      content: " ";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #fff;
+      border-radius: 1px;
+      transform: scaleX(1);
+      transition: all 0.6s ease;
+    }
+
+
+    #tutorialStarter {
+      visibility: visible;
+      top: 1.1rem;
+      right: 1.1rem;
+      border: none;
+      background: none;
+
+
+
+      border-radius: 56.00000000000001px;
+      position: relative;
+      isolation: isolate;
+      box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.2);
+
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: none;
+
+      width: 2.2rem;
+      height: 2.2rem;
+      padding: 0.3rem;
+
+      margin: 0;
+      text-decoration: none;
+    }
+
+    #tutorialStarter::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: 56.00000000000001px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      /* filter: url(#glass-distortion);
+       -webkit-filter: url(#glass-distortion); */
+      pointer-events: none;
+    }
+
+
+    #tutorialStarter::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      border-radius: 56.00000000000001px;
+      box-shadow: inset 0 0 15px -6px #ffffff;
+      background-color: rgba(255, 255, 255, 0);
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body id="background-body">
+  <div id="HeaderSeparator" style="display: flex; flex-direction: row;">
+    <div style="width: fit-content; margin: 0 auto;">
+      <h1 class="siteHeader" style="font-size: 2rem; font-weight: 600;">KlausurenManager</h1>
+      <p class="authorHeader" style="font-size: 0.95rem;">David Gomez C. (11b)</p>
+    </div>
+    <!-- <button id="tutorialStarter"><i class="fa-solid fa-circle-info fa-lg"></i> </button>   -->
+  </div>
+
+
+  <main>
+    <!-- Clock & Timer -->
+    <div id="clockAndTimer">
+      <h3 style="font-size: 15px; padding-bottom: 1.15rem" id="Datum">HEUTIGES DATUM</h3>
+
+      <!-- Clock -->
+      <div id="Clock">
+        <h5 style="padding: 0 !important; margin: 0 0 0 0.25em !important; text-align: left; font-size: 12px;">UHRZEIT
+        </h5>
+        <span id="clockTimeMain">00:00</span>
+        <span id="clockTimeSeconds">00</span>
+      </div>
+
+      <!-- Timer -->
+      <div id="Timer">
+        <h5 style="padding: 0 !important; margin: 0 0 0.35em 0.25em !important; text-align: left; font-size: 12px;">
+          TIMER</h5>
+        <div class="time-setter">
+
+          <div class="unit">
+            <button onclick="changeTime('hours', 1)" class="addTime" aria-label="Zeit inkrementieren">+</button>
+            <span id="hours">00</span>
+            <button onclick="changeTime('hours', -1)" class="remTime" aria-label="Zeit dekrementieren">-</button>
+            <div>Stunden</div>
+          </div>
+
+          <div class="unit">
+            <button onclick="changeTime('minutes', 1)" class="addTime" aria-label="Zeit inkrementieren">+</button>
+            <span id="minutes">00</span>
+            <button onclick="changeTime('minutes', -1)" class="remTime" aria-label="Zeit dekrementieren">-</button>
+            <div>Minuten</div>
+          </div>
+
+          <div class="unit">
+            <button onclick="changeTime('seconds', 1)" class="addTime" aria-label="Zeit inkrementieren">+</button>
+            <span id="seconds">00</span>
+            <button onclick="changeTime('seconds', -1)" class="remTime" aria-label="Zeit dekrementieren">-</button>
+            <div>Sekunden</div>
+          </div>
+        </div>
+
+        <div id="controls" style="z-index: 1004;">
+          <button id="toggle" style="z-index: 1005;">START</button>
+        </div>
+      </div>
+
+    </div>
+
+    <iframe src="https://www.tldraw.com/" title="NotePad"
+      style="margin: 0svh 4svh 0svh 4svh; width: 110svh; height: 65svh; border-radius: 16px; align-self: center;"></iframe>
+
+  </main>
+
+  <script>
+    // JS not written by me.
+    let h = 0, m = 0, s = 0;
+    let countdown;
+    let running = false;
+
+    function updateDisplay() {
+      document.getElementById("hours").textContent = String(h).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(m).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(s).padStart(2, "0");
+    }
+
+    function changeTime(unit, delta) {
+      if (running) return;
+      if (unit === 'hours') h = Math.max(0, h + delta);
+      if (unit === 'minutes') {
+        m = m + delta;
+        if (m < 0) m = 0;
+        if (m > 59) m = 59;
+      }
+      if (unit === 'seconds') {
+        s = s + delta;
+        if (s < 0) s = 0;
+        if (s > 59) s = 59;
+      }
+      updateDisplay();
+    }
+
+    function tick() {
+      let total = h * 3600 + m * 60 + s;
+      if (total <= 0) {
+        clearInterval(countdown);
+        running = false;
+        document.getElementById("toggle").textContent = "Start";
+        return;
+      }
+      total--;
+      h = Math.floor(total / 3600);
+      m = Math.floor((total % 3600) / 60);
+      s = total % 60;
+      updateDisplay();
+    }
+
+    document.getElementById("toggle").onclick = function () {
+      if (!running) {
+        let total = h * 3600 + m * 60 + s;
+        if (total <= 0) return;
+        countdown = setInterval(tick, 1000);
+        running = true;
+        this.textContent = "STOPP";
+      } else {
+        clearInterval(countdown);
+        running = false;
+        this.textContent = "START";
+      }
+    };
+
+    updateDisplay();
+  </script>
+
+
+  <!-- Background Styles -->
+  <script>
+    /*--------------------
+  Vars
+  --------------------*/
+    const deg = (a) => Math.PI / 180 * a
+    const rand = (v1, v2) => Math.floor(v1 + Math.random() * (v2 - v1))
+    const opt = {
+      particles: window.width / 500 ? 1000 : 500,
+      noiseScale: 0.009,
+      angle: Math.PI / 180 * -90,
+      h1: rand(0, 360),
+      h2: rand(0, 360),
+      s1: rand(20, 90),
+      s2: rand(20, 90),
+      l1: rand(30, 80),
+      l2: rand(30, 80),
+      strokeWeight: 1.2,
+      tail: 82,
+    }
+    const Particles = []
+    let time = 0
+    document.body.addEventListener('click', () => {
+      opt.h1 = rand(0, 360)
+      opt.h2 = rand(0, 360)
+      opt.s1 = rand(20, 90)
+      opt.s2 = rand(20, 90)
+      opt.l1 = rand(30, 80)
+      opt.l2 = rand(30, 80)
+      opt.angle += deg(random(60, 60)) * (Math.random() > .5 ? 1 : -1)
+
+      for (let p of Particles) {
+        p.randomize()
+      }
+    })
+
+
+    /*--------------------
+    Particle
+    --------------------*/
+    class Particle {
+      constructor(x, y) {
+        this.x = x
+        this.y = y
+        this.lx = x
+        this.ly = y
+        this.vx = 0
+        this.vy = 0
+        this.ax = 0
+        this.ay = 0
+        this.hueSemen = Math.random()
+        this.hue = this.hueSemen > .5 ? 20 + opt.h1 : 20 + opt.h2
+        this.sat = this.hueSemen > .5 ? opt.s1 : opt.s2
+        this.light = this.hueSemen > .5 ? opt.l1 : opt.l2
+        this.maxSpeed = this.hueSemen > .5 ? 3 : 2
+      }
+
+      randomize() {
+        this.hueSemen = Math.random()
+        this.hue = this.hueSemen > .5 ? 20 + opt.h1 : 20 + opt.h2
+        this.sat = this.hueSemen > .5 ? opt.s1 : opt.s2
+        this.light = this.hueSemen > .5 ? opt.l1 : opt.l2
+        this.maxSpeed = this.hueSemen > .5 ? 3 : 2
+      }
+
+      update() {
+        this.follow()
+
+        this.vx += this.ax
+        this.vy += this.ay
+
+        var p = Math.sqrt(this.vx * this.vx + this.vy * this.vy)
+        var a = Math.atan2(this.vy, this.vx)
+        var m = Math.min(this.maxSpeed, p)
+        this.vx = Math.cos(a) * m
+        this.vy = Math.sin(a) * m
+
+        this.x += this.vx
+        this.y += this.vy
+        this.ax = 0
+        this.ay = 0
+
+        this.edges()
+      }
+
+      follow() {
+        let angle = (noise(this.x * opt.noiseScale, this.y * opt.noiseScale, time * opt.noiseScale)) * Math.PI * 0.5 + opt.angle
+
+        this.ax += Math.cos(angle)
+        this.ay += Math.sin(angle)
+
+      }
+
+      updatePrev() {
+        this.lx = this.x
+        this.ly = this.y
+      }
+
+      edges() {
+        if (this.x < 0) {
+          this.x = width
+          this.updatePrev()
+        }
+        if (this.x > width) {
+          this.x = 0
+          this.updatePrev()
+        }
+        if (this.y < 0) {
+          this.y = height
+          this.updatePrev()
+        }
+        if (this.y > height) {
+          this.y = 0
+          this.updatePrev()
+        }
+      }
+
+      render() {
+        stroke(`hsla(${this.hue}, ${this.sat}%, ${this.light}%, .5)`)
+        line(this.x, this.y, this.lx, this.ly)
+        this.updatePrev()
+      }
+    }
+
+
+    /*--------------------
+    Setup
+    --------------------*/
+    function setup() {
+      createCanvas(windowWidth, windowHeight)
+      for (let i = 0; i < opt.particles; i++) {
+        Particles.push(new Particle(Math.random() * width, Math.random() * height))
+      }
+      strokeWeight(opt.strokeWeight)
+    }
+
+
+    /*--------------------
+    Draw
+    --------------------*/
+    function draw() {
+      time++
+      background(0, 100 - opt.tail)
+
+      for (let p of Particles) {
+        p.update()
+        p.render()
+      }
+    }
+
+
+    /*--------------------
+    Resize
+    --------------------*/
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight)
+    }
+
+
+
+    /*--------------------
+    Updates the Clock
+    --------------------*/
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, "0");
+      const minutes = String(now.getMinutes()).padStart(2, "0");
+      const seconds = String(now.getSeconds()).padStart(2, "0");
+
+      document.getElementById("clockTimeMain").textContent = `${hours}:${minutes}`;
+      document.getElementById("clockTimeSeconds").textContent = seconds;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+
+  </script>
+
+
+
+  <!-- BACKGROUND STYLES -->
+  <script src="r134-three.js"></script>
+  <script src="vanta.waves.min.js"></script>
+  <script>
+    VANTA.WAVES({
+      el: "html",
+      mouseControls: false,
+      touchControls: false,
+      gyroControls: true,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x331515,
+      shininess: 150.00,
+      waveHeight: 40.00,
+      waveSpeed: 0.35,
+      zoom: 0.65
+    })
+  </script>
+
+
+
+  <script>
+    // Array der Wochentage auf Deutsch
+    const weekdays = ["SONNTAG", "MONTAG", "DIENSTAG", "MITTWOCH", "DONNERSTAG", "FREITAG", "SAMSTAG"];
+
+    // Heutiges Datum abrufen
+    const today = new Date();
+
+    const dayOfWeek = weekdays[today.getDay()]; // Wochentag
+    const day = String(today.getDate()).padStart(2, '0'); // Tag mit führender Null
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Monat (0-basiert) mit führender Null
+    const year = today.getFullYear();
+
+    // Format: "TAG_DER_WOCHE, DD/MM/YYYY"
+    const formattedDate = `${dayOfWeek}, ${day}/${month}/${year}`;
+
+    // In das h3-Element einfügen
+    document.getElementById("Datum").textContent = formattedDate;
+  </script>
+
+</body>
+
+
+<footer style="font-size: 13px;">
+  <a href="https://github.com/David-cmrg/" target="_blank">Über mich</a>
+  <span style="margin: 0 0.6rem"> - </span>
+  <a href="https://forms.office.com/e/fgrS0tadyV" target="_blank">Feedback</a>
+</footer>
+
+</html>
